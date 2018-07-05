@@ -8,8 +8,7 @@
 
 import Foundation
 
-class BitcoinCashWallet: BitcoinCashWalletInterface {
-    
+class BitcoinCashWallet: BaseWallet, BitcoinCashWalletInterface {
     func getBalance(for address: String) -> Double {
         return 0.0
     }
