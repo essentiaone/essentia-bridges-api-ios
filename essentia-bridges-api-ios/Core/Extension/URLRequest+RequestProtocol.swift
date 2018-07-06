@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate struct Constants {
+fileprivate enum Constants {
     static let contentType = "Content-Type"
 }
 
