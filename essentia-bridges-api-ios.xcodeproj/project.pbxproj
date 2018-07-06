@@ -6,6 +6,19 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492202B20ED786800A59A6F /* WalletInterface.swift */; };
+		3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */; };
+		3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203020ED7A5F00A59A6F /* EthereumWallet.swift */; };
+		3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203220ED7B0B00A59A6F /* CryptoWallet.swift */; };
+		3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203420ED7C2000A59A6F /* BitcoinWalletInterface.swift */; };
+		3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203620ED7C4C00A59A6F /* BitcoinWallet.swift */; };
+		3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203A20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift */; };
+		3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */; };
+		3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */; };
+		3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3492201B20ED415F00A59A6F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +33,16 @@
 
 /* Begin PBXFileReference section */
 		3492201D20ED415F00A59A6F /* libessentia-bridges-api-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libessentia-bridges-api-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3492202B20ED786800A59A6F /* WalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInterface.swift; sourceTree = "<group>"; };
+		3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumWalletInterface.swift; sourceTree = "<group>"; };
+		3492203020ED7A5F00A59A6F /* EthereumWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumWallet.swift; sourceTree = "<group>"; };
+		3492203220ED7B0B00A59A6F /* CryptoWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoWallet.swift; sourceTree = "<group>"; };
+		3492203420ED7C2000A59A6F /* BitcoinWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWalletInterface.swift; sourceTree = "<group>"; };
+		3492203620ED7C4C00A59A6F /* BitcoinWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinWallet.swift; sourceTree = "<group>"; };
+		3492203A20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCashWalletInterface.swift; sourceTree = "<group>"; };
+		3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCashWallet.swift; sourceTree = "<group>"; };
+		3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWalletInterface.swift; sourceTree = "<group>"; };
+		3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +75,58 @@
 		3492201F20ED415F00A59A6F /* essentia-bridges-api-ios */ = {
 			isa = PBXGroup;
 			children = (
+				3492202920ED784400A59A6F /* Wallets */,
+				3492203220ED7B0B00A59A6F /* CryptoWallet.swift */,
 			);
 			path = "essentia-bridges-api-ios";
+			sourceTree = "<group>";
+		};
+		3492202920ED784400A59A6F /* Wallets */ = {
+			isa = PBXGroup;
+			children = (
+				3492203920ED7C9100A59A6F /* Litecoin */,
+				3492203820ED7C8700A59A6F /* BitcoinCash */,
+				3492202D20ED793A00A59A6F /* Bitcoin */,
+				3492202A20ED784B00A59A6F /* Ethereum */,
+				3492202B20ED786800A59A6F /* WalletInterface.swift */,
+			);
+			path = Wallets;
+			sourceTree = "<group>";
+		};
+		3492202A20ED784B00A59A6F /* Ethereum */ = {
+			isa = PBXGroup;
+			children = (
+				3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */,
+				3492203020ED7A5F00A59A6F /* EthereumWallet.swift */,
+			);
+			path = Ethereum;
+			sourceTree = "<group>";
+		};
+		3492202D20ED793A00A59A6F /* Bitcoin */ = {
+			isa = PBXGroup;
+			children = (
+				3492203420ED7C2000A59A6F /* BitcoinWalletInterface.swift */,
+				3492203620ED7C4C00A59A6F /* BitcoinWallet.swift */,
+			);
+			path = Bitcoin;
+			sourceTree = "<group>";
+		};
+		3492203820ED7C8700A59A6F /* BitcoinCash */ = {
+			isa = PBXGroup;
+			children = (
+				3492203A20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift */,
+				3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */,
+			);
+			path = BitcoinCash;
+			sourceTree = "<group>";
+		};
+		3492203920ED7C9100A59A6F /* Litecoin */ = {
+			isa = PBXGroup;
+			children = (
+				3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */,
+				3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */,
+			);
+			path = Litecoin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +161,7 @@
 				TargetAttributes = {
 					3492201C20ED415F00A59A6F = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -113,6 +187,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
+				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
+				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
+				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
+				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
+				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
+				3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */,
+				3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */,
+				3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */,
+				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,11 +320,18 @@
 		3492202520ED415F00A59A6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -249,8 +340,14 @@
 		3492202620ED415F00A59A6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
