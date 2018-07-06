@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol IWalletProtocol {
-    var title:String { get }
+    var title: String { get }
 }

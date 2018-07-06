@@ -8,12 +8,16 @@
 
 import Foundation
 
+fileprivate enum Constants {
+    static var title: String = "Litecoin"
+}
+
 public protocol ILitecoinWalletProtocol: IWalletProtocol {
-    func getBalance(for adderess:String) -> Double
+    func getBalance(for address: String) -> Double
 }
 
 extension ILitecoinWalletProtocol {
     var title: String {
-        return "BitcoinCash"
+        return Constants.title
     }
 }

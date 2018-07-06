@@ -10,7 +10,7 @@ import Foundation
 
 class BitcoinCashWallet: IBitcoinCashWalletProtocol {
     
-    func getBalance(for adderess: String) -> Double {
+    func getBalance(for address: String) -> Double {
         return 0.0
     }
 }
