@@ -1,5 +1,5 @@
 //
-//  IBitcoinWalletProtocol.swift
+//  EthereumWalletInterface.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 05.07.18.
@@ -9,15 +9,15 @@
 import Foundation
 
 fileprivate enum Constants {
-    static var title: String = "Bitcoin"
+    static var title: String = "Ethereum"
 }
 
-public protocol IBitcoinWalletProtocol: IWalletProtocol {
+public protocol EthereumWalletInterface: WalletInterface {
     func getBalance(for address: String) -> Double
 }
 
-extension IBitcoinWalletProtocol {
-    var title: String {
+extension EthereumWalletInterface {
+    public var title: String {
         return Constants.title
     }
 }

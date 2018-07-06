@@ -1,5 +1,5 @@
 //
-//  IEthereumWalletProtocol.swift
+//  BitcoinCashWalletInterface.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 05.07.18.
@@ -9,15 +9,15 @@
 import Foundation
 
 fileprivate enum Constants {
-    static var title: String = "Ethereum"
+    static var title: String = "BitcoinCash"
 }
 
-public protocol IEthereumWalletProtocol: IWalletProtocol {
+public protocol BitcoinCashWalletInterface: WalletInterface {
     func getBalance(for address: String) -> Double
 }
 
-extension IEthereumWalletProtocol {
-    public var title: String {
+extension BitcoinCashWalletInterface {
+    var title: String {
         return Constants.title
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LitecoinWallet: ILitecoinWalletProtocol {
+class LitecoinWallet: LitecoinWalletInterface {
     
     func getBalance(for address: String) -> Double {
         return 0.0

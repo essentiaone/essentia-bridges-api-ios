@@ -9,9 +9,9 @@
 import Foundation
 
 public class CryptoWallet {
-    public static let bitcoin: IBitcoinWalletProtocol = BitcoinWallet()
-    public static let ethereum: IEthereumWalletProtocol = EthereumWallet()
-    public static let litecoin: ILitecoinWalletProtocol = LitecoinWallet()
-    public static let bitcoinCash: IBitcoinCashWalletProtocol = BitcoinCashWallet()
+    public static let bitcoin: BitcoinWalletInterface = BitcoinWallet()
+    public static let ethereum: EthereumWalletInterface = EthereumWallet()
+    public static let litecoin: LitecoinWalletInterface = LitecoinWallet()
+    public static let bitcoinCash: BitcoinCashWalletInterface = BitcoinCashWallet()
     
 }

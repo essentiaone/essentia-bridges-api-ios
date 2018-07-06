@@ -1,5 +1,5 @@
 //
-//  IWalletProtocol.swift
+//  WalletInterface.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 05.07.18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol IWalletProtocol {
+public protocol WalletInterface {
     var title: String { get }
 }

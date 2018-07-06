@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BitcoinWallet: IBitcoinWalletProtocol {
+class BitcoinWallet: BitcoinWalletInterface {
     
     func getBalance(for address: String) -> Double {
         return 0.0

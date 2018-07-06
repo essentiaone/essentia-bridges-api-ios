@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EthereumWallet: IEthereumWalletProtocol {
+class EthereumWallet: EthereumWalletInterface {
     
     func getBalance(for address: String) -> Double {
         return 0.0

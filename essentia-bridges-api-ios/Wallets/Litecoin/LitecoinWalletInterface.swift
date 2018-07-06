@@ -1,5 +1,5 @@
 //
-//  ILitecoinWalletProtocol.swift
+//  LitecoinWalletInterface.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 05.07.18.
@@ -12,11 +12,11 @@ fileprivate enum Constants {
     static var title: String = "Litecoin"
 }
 
-public protocol ILitecoinWalletProtocol: IWalletProtocol {
+public protocol LitecoinWalletInterface: WalletInterface {
     func getBalance(for address: String) -> Double
 }
 
-extension ILitecoinWalletProtocol {
+extension LitecoinWalletInterface {
     var title: String {
         return Constants.title
     }
