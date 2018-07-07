@@ -23,6 +23,7 @@ extension RequestProtocol {
         urlRequest.httpMethod = requestType.description
         return urlRequest
     }
+    
     private func setupHttpHeaders(request: inout URLRequest) {
         request.setValue(contentType.description, forHTTPHeaderField: Constants.contentType)
         guard let headers = extraHeaders else { return }
@@ -30,6 +31,7 @@ extension RequestProtocol {
             request.setValue(header.value, forHTTPHeaderField: header.key)
         }
     }
+    
     private func buildJsonRequest(request: inout URLRequest) {
         guard let params = parameters,
             let data = try? JSONSerialization.data(withJSONObject: params,

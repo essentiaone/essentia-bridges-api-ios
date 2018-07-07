@@ -22,6 +22,7 @@ class NetworkManager: NetworkManagerInterface {
         }
         logRequst(urlRequest)
     }
+    
     private func handleResponse<SuccessModel: Codable, ErrorModel: Codable>
         (responce: (Data?, Error?),
          success: @escaping (SuccessModel) -> Void,
@@ -39,6 +40,7 @@ class NetworkManager: NetworkManagerInterface {
             success(object)
         }
     }
+    
     private func handleError<ErrorModel: Codable>
         (responce: Data,
          failure: @escaping (ErrorModel?) -> Void) {
@@ -51,6 +53,7 @@ class NetworkManager: NetworkManagerInterface {
         debugPrint(failedObject)
         failure(failedObject)
     }
+    
     private func logRequst(_ request: URLRequest) {
         debugPrint("==============================================")
         debugPrint("URL: \(request.url!)")

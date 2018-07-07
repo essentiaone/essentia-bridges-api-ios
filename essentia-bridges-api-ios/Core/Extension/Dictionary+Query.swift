@@ -25,6 +25,7 @@ extension Dictionary {
         }
         return pairs.joined(separator: Constants.concatSymbol)
     }
+    
     private func stringFrom(object: Any) -> String? {
         var string: String?
         if (object is Dictionary) || (object is [String]) {
@@ -38,9 +39,11 @@ extension Dictionary {
         }
         return string
     }
+    
     private func escaped(string: String?) -> String? {
         return string?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
+    
     public mutating func update(other: Dictionary) {
         for (key, value) in other {
             self.updateValue(value, forKey: key)
