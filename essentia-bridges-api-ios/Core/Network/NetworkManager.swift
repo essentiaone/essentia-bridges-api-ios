@@ -9,11 +9,12 @@
 import Foundation
 
 class NetworkManager: NetworkManagerInterface {
-    func makeRequest<SuccessModel: Codable, ErrorModel: Codable>
-        (_ request: RequestProtocol,
-         success: @escaping (SuccessModel) -> Void,
-         failure: @escaping (ErrorModel?) -> Void) {
-        let urlRequest = request.makeURLRequest()
+    func makeRequest<SuccessModel: Codable, ErrorModel: Codable> (
+            _ request: RequestProtocol,
+            success: @escaping (SuccessModel) -> Void,
+            failure: @escaping (ErrorModel?) -> Void
+        ) {
+        let urlRequest = request.makeUrlRequest()
         switch request.contentType {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, responce, error) in
@@ -23,10 +24,11 @@ class NetworkManager: NetworkManagerInterface {
         logRequst(urlRequest)
     }
     
-    private func handleResponse<SuccessModel: Codable, ErrorModel: Codable>
-        (responce: (Data?, Error?),
-         success: @escaping (SuccessModel) -> Void,
-         failure: @escaping (ErrorModel?) -> Void) {
+    private func handleResponse<SuccessModel: Codable, ErrorModel: Codable> (
+            responce: (Data?, Error?),
+            success: @escaping (SuccessModel) -> Void,
+            failure: @escaping (ErrorModel?) -> Void
+        ) {
         OperationQueue.main.addOperation {
             guard let data = responce.0 else {
                 failure(nil)
@@ -41,9 +43,10 @@ class NetworkManager: NetworkManagerInterface {
         }
     }
     
-    private func handleError<ErrorModel: Codable>
-        (responce: Data,
-         failure: @escaping (ErrorModel?) -> Void) {
+    private func handleError<ErrorModel: Codable> (
+            responce: Data,
+            failure: @escaping (ErrorModel?) -> Void
+        ) {
         let decoder = JSONDecoder()
         guard let failedObject = try? decoder.decode(ErrorModel.self, from: responce) else {
             debugPrint(String(data: responce, encoding: .utf8) as Any)

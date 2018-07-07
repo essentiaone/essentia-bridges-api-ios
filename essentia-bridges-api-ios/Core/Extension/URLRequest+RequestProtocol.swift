@@ -13,7 +13,7 @@ fileprivate enum Constants {
 }
 
 extension RequestProtocol {
-    func makeURLRequest() -> URLRequest {
+    func makeUrlRequest() -> URLRequest {
         var urlRequest: URLRequest = URLRequest(url: url)
         switch contentType {
         case .json:
@@ -27,8 +27,8 @@ extension RequestProtocol {
     private func setupHttpHeaders(request: inout URLRequest) {
         request.setValue(contentType.description, forHTTPHeaderField: Constants.contentType)
         guard let headers = extraHeaders else { return }
-        for header in headers {
-            request.setValue(header.value, forHTTPHeaderField: header.key)
+        headers.forEach { (key, value) in
+            request.setValue(value, forHTTPHeaderField: key)
         }
     }
     

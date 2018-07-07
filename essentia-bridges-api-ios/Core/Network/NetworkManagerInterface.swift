@@ -10,8 +10,9 @@ import Foundation
 
 protocol NetworkManagerInterface {
     
-    func makeRequest<SuccessModel: Codable, ErrorModel: Codable>
-        (_ request: RequestProtocol,
-         success: @escaping (SuccessModel) -> Void,
-         failure: @escaping (ErrorModel?) -> Void)
+    func makeRequest<SuccessModel: Codable, ErrorModel: Codable> (
+        _ request: RequestProtocol,
+        success: @escaping (SuccessModel) -> Void,
+        failure: @escaping (ErrorModel?) -> Void
+    )
 }
