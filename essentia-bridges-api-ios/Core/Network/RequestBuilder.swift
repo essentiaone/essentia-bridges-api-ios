@@ -20,11 +20,11 @@ class RequestBuilder {
         self.request = request
     }
     
-    func buildUrlRequest() -> URLRequest {
+    func build() -> URLRequest {
         var urlRequest: URLRequest = URLRequest(url: request.url)
         switch request.contentType {
         case .json:
-            buildJsonRequest(for: &urlRequest)
+            buildJson(for: &urlRequest)
         }
         setupHttpHeaders(for: &urlRequest)
         urlRequest.httpMethod = request.requestType.description
@@ -39,7 +39,7 @@ class RequestBuilder {
         }
     }
     
-    private func buildJsonRequest(for urlRequest: inout URLRequest) {
+    private func buildJson(for urlRequest: inout URLRequest) {
         guard let params = request.parameters,
             let data = try? JSONSerialization.data(withJSONObject: params,
                                                    options: .prettyPrinted) else {

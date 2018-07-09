@@ -15,7 +15,7 @@ class NetworkManager: NetworkManagerInterface {
             failure: @escaping (ErrorModel?) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
-        let urlRequest = requestBuilder.buildUrlRequest()
+        let urlRequest = requestBuilder.build()
         switch request.contentType {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
