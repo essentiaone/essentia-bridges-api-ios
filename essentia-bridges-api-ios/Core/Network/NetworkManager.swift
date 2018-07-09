@@ -20,7 +20,7 @@ class NetworkManager: NetworkManagerInterface {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 self.handleResponse(response: (data, error), success: success, failure: failure)
-                }.resume()
+            }.resume()
         }
         Logger.shared.logEvent(.httpRequest(urlRequest))
     }
