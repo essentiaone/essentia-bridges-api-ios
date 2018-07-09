@@ -8,8 +8,7 @@
 
 import Foundation
 
-class EthereumWallet: EthereumWalletInterface {
-    
+class EthereumWallet: BaseWallet, EthereumWalletInterface {
     func getBalance(for address: String) -> Double {
         return 0.0
     }

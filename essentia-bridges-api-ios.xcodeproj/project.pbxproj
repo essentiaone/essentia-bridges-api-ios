@@ -17,6 +17,14 @@
 		3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */; };
 		3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */; };
 		3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */; };
+		3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207D20EFC42300A59A6F /* NetworkManagerInterface.swift */; };
+		3492208320EFC42300A59A6F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207E20EFC42300A59A6F /* NetworkManager.swift */; };
+		3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207F20EFC42300A59A6F /* RequestProtocol.swift */; };
+		3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208520EFC8B700A59A6F /* BaseWallet.swift */; };
+		3492208B20F108A400A59A6F /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208A20F108A400A59A6F /* RequestBuilder.swift */; };
+		3492209020F3266000A59A6F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208F20F3266000A59A6F /* Logger.swift */; };
+		3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209320F32AB300A59A6F /* LoggerEventType.swift */; };
+		3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209520F3390E00A59A6F /* URLRequest+curl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +51,14 @@
 		3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCashWallet.swift; sourceTree = "<group>"; };
 		3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWalletInterface.swift; sourceTree = "<group>"; };
 		3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWallet.swift; sourceTree = "<group>"; };
+		3492207D20EFC42300A59A6F /* NetworkManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerInterface.swift; sourceTree = "<group>"; };
+		3492207E20EFC42300A59A6F /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3492207F20EFC42300A59A6F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		3492208520EFC8B700A59A6F /* BaseWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWallet.swift; sourceTree = "<group>"; };
+		3492208A20F108A400A59A6F /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		3492208F20F3266000A59A6F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3492209320F32AB300A59A6F /* LoggerEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerEventType.swift; sourceTree = "<group>"; };
+		3492209520F3390E00A59A6F /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +91,7 @@
 		3492201F20ED415F00A59A6F /* essentia-bridges-api-ios */ = {
 			isa = PBXGroup;
 			children = (
+				3492207820EFC42300A59A6F /* Core */,
 				3492202920ED784400A59A6F /* Wallets */,
 				3492203220ED7B0B00A59A6F /* CryptoWallet.swift */,
 			);
@@ -89,6 +106,7 @@
 				3492202D20ED793A00A59A6F /* Bitcoin */,
 				3492202A20ED784B00A59A6F /* Ethereum */,
 				3492202B20ED786800A59A6F /* WalletInterface.swift */,
+				3492208520EFC8B700A59A6F /* BaseWallet.swift */,
 			);
 			path = Wallets;
 			sourceTree = "<group>";
@@ -129,6 +147,44 @@
 			path = Litecoin;
 			sourceTree = "<group>";
 		};
+		3492207820EFC42300A59A6F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3492208C20F1171800A59A6F /* Logger */,
+				3492207920EFC42300A59A6F /* Extension */,
+				3492207C20EFC42300A59A6F /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3492207920EFC42300A59A6F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3492209520F3390E00A59A6F /* URLRequest+curl.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3492207C20EFC42300A59A6F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3492207D20EFC42300A59A6F /* NetworkManagerInterface.swift */,
+				3492207E20EFC42300A59A6F /* NetworkManager.swift */,
+				3492207F20EFC42300A59A6F /* RequestProtocol.swift */,
+				3492208A20F108A400A59A6F /* RequestBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3492208C20F1171800A59A6F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3492208F20F3266000A59A6F /* Logger.swift */,
+				3492209320F32AB300A59A6F /* LoggerEventType.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +195,7 @@
 				3492201920ED415F00A59A6F /* Sources */,
 				3492201A20ED415F00A59A6F /* Frameworks */,
 				3492201B20ED415F00A59A6F /* CopyFiles */,
+				3492208720F00FD800A59A6F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -182,6 +239,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3492208720F00FD800A59A6F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3492201920ED415F00A59A6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -189,14 +262,22 @@
 			files = (
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
+				3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */,
+				3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
+				3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
 				3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */,
+				3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */,
 				3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */,
+				3492208320EFC42300A59A6F /* NetworkManager.swift in Sources */,
+				3492209020F3266000A59A6F /* Logger.swift in Sources */,
 				3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */,
 				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
+				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,
+				3492208B20F108A400A59A6F /* RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

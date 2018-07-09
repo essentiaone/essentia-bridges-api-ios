@@ -13,5 +13,4 @@ public class CryptoWallet {
     public static let ethereum: EthereumWalletInterface = EthereumWallet()
     public static let litecoin: LitecoinWalletInterface = LitecoinWallet()
     public static let bitcoinCash: BitcoinCashWalletInterface = BitcoinCashWallet()
-    
 }
