@@ -41,9 +41,9 @@ class RequestBuilder {
     
     private func buildJson(for urlRequest: inout URLRequest) {
         guard let params = request.parameters,
-            let data = try? JSONSerialization.data(withJSONObject: params,
-                                                   options: .prettyPrinted) else {
-                                                    return
+              let data = try? JSONSerialization.data(withJSONObject: params,
+                                                            options: .prettyPrinted) else {
+            return
         }
         urlRequest.httpBody = data
     }
