@@ -25,6 +25,8 @@
 		3492209020F3266000A59A6F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208F20F3266000A59A6F /* Logger.swift */; };
 		3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209320F32AB300A59A6F /* LoggerEventType.swift */; };
 		3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209520F3390E00A59A6F /* URLRequest+curl.swift */; };
+		3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209720F34F4900A59A6F /* EthereumEndpoint.swift */; };
+		3492209A20F3508500A59A6F /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209920F3508500A59A6F /* Typealiases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,8 @@
 		3492208F20F3266000A59A6F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3492209320F32AB300A59A6F /* LoggerEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerEventType.swift; sourceTree = "<group>"; };
 		3492209520F3390E00A59A6F /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
+		3492209720F34F4900A59A6F /* EthereumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumEndpoint.swift; sourceTree = "<group>"; };
+		3492209920F3508500A59A6F /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */,
 				3492203020ED7A5F00A59A6F /* EthereumWallet.swift */,
+				3492209720F34F4900A59A6F /* EthereumEndpoint.swift */,
 			);
 			path = Ethereum;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				3492208C20F1171800A59A6F /* Logger */,
 				3492207920EFC42300A59A6F /* Extension */,
 				3492207C20EFC42300A59A6F /* Network */,
+				3492209920F3508500A59A6F /* Typealiases.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -262,12 +268,14 @@
 			files = (
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
+				3492209A20F3508500A59A6F /* Typealiases.swift in Sources */,
 				3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */,
 				3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
 				3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */,
+				3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
 				3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */,
 				3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */,

@@ -9,8 +9,15 @@
 import Foundation
 
 public class CryptoWallet {
-    public static let bitcoin: BitcoinWalletInterface = BitcoinWallet()
-    public static let ethereum: EthereumWalletInterface = EthereumWallet()
-    public static let litecoin: LitecoinWalletInterface = LitecoinWallet()
-    public static let bitcoinCash: BitcoinCashWalletInterface = BitcoinCashWallet()
+    init(serverUrl: String) {
+        bitcoin = BitcoinWallet(serverUrl)
+        ethereum = EthereumWallet(serverUrl)
+        litecoin = LitecoinWallet(serverUrl)
+        bitcoinCash = BitcoinCashWallet(serverUrl)
+    }
+
+    public let bitcoin: BitcoinWalletInterface
+    public let ethereum: EthereumWalletInterface
+    public let litecoin: LitecoinWalletInterface
+    public let bitcoinCash: BitcoinCashWalletInterface
 }

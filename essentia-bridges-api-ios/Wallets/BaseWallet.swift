@@ -9,5 +9,9 @@
 import Foundation
 
 class BaseWallet {
-    let networking: NetworkManagerInterface = NetworkManager()
+    init(_ serverUrl: String) {
+        networking = NetworkManager(serverUrl)
+    }
+    
+    let networking: NetworkManagerInterface
 }

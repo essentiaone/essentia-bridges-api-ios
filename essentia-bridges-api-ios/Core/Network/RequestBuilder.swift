@@ -20,8 +20,11 @@ class RequestBuilder {
         self.request = request
     }
     
-    func build() -> URLRequest {
-        var urlRequest: URLRequest = URLRequest(url: request.url)
+    func build(for serverUrl: String) -> URLRequest {
+        guard let url = URL(string: serverUrl + request.path) else {
+            fatalError("Server url not set")
+        }
+        var urlRequest: URLRequest = URLRequest(url:url)
         switch request.contentType {
         case .json:
             buildJson(for: &urlRequest)

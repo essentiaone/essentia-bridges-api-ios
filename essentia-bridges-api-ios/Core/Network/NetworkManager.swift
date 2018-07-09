@@ -9,13 +9,20 @@
 import Foundation
 
 class NetworkManager: NetworkManagerInterface {
+    
+    init(_ serverUrl: String) {
+        self.serverUrl = serverUrl
+    }
+    
+    let serverUrl: String
+    
     func makeRequest<SuccessModel: Codable, ErrorModel: Codable> (
             _ request: RequestProtocol,
             success: @escaping (SuccessModel) -> Void,
             failure: @escaping (ErrorModel?) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
-        let urlRequest = requestBuilder.build()
+        let urlRequest = requestBuilder.build(for:serverUrl)
         switch request.contentType {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
