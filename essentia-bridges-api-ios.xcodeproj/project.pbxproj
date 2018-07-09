@@ -17,7 +17,6 @@
 		3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */; };
 		3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */; };
 		3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */; };
-		3492208020EFC42300A59A6F /* Dictionary+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207A20EFC42300A59A6F /* Dictionary+Query.swift */; };
 		3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207D20EFC42300A59A6F /* NetworkManagerInterface.swift */; };
 		3492208320EFC42300A59A6F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207E20EFC42300A59A6F /* NetworkManager.swift */; };
 		3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207F20EFC42300A59A6F /* RequestProtocol.swift */; };
@@ -52,7 +51,6 @@
 		3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinCashWallet.swift; sourceTree = "<group>"; };
 		3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWalletInterface.swift; sourceTree = "<group>"; };
 		3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWallet.swift; sourceTree = "<group>"; };
-		3492207A20EFC42300A59A6F /* Dictionary+Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Query.swift"; sourceTree = "<group>"; };
 		3492207D20EFC42300A59A6F /* NetworkManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerInterface.swift; sourceTree = "<group>"; };
 		3492207E20EFC42300A59A6F /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3492207F20EFC42300A59A6F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 		3492207920EFC42300A59A6F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3492207A20EFC42300A59A6F /* Dictionary+Query.swift */,
 				3492209520F3390E00A59A6F /* URLRequest+curl.swift */,
 			);
 			path = Extension;
@@ -267,7 +264,6 @@
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
 				3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */,
 				3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */,
-				3492208020EFC42300A59A6F /* Dictionary+Query.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
