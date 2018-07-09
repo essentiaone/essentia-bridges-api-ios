@@ -23,6 +23,9 @@
 		3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492207F20EFC42300A59A6F /* RequestProtocol.swift */; };
 		3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208520EFC8B700A59A6F /* BaseWallet.swift */; };
 		3492208B20F108A400A59A6F /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208A20F108A400A59A6F /* RequestBuilder.swift */; };
+		3492209020F3266000A59A6F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208F20F3266000A59A6F /* Logger.swift */; };
+		3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209320F32AB300A59A6F /* LoggerEventType.swift */; };
+		3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209520F3390E00A59A6F /* URLRequest+curl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +58,9 @@
 		3492207F20EFC42300A59A6F /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		3492208520EFC8B700A59A6F /* BaseWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWallet.swift; sourceTree = "<group>"; };
 		3492208A20F108A400A59A6F /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		3492208F20F3266000A59A6F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3492209320F32AB300A59A6F /* LoggerEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerEventType.swift; sourceTree = "<group>"; };
+		3492209520F3390E00A59A6F /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		3492207820EFC42300A59A6F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3492208C20F1171800A59A6F /* Logger */,
 				3492207920EFC42300A59A6F /* Extension */,
 				3492207C20EFC42300A59A6F /* Network */,
 			);
@@ -156,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				3492207A20EFC42300A59A6F /* Dictionary+Query.swift */,
+				3492209520F3390E00A59A6F /* URLRequest+curl.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -169,6 +177,15 @@
 				3492208A20F108A400A59A6F /* RequestBuilder.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3492208C20F1171800A59A6F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3492208F20F3266000A59A6F /* Logger.swift */,
+				3492209320F32AB300A59A6F /* LoggerEventType.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,16 +265,19 @@
 			files = (
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
+				3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */,
 				3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */,
 				3492208020EFC42300A59A6F /* Dictionary+Query.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
+				3492209420F32AB300A59A6F /* LoggerEventType.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
 				3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */,
 				3492208420EFC42300A59A6F /* RequestProtocol.swift in Sources */,
 				3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */,
 				3492208320EFC42300A59A6F /* NetworkManager.swift in Sources */,
+				3492209020F3266000A59A6F /* Logger.swift in Sources */,
 				3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */,
 				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
 				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,

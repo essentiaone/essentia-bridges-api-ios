@@ -22,7 +22,7 @@ class NetworkManager: NetworkManagerInterface {
                 self.handleResponse(responce: (data, error), success: success, failure: failure)
                 }.resume()
         }
-        logRequst(urlRequest)
+        Logger.shared.logEvent(.httpRequest(urlRequest))
     }
     
     private func handleResponse<SuccessModel: Codable, ErrorModel: Codable> (
@@ -50,21 +50,11 @@ class NetworkManager: NetworkManagerInterface {
         ) {
         let decoder = JSONDecoder()
         guard let failedObject = try? decoder.decode(ErrorModel.self, from: responce) else {
-            debugPrint(String(data: responce, encoding: .utf8) as Any)
+            Logger.shared.logEvent(.message(.error, String(data: responce, encoding: .utf8)))
             failure(nil)
             return
         }
-        debugPrint(failedObject)
+        Logger.shared.logEvent(.message(.error, String(describing: failedObject)))
         failure(failedObject)
-    }
-    
-    private func logRequst(_ request: URLRequest) {
-        debugPrint("==============================================")
-        debugPrint("URL: \(request.url!)")
-        debugPrint("Headers: \(request.allHTTPHeaderFields!)")
-        if let body = request.httpBody {
-            debugPrint("Body: \(String(describing: String(data: body, encoding: .utf8)))")
-        }
-        debugPrint("==============================================")
     }
 }
