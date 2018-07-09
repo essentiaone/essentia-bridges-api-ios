@@ -8,31 +8,42 @@
 
 import Foundation
 
+fileprivate enum Constants {
+    static var curlPrefix = "curl"
+    static var curlPostfix = "\\\n\t"
+    static var headMethod = "HEAD"
+    static var headCommand = " --head"
+    static var requestTypePrefix = "-X"
+    static var requestHeaderPrefix = "-H"
+    static var requestBodyPrefix = "-d"
+    static var cookie = "Cookie"
+}
+
 extension URLRequest {
     public var curlString: String {
         guard let url = url else { return "" }
-        var baseCommand = "curl \(url.absoluteString)"
+        var baseCommand = "\(Constants.curlPrefix) \(url.absoluteString)"
         
-        if httpMethod == "HEAD" {
-            baseCommand += " --head"
+        if httpMethod == Constants.headMethod {
+            baseCommand += Constants.headCommand
         }
         
         var command = [baseCommand]
         
-        if let method = httpMethod, method != "GET" && method != "HEAD" {
-            command.append("-X \(method)")
+        if let method = httpMethod, method != TypeRequest.get.description && method != TypeRequest.head.description {
+            command.append("\(Constants.requestTypePrefix) \(method)")
         }
         
         if let headers = allHTTPHeaderFields {
-            for (key, value) in headers where key != "Cookie" {
-                command.append("-H '\(key): \(value)'")
+            for (key, value) in headers where key != Constants.cookie {
+                command.append("\(Constants.requestHeaderPrefix) '\(key): \(value)'")
             }
         }
         
         if let data = httpBody, let body = String(data: data, encoding: .utf8) {
-            command.append("-d '\(body)'")
+            command.append("\(Constants.requestBodyPrefix) '\(body)'")
         }
         
-        return command.joined(separator: " \\\n\t")
+        return command.joined(separator: " \(Constants.curlPostfix)")
     }
 }

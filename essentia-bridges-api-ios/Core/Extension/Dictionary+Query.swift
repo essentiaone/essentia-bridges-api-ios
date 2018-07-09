@@ -27,17 +27,15 @@ extension Dictionary {
     }
     
     private func stringFrom(object: Any) -> String? {
-        var string: String?
         if (object is Dictionary) || (object is [String]) {
             guard let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else {
                 return nil
             }
             let jsonString = String(bytes: jsonData, encoding: .utf8)
-            string = self.escaped(string: jsonString)
+            return self.escaped(string: jsonString)
         } else {
-            string = self.escaped(string: String(describing: object))
+            return self.escaped(string: String(describing: object))
         }
-        return string
     }
     
     private func escaped(string: String?) -> String? {

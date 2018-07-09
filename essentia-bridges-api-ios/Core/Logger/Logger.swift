@@ -18,7 +18,6 @@ public class Logger {
         return Logger()
     }
     
-    // MARK: - Internal
     internal func logEvent(_ event: LoggerEventType) {
         var message = event.consoleMarker
         switch event {
@@ -30,7 +29,6 @@ public class Logger {
         consolePrintEvent(message: message)
     }
     
-    // MARK: - Private
     private func consolePrintEvent(message: String) {
         debugPrint(message)
     }
