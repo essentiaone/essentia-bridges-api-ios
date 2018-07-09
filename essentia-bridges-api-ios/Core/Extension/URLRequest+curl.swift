@@ -30,7 +30,7 @@ extension URLRequest {
         
         var command = [baseCommand]
         
-        if let method = httpMethod, method != TypeRequest.get.description && method != TypeRequest.head.description {
+        if let method = httpMethod, method != RequestType.get.description && method != RequestType.head.description {
             command.append("\(Constants.requestTypePrefix) \(method)")
         }
         

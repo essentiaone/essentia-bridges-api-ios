@@ -12,14 +12,14 @@ fileprivate enum Constants {
     static var jsonContentType = "application/json"
 }
 
-enum TypeRequest {
+enum RequestType {
     case post, get, put, patch, delete, head, trace, connect
     var description: String {
         return String(describing: self).uppercased()
     }
 }
 
-enum ContentTypeRequest {
+enum RequestContentType {
     case json
     var description: String {
         switch self {
@@ -33,6 +33,6 @@ protocol RequestProtocol {
     var url: URL { get }
     var extraHeaders: [String: String]? { get }
     var parameters: [String: Any]? { get }
-    var requestType: TypeRequest { get }
-    var contentType: ContentTypeRequest { get }
+    var requestType: RequestType { get }
+    var contentType: RequestContentType { get }
 }
