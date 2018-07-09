@@ -18,26 +18,26 @@ class NetworkManager: NetworkManagerInterface {
         let urlRequest = requestBuilder.buildUrlRequest()
         switch request.contentType {
         case .json:
-            URLSession.shared.dataTask(with: urlRequest) { (data, responce, error) in
-                self.handleResponse(responce: (data, error), success: success, failure: failure)
+            URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+                self.handleResponse(response: (data, error), success: success, failure: failure)
                 }.resume()
         }
         Logger.shared.logEvent(.httpRequest(urlRequest))
     }
     
     private func handleResponse<SuccessModel: Codable, ErrorModel: Codable> (
-            responce: (Data?, Error?),
+            response: (Data?, Error?),
             success: @escaping (SuccessModel) -> Void,
             failure: @escaping (ErrorModel?) -> Void
         ) {
         OperationQueue.main.addOperation {
-            guard let data = responce.0 else {
+            guard let data = response.0 else {
                 failure(nil)
                 return
             }
             let decoder = JSONDecoder()
             guard let object = try? decoder.decode(SuccessModel.self, from: data) else {
-                self.handleError(responce: data, failure: failure)
+                self.handleError(response: data, failure: failure)
                 return
             }
             success(object)
@@ -45,12 +45,12 @@ class NetworkManager: NetworkManagerInterface {
     }
     
     private func handleError<ErrorModel: Codable> (
-            responce: Data,
+            response: Data,
             failure: @escaping (ErrorModel?) -> Void
         ) {
         let decoder = JSONDecoder()
-        guard let failedObject = try? decoder.decode(ErrorModel.self, from: responce) else {
-            Logger.shared.logEvent(.message(.error, String(data: responce, encoding: .utf8)))
+        guard let failedObject = try? decoder.decode(ErrorModel.self, from: response) else {
+            Logger.shared.logEvent(.message(.error, String(data: response, encoding: .utf8)))
             failure(nil)
             return
         }

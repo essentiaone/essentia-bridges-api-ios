@@ -25,7 +25,7 @@ extension Dictionary {
         }
         return pairs.joined(separator: Constants.concatSymbol)
     }
-    
+
     private func stringFrom(object: Any) -> String? {
         if (object is Dictionary) || (object is [String]) {
             guard let jsonData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else {
@@ -33,11 +33,10 @@ extension Dictionary {
             }
             let jsonString = String(bytes: jsonData, encoding: .utf8)
             return self.escaped(string: jsonString)
-        } else {
-            return self.escaped(string: String(describing: object))
         }
+        return self.escaped(string: String(describing: object))
     }
-    
+
     private func escaped(string: String?) -> String? {
         return string?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     }
