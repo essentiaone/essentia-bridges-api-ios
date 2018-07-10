@@ -27,6 +27,7 @@
 		3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209520F3390E00A59A6F /* URLRequest+curl.swift */; };
 		3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209720F34F4900A59A6F /* EthereumEndpoint.swift */; };
 		3492209A20F3508500A59A6F /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209920F3508500A59A6F /* Typealiases.swift */; };
+		F896B24478F60F38BFF4E9DC /* Pods_essentia_bridges_api_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DD649BAF88A746856F204D2 /* Pods-essentia-bridges-api-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-bridges-api-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-essentia-bridges-api-ios/Pods-essentia-bridges-api-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		3492201D20ED415F00A59A6F /* libessentia-bridges-api-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libessentia-bridges-api-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3492202B20ED786800A59A6F /* WalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInterface.swift; sourceTree = "<group>"; };
 		3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumWalletInterface.swift; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		3492209520F3390E00A59A6F /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
 		3492209720F34F4900A59A6F /* EthereumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumEndpoint.swift; sourceTree = "<group>"; };
 		3492209920F3508500A59A6F /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_essentia_bridges_api_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-bridges-api-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-essentia-bridges-api-ios/Pods-essentia-bridges-api-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F896B24478F60F38BFF4E9DC /* Pods_essentia_bridges_api_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 			children = (
 				3492201F20ED415F00A59A6F /* essentia-bridges-api-ios */,
 				3492201E20ED415F00A59A6F /* Products */,
+				DEE4D68BEC557545D7E873A8 /* Pods */,
+				BCECF70FCEE28ACAAF72BF57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +198,23 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		BCECF70FCEE28ACAAF72BF57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE4D68BEC557545D7E873A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DD649BAF88A746856F204D2 /* Pods-essentia-bridges-api-ios.debug.xcconfig */,
+				E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3492202420ED415F00A59A6F /* Build configuration list for PBXNativeTarget "essentia-bridges-api-ios" */;
 			buildPhases = (
+				652E907C9F636DBD724D083A /* [CP] Check Pods Manifest.lock */,
 				3492201920ED415F00A59A6F /* Sources */,
 				3492201A20ED415F00A59A6F /* Frameworks */,
 				3492201B20ED415F00A59A6F /* CopyFiles */,
@@ -258,6 +283,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		652E907C9F636DBD724D083A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-essentia-bridges-api-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -408,6 +451,7 @@
 		};
 		3492202520ED415F00A59A6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DD649BAF88A746856F204D2 /* Pods-essentia-bridges-api-ios.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -428,6 +472,7 @@
 		};
 		3492202620ED415F00A59A6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -5,6 +5,6 @@ target 'essentia-bridges-api-ios' do
   use_frameworks!
   
 #Core
-  pod 'BigNumber', '~> 2.0', :git => 'https://github.com/mkrd/Swift-Big-Integer.git'
+  pod 'BigNumber', :git => 'https://github.com/mkrd/Swift-Big-Integer.git'
 
 end
