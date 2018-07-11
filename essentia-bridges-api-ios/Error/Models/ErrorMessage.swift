@@ -1,5 +1,5 @@
 //
-//  BridgesApiError.swift
+//  ErrorMessage.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 10.07.18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum BridgesApiError: Error {
-    case unknownError
+public struct ErrorMessage: Codable {
+    public let error: String
 }

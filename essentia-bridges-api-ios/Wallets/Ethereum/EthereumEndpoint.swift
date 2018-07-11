@@ -26,16 +26,20 @@ fileprivate enum Constants {
         static var data = "data"
     }
     
+    enum Body {
+        static var body = "body"
+        static var toAddress = "to"
+    }
 }
 
 // MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/ethereum.rst
 enum EthereumEndpoint: RequestProtocol {
     case getBalance(Address)
-    case sendTransaction(transaction:EthereumTransaction)
+    case sendTransaction(withData: TransactionData)
     case getTransactionCount(Address)
-    case callSmartContract
+    case callSmartContract(Address, withData: TransactionData)
     case getGasPrice
-    case getGasEstimate(Address, data: String)
+    case getGasEstimate(Address, withData: TransactionData)
     case getBlockNumber
     case getTransactionByHash(TransactionHash)
     case getReceiptOfTransaction(TransactionHash)
@@ -65,8 +69,11 @@ enum EthereumEndpoint: RequestProtocol {
     
     var parameters: [String : Any]? {
         switch self {
-        case .sendTransaction:
-            return nil
+        case .callSmartContract(let toAddress, let withData):
+            return [Constants.Body.toAddress: toAddress,
+                    Constants.Body.body: withData]
+        case .sendTransaction(let withData):
+            return [Constants.Body.body: withData]
         default:
             return nil
         }
@@ -74,9 +81,9 @@ enum EthereumEndpoint: RequestProtocol {
     
     var extraHeaders: [String : String]? {
         switch self {
-        case .getGasEstimate(let address, let data):
+        case .getGasEstimate(let address, let withData):
             return [Constants.Headers.address: address,
-                    Constants.Headers.data: data]
+                    Constants.Headers.data: withData]
         default:
             return nil
         }

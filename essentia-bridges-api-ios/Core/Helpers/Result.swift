@@ -6,7 +6,7 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-public enum Result<Object> {
+public enum Result<Object: Decodable> {
     case success(Object)
     case failure(BridgesApiError)
     
