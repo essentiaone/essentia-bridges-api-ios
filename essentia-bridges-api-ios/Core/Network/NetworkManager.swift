@@ -21,7 +21,7 @@ class NetworkManager: NetworkManagerInterface {
             result: @escaping (Result<SuccessModel>) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
-        let urlRequest = requestBuilder.build(for:serverUrl)
+        let urlRequest = requestBuilder.build(for: serverUrl)
         switch request.contentType {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
