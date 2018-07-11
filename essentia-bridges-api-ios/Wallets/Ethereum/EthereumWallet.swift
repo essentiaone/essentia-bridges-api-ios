@@ -29,7 +29,11 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
         networking.makeRequest(EthereumEndpoint.getGasPrice, result: result)
     }
     
-    func getGasEstimate(to address: Address, data: TransactionData, result: @escaping (Result<EthereumNumberValue>) -> Void) {
+    func getGasEstimate(
+        to address: Address,
+        data: TransactionData,
+        result: @escaping (Result<EthereumNumberValue>) -> Void
+    ) {
         networking.makeRequest(EthereumEndpoint.getGasEstimate(address, withData: data), result: result)
     }
     
@@ -41,7 +45,7 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
         networking.makeRequest(EthereumEndpoint.getReceiptOfTransaction(hash), result: result)
     }
     
-    func getBlockNumber(result: @escaping (Result<String>) -> Void) {
+    func getBlockNumber(result: @escaping (Result<EthereumNumberValue>) -> Void) {
         networking.makeRequest(EthereumEndpoint.getBlockNumber, result: result)
     }
 }

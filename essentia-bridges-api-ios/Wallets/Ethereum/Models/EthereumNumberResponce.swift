@@ -11,7 +11,7 @@ import Foundation
 public struct EthereumNumberValue: Decodable {
     let value: String
     
-    var intValue:Int {
+    var intValue: Int {
         return Int(value) ?? 0
     }
     

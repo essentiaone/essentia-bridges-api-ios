@@ -27,8 +27,6 @@
 		3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209520F3390E00A59A6F /* URLRequest+curl.swift */; };
 		3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209720F34F4900A59A6F /* EthereumEndpoint.swift */; };
 		3492209A20F3508500A59A6F /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209920F3508500A59A6F /* Typealiases.swift */; };
-		349220A320F4E16200A59A6F /* EthereumTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220A220F4E16000A59A6F /* EthereumTransaction.swift */; };
-		349220A520F4E89300A59A6F /* Wei+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220A420F4E89300A59A6F /* Wei+Codable.swift */; };
 		349220A820F4FCF400A59A6F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220A720F4FCF400A59A6F /* Result.swift */; };
 		349220AA20F4FD1D00A59A6F /* BridgesApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220A920F4FD1D00A59A6F /* BridgesApiError.swift */; };
 		349220CF20F517A900A59A6F /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220CE20F517A900A59A6F /* ErrorMessage.swift */; };
@@ -74,8 +72,6 @@
 		3492209520F3390E00A59A6F /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
 		3492209720F34F4900A59A6F /* EthereumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumEndpoint.swift; sourceTree = "<group>"; };
 		3492209920F3508500A59A6F /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		349220A220F4E16000A59A6F /* EthereumTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumTransaction.swift; sourceTree = "<group>"; };
-		349220A420F4E89300A59A6F /* Wei+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wei+Codable.swift"; sourceTree = "<group>"; };
 		349220A720F4FCF400A59A6F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		349220A920F4FD1D00A59A6F /* BridgesApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesApiError.swift; sourceTree = "<group>"; };
 		349220CE20F517A900A59A6F /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
@@ -145,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				349220D120F5655A00A59A6F /* Models */,
-				349220A220F4E16000A59A6F /* EthereumTransaction.swift */,
 				3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */,
 				3492203020ED7A5F00A59A6F /* EthereumWallet.swift */,
 				3492209720F34F4900A59A6F /* EthereumEndpoint.swift */,
@@ -197,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				3492209520F3390E00A59A6F /* URLRequest+curl.swift */,
-				349220A420F4E89300A59A6F /* Wei+Codable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -378,9 +372,7 @@
 			files = (
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
-				349220A320F4E16200A59A6F /* EthereumTransaction.swift in Sources */,
 				3492209A20F3508500A59A6F /* Typealiases.swift in Sources */,
-				349220A520F4E89300A59A6F /* Wei+Codable.swift in Sources */,
 				3492209620F3390E00A59A6F /* URLRequest+curl.swift in Sources */,
 				3492208220EFC42300A59A6F /* NetworkManagerInterface.swift in Sources */,
 				349220CF20F517A900A59A6F /* ErrorMessage.swift in Sources */,
