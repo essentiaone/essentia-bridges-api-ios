@@ -9,52 +9,57 @@
 import Foundation
 
 class NetworkManager: NetworkManagerInterface {
-    func makeRequest<SuccessModel: Codable, ErrorModel: Codable> (
+    
+    init(_ serverUrl: String) {
+        self.serverUrl = serverUrl
+    }
+    
+    let serverUrl: String
+    
+    func makeRequest<SuccessModel: Decodable> (
             _ request: RequestProtocol,
-            success: @escaping (SuccessModel) -> Void,
-            failure: @escaping (ErrorModel?) -> Void
+            result: @escaping (Result<SuccessModel>) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
-        let urlRequest = requestBuilder.build()
+        let urlRequest = requestBuilder.build(for: serverUrl)
         switch request.contentType {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-                self.handleResponse(response: (data, error), success: success, failure: failure)
+                self.handleResponse(response: (data, error), result: result)
             }.resume()
         }
         Logger.shared.logEvent(.httpRequest(urlRequest))
     }
     
-    private func handleResponse<SuccessModel: Codable, ErrorModel: Codable> (
+    private func handleResponse<SuccessModel: Decodable> (
             response: (Data?, Error?),
-            success: @escaping (SuccessModel) -> Void,
-            failure: @escaping (ErrorModel?) -> Void
+            result: @escaping (Result<SuccessModel>) -> Void
         ) {
         OperationQueue.main.addOperation {
             guard let data = response.0 else {
-                failure(nil)
+                result(.failure(.unknownError))
                 return
             }
             let decoder = JSONDecoder()
             guard let object = try? decoder.decode(SuccessModel.self, from: data) else {
-                self.handleError(response: data, failure: failure)
+                self.handleError(response: data, result: result)
                 return
             }
-            success(object)
+            result(.success(object))
         }
     }
     
-    private func handleError<ErrorModel: Codable> (
+    private func handleError<SuccessModel: Decodable> (
             response: Data,
-            failure: @escaping (ErrorModel?) -> Void
+            result: @escaping (Result<SuccessModel>) -> Void
         ) {
         let decoder = JSONDecoder()
-        guard let failedObject = try? decoder.decode(ErrorModel.self, from: response) else {
+        guard let failedObject = try? decoder.decode(BridgesApiError.self, from: response) else {
             Logger.shared.logEvent(.message(.error, String(data: response, encoding: .utf8)))
-            failure(nil)
+            result(.failure(.unknownError))
             return
         }
         Logger.shared.logEvent(.message(.error, String(describing: failedObject)))
-        failure(failedObject)
+        result(.failure(failedObject))
     }
 }

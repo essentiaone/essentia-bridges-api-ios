@@ -30,7 +30,7 @@ enum RequestContentType {
 }
 
 protocol RequestProtocol {
-    var url: URL { get }
+    var path: String { get }
     var extraHeaders: [String: String]? { get }
     var parameters: [String: Any]? { get }
     var requestType: RequestType { get }
