@@ -9,6 +9,13 @@
 import Foundation
 
 class EthereumWallet: BaseWallet, EthereumWalletInterface {
+    let etherScan: EtherScanInfo
+    
+    init(_ bridgeUrl: String, etherScan: EtherScanInfo) {
+        self.etherScan = etherScan
+        super.init(bridgeUrl)
+    }
+    
     func getBalance(for address: Address, result: @escaping (Result<EthereumBalance>) -> Void) {
         networking.makeRequest(EthereumEndpoint.getBalance(address), result: result)
     }

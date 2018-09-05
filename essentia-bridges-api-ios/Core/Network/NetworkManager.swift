@@ -42,6 +42,7 @@ class NetworkManager: NetworkManagerInterface {
             }
             let decoder = JSONDecoder()
             guard let object = try? decoder.decode(SuccessModel.self, from: data) else {
+                Logger.shared.logEvent(.message(.warning, String(data: data, encoding: .utf8)))
                 self.handleError(response: data, result: result)
                 return
             }

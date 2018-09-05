@@ -9,11 +9,7 @@
 import Foundation
 
 public struct EthereumNumberValue: Decodable {
-    let value: String
-    
-    var intValue: Int {
-        return Int(value) ?? 0
-    }
+    let value: Double
     
     enum CodingKeys: CodingKey, String {
         case value = "result"
