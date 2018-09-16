@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EssentiaNetworkCore
 
 fileprivate enum Constants {
     enum Path {

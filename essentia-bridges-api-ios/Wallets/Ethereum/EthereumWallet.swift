@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EssentiaNetworkCore
 
 class EthereumWallet: BaseWallet, EthereumWalletInterface {
     func getBalance(for address: Address, result: @escaping (Result<EthereumBalance>) -> Void) {
