@@ -12,7 +12,7 @@ public struct BalanceValue: Decodable {
     public let value: Double
     
     enum CodingKeys: CodingKey, String {
-        case value = "balance-in-eth"
+        case value = "balance"
     }
 }
 
