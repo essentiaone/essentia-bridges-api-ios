@@ -9,7 +9,7 @@
 import Foundation
 
 public struct EthereumTransactionCount: Decodable {
-    public let count: String
+    public let count: Int
     
     enum CodingKeys: CodingKey, String {
         case count = "result"

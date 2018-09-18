@@ -9,10 +9,10 @@
 import Foundation
 
 fileprivate enum Constants {
-    static var infoMarker = "🔷"
-    static var warningMarker = "⚠️"
-    static var errorMarker = "‼️"
-    static var httpRequestMarker = "🌏"
+    static var infoMarker = "🔷 "
+    static var warningMarker = "⚠️ "
+    static var errorMarker = "❗️ "
+    static var httpRequestMarker = "🌏 "
 }
 
 enum LoggerEventMessageType {

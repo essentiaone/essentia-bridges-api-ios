@@ -8,12 +8,16 @@
 
 import Foundation
 
+fileprivate var etherScanApiUrl = "http://api.etherscan.io/api"
+
 public class CryptoWallet {
-    init(serverUrl: String) {
-        bitcoin = BitcoinWallet(serverUrl)
-        ethereum = EthereumWallet(serverUrl)
-        litecoin = LitecoinWallet(serverUrl)
-        bitcoinCash = BitcoinCashWallet(serverUrl)
+    init(bridgeApiUrl: String, etherScanApiKey: String) {
+        bitcoin = BitcoinWallet(bridgeApiUrl)
+        ethereum = EthereumWallet(bridgeApiUrl,
+                                  etherScan: EtherScanInfo(url: etherScanApiUrl,
+                                                           apiKey: etherScanApiKey))
+        litecoin = LitecoinWallet(bridgeApiUrl)
+        bitcoinCash = BitcoinCashWallet(bridgeApiUrl)
     }
 
     public let bitcoin: BitcoinWalletInterface

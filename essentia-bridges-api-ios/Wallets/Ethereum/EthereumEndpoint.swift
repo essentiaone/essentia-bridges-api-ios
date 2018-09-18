@@ -43,7 +43,7 @@ enum EthereumEndpoint: RequestProtocol {
     case getBlockNumber
     case getTransactionByHash(TransactionHash)
     case getReceiptOfTransaction(TransactionHash)
-    
+
     var path: String {
         switch self {
         case .getBalance(let address):
@@ -53,7 +53,7 @@ enum EthereumEndpoint: RequestProtocol {
         case .getTransactionByHash(let transaction):
             return NSString(format: Constants.Path.getTransactionByHash, transaction).description
         case .getReceiptOfTransaction(let transaction):
-            return NSString(format: Constants.Path.getTransactionByHash, transaction).description
+            return NSString(format: Constants.Path.getReceiptOfTransaction, transaction).description
         case .sendTransaction:
             return Constants.Path.sendTransaction
         case .callSmartContract:
