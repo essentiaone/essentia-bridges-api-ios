@@ -2,7 +2,7 @@
 //  EtherScanInfo.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Pavlo Boiko on 05.09.18.
+//  Created by Pavlo Boiko on 18.09.18.
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 

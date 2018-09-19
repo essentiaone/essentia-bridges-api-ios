@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EssentiaNetworkCore
 
 class EthereumWallet: BaseWallet, EthereumWalletInterface {
     let etherScan: EtherScanInfo
