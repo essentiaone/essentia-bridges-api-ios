@@ -20,8 +20,7 @@ fileprivate enum Constants {
     
     enum Headers {
         static var address = "address"
-        static var data = "data"
-        static var transactionId = "id"
+        static var data = "data"        
     }
     
     enum Body {
