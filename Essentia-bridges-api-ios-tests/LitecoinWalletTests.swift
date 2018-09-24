@@ -19,7 +19,7 @@ fileprivate var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
 fileprivate var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
 fileprivate var expectedBalance = 0.00579998
 
-fileprivate struct expectedTransactionbyId {
+fileprivate struct ExpectedTransactionbyId {
     static public let blockhash: String = "021af84732c7f1ff56f817ec8ca18ae70e66c406959dfee13fa1d7da97a55dce"
     static public let blockheight: Int = 1418413
     static public let blocktime: Int = 1525873384
@@ -43,13 +43,13 @@ fileprivate struct expectedTransactionbyId {
     }
 }
 
-fileprivate struct expectedTransactionHistory {
+fileprivate struct ExpectedTransactionHistory {
     static public let from: Int = 0
     static public let to:Int = 50
     static public let totalItems:Int = 52
 }
 
-fileprivate struct expectedUTXO {
+fileprivate struct ExpectedUTXO {
     static public let address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
     static public let amount = 0.00379998
     static public let height = 1487761
@@ -85,20 +85,20 @@ class LitecoinTests: XCTestCase {
         ltcWallet?.getTransactionById(for: transactionId, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object.blockhash == expectedTransactionbyId.blockhash)
-                XCTAssert(object.blocktime == expectedTransactionbyId.blocktime)
-                XCTAssert(object.blockheight == expectedTransactionbyId.blockheight)
-                XCTAssert(object.size == expectedTransactionbyId.size)
-                XCTAssert(object.time == expectedTransactionbyId.time)
-                XCTAssert(object.txid == expectedTransactionbyId.txid)
-                XCTAssert(object.fees == expectedTransactionbyId.fees)
-                XCTAssert(object.valueIn == expectedTransactionbyId.valueIn)
-                XCTAssert(object.valueOut == expectedTransactionbyId.valueOut)
-                XCTAssert(object.vin[0].addr == expectedTransactionbyId.Vin.addr)
-                XCTAssert(object.vin[0].txid == expectedTransactionbyId.Vin.txid)
-                XCTAssert(object.vin[0].value == expectedTransactionbyId.Vin.value)
-                XCTAssert(object.vout[0].scriptPubKey.addresses == expectedTransactionbyId.Vout.addresses)
-                XCTAssert(object.vout[0].value == expectedTransactionbyId.Vout.value)
+                XCTAssert(object.blockhash == ExpectedTransactionbyId.blockhash)
+                XCTAssert(object.blocktime == ExpectedTransactionbyId.blocktime)
+                XCTAssert(object.blockheight == ExpectedTransactionbyId.blockheight)
+                XCTAssert(object.size == ExpectedTransactionbyId.size)
+                XCTAssert(object.time == ExpectedTransactionbyId.time)
+                XCTAssert(object.txid == ExpectedTransactionbyId.txid)
+                XCTAssert(object.fees == ExpectedTransactionbyId.fees)
+                XCTAssert(object.valueIn == ExpectedTransactionbyId.valueIn)
+                XCTAssert(object.valueOut == ExpectedTransactionbyId.valueOut)
+                XCTAssert(object.vin[0].addr == ExpectedTransactionbyId.Vin.addr)
+                XCTAssert(object.vin[0].txid == ExpectedTransactionbyId.Vin.txid)
+                XCTAssert(object.vin[0].value == ExpectedTransactionbyId.Vin.value)
+                XCTAssert(object.vout[0].scriptPubKey.addresses == ExpectedTransactionbyId.Vout.addresses)
+                XCTAssert(object.vout[0].value == ExpectedTransactionbyId.Vout.value)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
@@ -112,9 +112,9 @@ class LitecoinTests: XCTestCase {
         ltcWallet?.getTransactionsHistory(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object.totalItems == expectedTransactionHistory.totalItems)
-                XCTAssert(object.from == expectedTransactionHistory.from)
-                XCTAssert(object.to == expectedTransactionHistory.to)
+                XCTAssert(object.totalItems == ExpectedTransactionHistory.totalItems)
+                XCTAssert(object.from == ExpectedTransactionHistory.from)
+                XCTAssert(object.to == ExpectedTransactionHistory.to)
                 expectation.fulfill()
             case .failure:
                  XCTFail(expectation.description)
@@ -128,12 +128,12 @@ class LitecoinTests: XCTestCase {
         ltcWallet?.getUTxo(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object[0].address == expectedUTXO.address)
-                XCTAssert(object[0].amount == expectedUTXO.amount)
-                XCTAssert(object[0].height == expectedUTXO.height)
-                XCTAssert(object[0].satoshis == expectedUTXO.satoshis)
-                XCTAssert(object[0].txid == expectedUTXO.txid)
-                XCTAssert(object[0].scriptPubKey == expectedUTXO.scriptPubKey)                
+                XCTAssert(object[0].address == ExpectedUTXO.address)
+                XCTAssert(object[0].amount == ExpectedUTXO.amount)
+                XCTAssert(object[0].height == ExpectedUTXO.height)
+                XCTAssert(object[0].satoshis == ExpectedUTXO.satoshis)
+                XCTAssert(object[0].txid == ExpectedUTXO.txid)
+                XCTAssert(object[0].scriptPubKey == ExpectedUTXO.scriptPubKey)                
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
