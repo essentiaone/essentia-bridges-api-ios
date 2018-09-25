@@ -13,13 +13,5 @@ public struct LitecoinTransactionsHistory: Decodable {
     public let from: Int
     public let to: Int
     public let items: [LitecoinTransactionValue]
-    
-   
-    enum CodingKeys: CodingKey, String {
-        case totalItems = "totalItems"
-        case from = "from"
-        case to = "to"
-        case items = "items"
-    }
 }
 

@@ -6,7 +6,6 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-import Foundation
 import EssentiaNetworkCore
 
 fileprivate enum Constants {

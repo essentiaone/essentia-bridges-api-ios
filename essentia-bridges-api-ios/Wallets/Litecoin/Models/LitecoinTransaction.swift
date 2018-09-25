@@ -11,32 +11,17 @@ import Foundation
 
 public struct LitecoinTransactionVoutAddresses: Decodable {
     public let addresses: [String]
-    
-    enum CodingKeys: String, CodingKey {
-        case addresses = "addresses"
-    }
 }
 
 public struct LitecoinTransactionVout: Decodable {
     public let value: String
-    public let scriptPubKey: LitecoinTransactionVoutAddresses
-    
-    enum Codingkeys: String, CodingKey {
-        case value = "value"
-        case scriptPubKey = "scriptPubKey"
-    }
+    public let scriptPubKey: LitecoinTransactionVoutAddresses   
 }
 
 public struct LitecoinTransactionVin: Decodable {
     public let addr: String
     public let txid: String
     public let value: Double
-    
-    enum Codingkeys: String, CodingKey {
-        case addr = "addr"
-        case txid = "txid"
-        case value = "value"
-    }
 }
 
 public struct LitecoinTransactionValue: Decodable {
@@ -52,19 +37,5 @@ public struct LitecoinTransactionValue: Decodable {
     
     public let vin: [LitecoinTransactionVin]
     public let vout: [LitecoinTransactionVout]
-    
-    enum CodingKeys: CodingKey, String {
-        case blockhash = "blockhash"
-        case blockheight = "blockheight"
-        case blocktime = "blocktime"
-        case fees = "fees"
-        case size = "size"
-        case time = "time"
-        case txid = "txid"
-        case valueIn = "valueIn"
-        case valueOut = "valueOut"
-        case vin = "vin"
-        case vout = "vout"
-    }
 }
 
