@@ -6,10 +6,31 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-import Foundation
+import EssentiaNetworkCore
 
 class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
-    func getBalance(for address: String) -> Double {
-        return 0.0
+    
+    override init(_ bridgeUrl: String) {
+        super.init(bridgeUrl)
+    }
+    
+    func getBalance(for address: Address, result: @escaping (Result<LitecoinBalance>) -> Void) {
+        networking.makeRequest(LitecoinEndpoint.getBalance(address), result: result)
+    }
+    
+    func sendTransaction(with data: TransactionData, result: @escaping (Result<String>) -> Void) {
+        networking.makeRequest(LitecoinEndpoint.sendTransaction(withData: data), result: result)
+    }
+    
+    func getTransactionsHistory(for address: Address, result: @escaping (Result<LitecoinTransactionsHistory>) -> Void) {
+        networking.makeRequest(LitecoinEndpoint.getTransactionsHistory(address), result: result)
+    }
+    
+    func getTransactionById(for id: TransactionId, result: @escaping (Result<LitecoinTransactionValue>) -> Void) {
+        networking.makeRequest(LitecoinEndpoint.getTransactionById(id), result: result)
+    }
+    
+    func getUTxo(for address: Address, result: @escaping (Result<[LitecoinUTXO]>) -> Void) {
+        networking.makeRequest(LitecoinEndpoint.getUTxo(address), result: result)
     }
 }

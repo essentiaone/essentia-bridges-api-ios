@@ -10,4 +10,8 @@ target 'essentia-bridges-api-ios' do
 #Core
   pod "HDWalletKit"
   pod "essentia-network-core-ios"
+  
+  target 'Essentia-bridges-api-ios-tests' do
+      inherit! :search_paths
+  end
 end
