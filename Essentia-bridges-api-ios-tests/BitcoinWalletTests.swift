@@ -159,11 +159,17 @@ class BitcoinTests: XCTestCase {
             case .success(let object):
                 XCTAssertEqual(object.txid, expectedTxId)
                 expectation.fulfill()
-            case .failure:
+            case .failure(let error):
+                switch error {
+                case .error(let localizedErr):
+                    XCTAssert(localizedErr.error != "")
+                    expectation.fulfill()
+                case .unknownError:
                 XCTFail(expectation.description)
             }
+        }
         })
         waitForExpectations(timeout: 5, handler: nil)
     }
-    
 }
+

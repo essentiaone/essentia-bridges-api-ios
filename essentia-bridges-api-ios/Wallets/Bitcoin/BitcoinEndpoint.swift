@@ -62,10 +62,7 @@ enum BitcoinEndpoint: RequestProtocol {
     }
     
     var extraHeaders: [String : String]? {
-        switch self {
-        default:
-            return nil
-        }
+        return nil
     }
     
     var requestType: RequestType {

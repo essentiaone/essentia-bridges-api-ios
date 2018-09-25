@@ -16,14 +16,4 @@ public struct BitcoinUTXO: Decodable {
     public let txid: String
     public let vout: Int
     
-    enum CodingKeys: String, CodingKey {
-        case address = "address"
-        case amount = "amount"
-        case confirmations = "confirmations"
-        case height = "height"
-        case satoshis = "satoshis"
-        case scriptPubKey = "scriptPubKey"
-        case txid = "txid"
-        case vout = "vout"
-    }
 }

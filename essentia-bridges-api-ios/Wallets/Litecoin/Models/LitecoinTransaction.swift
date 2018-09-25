@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public struct LitecoinTransactionVoutAddresses: Decodable {
     public let addresses: [String]
 }

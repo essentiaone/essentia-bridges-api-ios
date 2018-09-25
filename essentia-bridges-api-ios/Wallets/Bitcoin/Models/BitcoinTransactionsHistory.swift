@@ -12,11 +12,4 @@ public struct BitcoinTransactionsHistory: Decodable {
     public let to: Int
     public let items: [BitcoinTransactionValue]
     
-    
-    enum CodingKeys: CodingKey, String {
-        case totalItems = "totalItems"
-        case from = "from"
-        case to = "to"
-        case items = "items"
-    }
 }

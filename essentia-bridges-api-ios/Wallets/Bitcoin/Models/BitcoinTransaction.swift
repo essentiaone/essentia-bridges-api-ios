@@ -8,10 +8,7 @@
 
 public struct BitcoinTransactionVoutAddresses: Decodable {
     public let addresses: [String]
-    
-    enum CodingKeys: String, CodingKey {
-        case addresses = "addresses"
-    }
+      
 }
 public struct BitcoinTransactionVout: Decodable {
     public let value: String
@@ -24,11 +21,6 @@ public struct BitcoinTransactionVin: Decodable {
     public let txid: String
     public let value: Double
     
-    enum Codingkeys: String, CodingKey {
-        case addr = "addr"
-        case txid = "txid"
-        case value = "value"
-    }
 }
 public struct BitcoinTransactionValue: Decodable {
     public let blockhash: String

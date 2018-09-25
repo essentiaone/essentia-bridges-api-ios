@@ -8,5 +8,4 @@
 
 public struct BitcoinSendTXResponse: Decodable {
     public let txid: String
-    
 }
