@@ -19,7 +19,7 @@ class BitcoinWallet: BaseWallet, BitcoinWalletInterface {
         networking.makeRequest(BitcoinEndpoint.getBalance(address), result: result)
     }
     
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<String>) -> Void) {
+    func sendTransaction(with data: TransactionData, result: @escaping (Result<BitcoinSendTXResponse>) -> Void) {
         networking.makeRequest(BitcoinEndpoint.sendTransaction(withData: data), result: result)
     }
     

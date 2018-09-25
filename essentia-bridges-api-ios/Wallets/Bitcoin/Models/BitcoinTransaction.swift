@@ -6,8 +6,6 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-import Foundation
-
 public struct BitcoinTransactionVoutAddresses: Decodable {
     public let addresses: [String]
     
@@ -18,11 +16,8 @@ public struct BitcoinTransactionVoutAddresses: Decodable {
 public struct BitcoinTransactionVout: Decodable {
     public let value: String
     public let scriptPubKey: BitcoinTransactionVoutAddresses
-    
-    enum Codingkeys: String, CodingKey {
-        case value = "value"
-        case scriptPubKey = "scriptPubKey"
-    }
+    public let spentTxId: String?
+        
 }
 public struct BitcoinTransactionVin: Decodable {
     public let addr: String
@@ -39,6 +34,7 @@ public struct BitcoinTransactionValue: Decodable {
     public let blockhash: String
     public let blockheight: Int
     public let blocktime: Int
+    public let confirmations: Int
     public let fees: Double
     public let size: Int
     public let time: Int
@@ -49,17 +45,5 @@ public struct BitcoinTransactionValue: Decodable {
     public let vin: [BitcoinTransactionVin]
     public let vout: [BitcoinTransactionVout]
     
-    enum CodingKeys: CodingKey, String {
-        case blockhash = "blockhash"
-        case blockheight = "blockheight"
-        case blocktime = "blocktime"
-        case fees = "fees"
-        case size = "size"
-        case time = "time"
-        case txid = "txid"
-        case valueIn = "valueIn"
-        case valueOut = "valueOut"
-        case vin = "vin"
-        case vout = "vout"
-    }
+
 }

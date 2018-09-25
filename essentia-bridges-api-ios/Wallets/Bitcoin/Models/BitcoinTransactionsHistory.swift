@@ -6,8 +6,6 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-import Foundation
-
 public struct BitcoinTransactionsHistory: Decodable {
     public let totalItems: Int
     public let from: Int

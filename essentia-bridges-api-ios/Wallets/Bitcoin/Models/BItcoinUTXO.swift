@@ -6,8 +6,6 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-import Foundation
-
 public struct BitcoinUTXO: Decodable {
     public let address: String
     public let amount : Double
