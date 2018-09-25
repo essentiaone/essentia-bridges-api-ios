@@ -112,7 +112,7 @@ class EthereumTests: XCTestCase {
                 case .unknownError:
                     XCTFail(expectation.description)
                 }
-               
+    
             }
         })
         waitForExpectations(timeout: 5, handler: nil)

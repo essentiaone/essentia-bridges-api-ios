@@ -29,7 +29,22 @@
 		349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */; };
 		349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D820F5F57C00A59A6F /* RPCModel.swift */; };
 		349220DB20F6005C00A59A6F /* EthereumTransactionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220DA20F6005C00A59A6F /* EthereumTransactionCount.swift */; };
-		8F2ABAC86184A7C0C9749E80 /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */; };
+		4C9E745855E57C6FCACF004C /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */; };
+		BB1E8E2F21590D67001B1082 /* LitecoinTransactionsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */; };
+		BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */; };
+		BB8013E4215643B1003E3612 /* HDWalletKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8013E3215643B1003E3612 /* HDWalletKit.framework */; };
+		BB8013E6215643B5003E3612 /* EssentiaNetworkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8013E5215643B5003E3612 /* EssentiaNetworkCore.framework */; };
+		BB8013E9215667D4003E3612 /* LitecoinEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8013E8215667D4003E3612 /* LitecoinEndpoint.swift */; };
+		BB8013EB215673D3003E3612 /* LitecoinBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8013EA215673D3003E3612 /* LitecoinBalance.swift */; };
+		BB8013ED215679FA003E3612 /* LitecoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8013EC215679FA003E3612 /* LitecoinWalletTests.swift */; };
+		BB8013EF2156917F003E3612 /* LitecoinTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8013EE2156917F003E3612 /* LitecoinTransaction.swift */; };
+		BB9163FE215A2D2C0083584B /* BitcoinEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163F8215A2D2B0083584B /* BitcoinEndpoint.swift */; };
+		BB9163FF215A2D2C0083584B /* BitcoinBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163FA215A2D2B0083584B /* BitcoinBalance.swift */; };
+		BB916400215A2D2C0083584B /* BitcoinTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163FB215A2D2B0083584B /* BitcoinTransaction.swift */; };
+		BB916401215A2D2C0083584B /* BitcoinTransactionsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163FC215A2D2B0083584B /* BitcoinTransactionsHistory.swift */; };
+		BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */; };
+		BB916404215A33CE0083584B /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916403215A33CE0083584B /* BitcoinWalletTests.swift */; };
+		BB916406215A3E560083584B /* BitcoinSendTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916405215A3E560083584B /* BitcoinSendTX.swift */; };
 		F896B24478F60F38BFF4E9DC /* Pods_essentia_bridges_api_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,9 +98,24 @@
 		349220DA20F6005C00A59A6F /* EthereumTransactionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumTransactionCount.swift; sourceTree = "<group>"; };
 		47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_essentia_bridges_api_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Essentia_bridges_api_ios_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61333CBFC6097E4E36988536 /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
-		6D98CBDB9BC3874B03AC3B3F /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EE38E6E54409846E4E9EC9F /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
+		BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinTransactionsHistory.swift; sourceTree = "<group>"; };
+		BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinUTXO.swift; sourceTree = "<group>"; };
+		BB8013E3215643B1003E3612 /* HDWalletKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HDWalletKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8013E5215643B5003E3612 /* EssentiaNetworkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentiaNetworkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8013E8215667D4003E3612 /* LitecoinEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinEndpoint.swift; sourceTree = "<group>"; };
+		BB8013EA215673D3003E3612 /* LitecoinBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinBalance.swift; sourceTree = "<group>"; };
+		BB8013EC215679FA003E3612 /* LitecoinWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinWalletTests.swift; sourceTree = "<group>"; };
+		BB8013EE2156917F003E3612 /* LitecoinTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinTransaction.swift; sourceTree = "<group>"; };
+		BB9163F8215A2D2B0083584B /* BitcoinEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinEndpoint.swift; sourceTree = "<group>"; };
+		BB9163FA215A2D2B0083584B /* BitcoinBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinBalance.swift; sourceTree = "<group>"; };
+		BB9163FB215A2D2B0083584B /* BitcoinTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinTransaction.swift; sourceTree = "<group>"; };
+		BB9163FC215A2D2B0083584B /* BitcoinTransactionsHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinTransactionsHistory.swift; sourceTree = "<group>"; };
+		BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BItcoinUTXO.swift; sourceTree = "<group>"; };
+		BB916403215A33CE0083584B /* BitcoinWalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinWalletTests.swift; sourceTree = "<group>"; };
+		BB916405215A3E560083584B /* BitcoinSendTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinSendTX.swift; sourceTree = "<group>"; };
 		E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-bridges-api-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-essentia-bridges-api-ios/Pods-essentia-bridges-api-ios.release.xcconfig"; sourceTree = "<group>"; };
+		FE4B0AB970A7844BDF094E92 /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +123,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8013E4215643B1003E3612 /* HDWalletKit.framework in Frameworks */,
+				BB8013E6215643B5003E3612 /* EssentiaNetworkCore.framework in Frameworks */,
 				34514983213F2943004A30E7 /* libessentia-bridges-api-ios.a in Frameworks */,
-				8F2ABAC86184A7C0C9749E80 /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */,
+				4C9E745855E57C6FCACF004C /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +146,8 @@
 			children = (
 				34514982213F2943004A30E7 /* Info.plist */,
 				34514989213F296F004A30E7 /* EthereumWalletTests.swift */,
+				BB8013EC215679FA003E3612 /* LitecoinWalletTests.swift */,
+				BB916403215A33CE0083584B /* BitcoinWalletTests.swift */,
 			);
 			path = "Essentia-bridges-api-ios-tests";
 			sourceTree = "<group>";
@@ -176,8 +210,10 @@
 		3492202D20ED793A00A59A6F /* Bitcoin */ = {
 			isa = PBXGroup;
 			children = (
+				BB9163F9215A2D2B0083584B /* Models */,
 				3492203420ED7C2000A59A6F /* BitcoinWalletInterface.swift */,
 				3492203620ED7C4C00A59A6F /* BitcoinWallet.swift */,
+				BB9163F8215A2D2B0083584B /* BitcoinEndpoint.swift */,
 			);
 			path = Bitcoin;
 			sourceTree = "<group>";
@@ -194,8 +230,10 @@
 		3492203920ED7C9100A59A6F /* Litecoin */ = {
 			isa = PBXGroup;
 			children = (
+				BB8013E7215667B2003E3612 /* Models */,
 				3492203E20ED7D2500A59A6F /* LitecoinWalletInterface.swift */,
 				3492204020ED7D2F00A59A6F /* LitecoinWallet.swift */,
+				BB8013E8215667D4003E3612 /* LitecoinEndpoint.swift */,
 			);
 			path = Litecoin;
 			sourceTree = "<group>";
@@ -245,9 +283,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BB8013E7215667B2003E3612 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB8013EA215673D3003E3612 /* LitecoinBalance.swift */,
+				BB8013EE2156917F003E3612 /* LitecoinTransaction.swift */,
+				BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */,
+				BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB9163F9215A2D2B0083584B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB9163FA215A2D2B0083584B /* BitcoinBalance.swift */,
+				BB9163FB215A2D2B0083584B /* BitcoinTransaction.swift */,
+				BB9163FC215A2D2B0083584B /* BitcoinTransactionsHistory.swift */,
+				BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */,
+				BB916405215A3E560083584B /* BitcoinSendTX.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BCECF70FCEE28ACAAF72BF57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB8013E5215643B5003E3612 /* EssentiaNetworkCore.framework */,
+				BB8013E3215643B1003E3612 /* HDWalletKit.framework */,
 				47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */,
 				49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */,
 			);
@@ -259,8 +322,8 @@
 			children = (
 				1DD649BAF88A746856F204D2 /* Pods-essentia-bridges-api-ios.debug.xcconfig */,
 				E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */,
-				6D98CBDB9BC3874B03AC3B3F /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */,
-				61333CBFC6097E4E36988536 /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */,
+				FE4B0AB970A7844BDF094E92 /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */,
+				9EE38E6E54409846E4E9EC9F /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -272,11 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34514988213F2943004A30E7 /* Build configuration list for PBXNativeTarget "Essentia-bridges-api-ios-tests" */;
 			buildPhases = (
-				9793FFDAA1C71C32261C390A /* [CP] Check Pods Manifest.lock */,
+				B82F02A9E12FAAB78F4ADBD2 /* [CP] Check Pods Manifest.lock */,
 				3451497A213F2943004A30E7 /* Sources */,
 				3451497B213F2943004A30E7 /* Frameworks */,
 				3451497C213F2943004A30E7 /* Resources */,
-				4B33C152B08D4FD101128EBC /* [CP] Embed Pods Frameworks */,
+				D178A98FD607C9CB35CA8761 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,7 +472,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9793FFDAA1C71C32261C390A /* [CP] Check Pods Manifest.lock */ = {
+		B82F02A9E12FAAB78F4ADBD2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,6 +490,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D178A98FD607C9CB35CA8761 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -434,7 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB916404215A33CE0083584B /* BitcoinWalletTests.swift in Sources */,
 				3451498A213F296F004A30E7 /* EthereumWalletTests.swift in Sources */,
+				BB8013ED215679FA003E3612 /* LitecoinWalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,25 +530,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
+				BB916400215A2D2C0083584B /* BitcoinTransaction.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
 				3492209A20F3508500A59A6F /* Typealiases.swift in Sources */,
 				349220CF20F517A900A59A6F /* ErrorMessage.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
+				BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */,
 				349220D420F5658F00A59A6F /* EthereumBalance.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
 				3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */,
 				349220AA20F4FD1D00A59A6F /* BridgesApiError.swift in Sources */,
 				349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */,
+				BB9163FE215A2D2C0083584B /* BitcoinEndpoint.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
+				BB8013E9215667D4003E3612 /* LitecoinEndpoint.swift in Sources */,
 				3492203F20ED7D2500A59A6F /* LitecoinWalletInterface.swift in Sources */,
 				349220DB20F6005C00A59A6F /* EthereumTransactionCount.swift in Sources */,
+				BB916401215A2D2C0083584B /* BitcoinTransactionsHistory.swift in Sources */,
 				3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */,
+				BB9163FF215A2D2C0083584B /* BitcoinBalance.swift in Sources */,
 				34737BDA2150E077008A306F /* EtherScanInfo.swift in Sources */,
+				BB8013EF2156917F003E3612 /* LitecoinTransaction.swift in Sources */,
+				BB1E8E2F21590D67001B1082 /* LitecoinTransactionsHistory.swift in Sources */,
 				3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */,
 				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
+				BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */,
 				349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */,
 				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,
+				BB8013EB215673D3003E3612 /* LitecoinBalance.swift in Sources */,
+				BB916406215A3E560083584B /* BitcoinSendTX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,11 +576,11 @@
 /* Begin XCBuildConfiguration section */
 		34514986213F2943004A30E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D98CBDB9BC3874B03AC3B3F /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */;
+			baseConfigurationReference = FE4B0AB970A7844BDF094E92 /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X24R65DM8E;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Essentia-bridges-api-ios-tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,11 +597,11 @@
 		};
 		34514987213F2943004A30E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61333CBFC6097E4E36988536 /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */;
+			baseConfigurationReference = 9EE38E6E54409846E4E9EC9F /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X24R65DM8E;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Essentia-bridges-api-ios-tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -622,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
