@@ -27,6 +27,7 @@ fileprivate enum Constants {
         static var body = "body"
         static var toAddress = "to"
     }
+    
 }
 // MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/bitcoin.rst
 enum BitcoinEndpoint: RequestProtocol {
@@ -54,7 +55,7 @@ enum BitcoinEndpoint: RequestProtocol {
     var parameters: [String : Any]? {
         switch self {
         case .sendTransaction(let withData):
-            return [Constants.Body.body: withData]
+            return [Constants.Headers.data: withData]
         default:
             return nil
         }

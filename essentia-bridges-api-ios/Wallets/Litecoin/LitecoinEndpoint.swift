@@ -54,7 +54,7 @@ enum LitecoinEndpoint: RequestProtocol {
     var parameters: [String : Any]? {
         switch self {
         case .sendTransaction(let withData):
-            return [Constants.Body.body: withData]
+            return [Constants.Headers.data: withData]
         default:
             return nil
         }

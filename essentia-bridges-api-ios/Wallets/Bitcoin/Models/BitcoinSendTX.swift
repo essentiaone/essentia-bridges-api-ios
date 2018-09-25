@@ -7,6 +7,6 @@
 //
 
 public struct BitcoinSendTXResponse: Decodable {
-    public let error: String
-    //public let result: String
+    public let txid: String
+    
 }
