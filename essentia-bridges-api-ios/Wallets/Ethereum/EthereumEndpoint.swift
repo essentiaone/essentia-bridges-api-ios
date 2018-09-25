@@ -28,7 +28,7 @@ fileprivate enum Constants {
     }
     
     enum Body {
-        static var body = "body"
+        static var data = "data"
         static var toAddress = "to"
     }
 }
@@ -72,9 +72,9 @@ enum EthereumEndpoint: RequestProtocol {
         switch self {
         case .callSmartContract(let toAddress, let withData):
             return [Constants.Body.toAddress: toAddress,
-                    Constants.Body.body: withData]
+                    Constants.Body.data: withData]
         case .sendTransaction(let withData):
-            return [Constants.Body.body: withData]
+            return [Constants.Body.data: withData]
         default:
             return nil
         }
