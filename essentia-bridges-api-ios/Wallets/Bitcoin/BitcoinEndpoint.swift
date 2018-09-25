@@ -1,35 +1,36 @@
 //
-//  LitecoinEndpoint.swift
+//  BitcoinEndpoint.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Binomial on 22.09.2018.
+//  Created by Binomial on 24.09.2018.
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
+import Foundation
 import EssentiaNetworkCore
 
 fileprivate enum Constants {
     enum Path {
-        static var getBalance: NSString = "/litecoin/wallets/%@/balance"
-        static var getUTxo: NSString = "/litecoin/wallets/%@/utxo/"
-        static var getTransactionsHistory: NSString = "/litecoin/wallets/%@/transactions"
-        static var getTransactionById: NSString = "/litecoin/transactions/%@"
-        static var sendTransaction: String = "/litecoin/wallets/transactions"
+        static var getBalance: NSString = "/bitcoin/wallets/%@/balance"
+        static var getUTxo: NSString = "/bitcoin/wallets/%@/utxo/"
+        static var getTransactionsHistory: NSString = "/bitcoin/wallets/%@/transactions"
+        static var getTransactionById: NSString = "/bitcoin/transactions/%@"
+        static var sendTransaction: String = "/bitcoin/wallets/transactions"
     }
     
     enum Headers {
         static var address = "address"
-        static var data = "data"        
+        static var data = "data"
     }
     
     enum Body {
         static var body = "body"
         static var toAddress = "to"
     }
+    
 }
-
-// MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/litecoin.rst
-enum LitecoinEndpoint: RequestProtocol {
+// MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/bitcoin.rst
+enum BitcoinEndpoint: RequestProtocol {
     case getBalance(Address)
     case getUTxo(Address)
     case getTransactionsHistory(Address)
@@ -61,10 +62,7 @@ enum LitecoinEndpoint: RequestProtocol {
     }
     
     var extraHeaders: [String : String]? {
-        switch self {
-        default:
-            return nil
-        }
+        return nil
     }
     
     var requestType: RequestType {
