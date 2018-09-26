@@ -123,8 +123,8 @@ class BitcoinTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.from, ExpectedTransactionHistory.from)
-                XCTAssertEqual(object.to, ExpectedTransactionHistory.to)
+                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.from)
+                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.to)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

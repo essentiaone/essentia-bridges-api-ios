@@ -58,6 +58,22 @@ fileprivate struct ExpectedUTXO {
     static public let vout = 1
 }
 
+fileprivate var transactionData =
+["0100000002e7a158cd5b485d977c618d7d30076c014d3e164c886e27d38514000",
+ "6531c124c010000006a4730440220457bd0e35a7165e811dd6f774e5880d948b8",
+ "ac81f98329340f9384215fcc9dda02205eccf40903f11b24c64a92604a145d00b",
+ "062e05d06eaf4beb4b43ab0e218975b0121034e2ec662bbc43c046c3fc4bcb80a",
+ "6c522715343a1728c126469710c377b7026bffffffffe7a158cd5b485d977c618",
+ "d7d30076c014d3e164c886e27d385140006531c124c000000006a47304402204f",
+ "7d98870e113298e19c58a4f9b5f07c0d904e6f3a729fe9f4157a1c6220b6aa022",
+ "075e307c292da39c938d8fcd201c37c50566267cf9b31dcd37aed45897c448780",
+ "0121034e2ec662bbc43c046c3fc4bcb80a6c522715343a1728c126469710c377b",
+ "7026bffffffff02a0860100000000001976a9143a62afc6a58bf99ae74d7eab7b",
+ "af324790829bf788ac635c1100000000001976a9143a62afc6a58bf99ae74d7ea",
+ "b7baf324790829bf788ac00000000"].joined()
+
+fileprivate var expectedTxId: String = ""
+
 class LitecoinTests: XCTestCase {
     var ltcWallet: LitecoinWallet?
     
@@ -112,8 +128,8 @@ class LitecoinTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.from, ExpectedTransactionHistory.from)
-                XCTAssertEqual(object.to, ExpectedTransactionHistory.to)
+                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.from)
+                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.to)
                 expectation.fulfill()
             case .failure:
                  XCTFail(expectation.description)
@@ -136,6 +152,26 @@ class LitecoinTests: XCTestCase {
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
+            }
+        })
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testSendTX() {
+        let expectation = self.expectation(description: "Send TX")
+        ltcWallet?.sendTransaction(with: transactionData, result: { (result) in
+            switch result {
+            case .success(let object):
+                XCTAssertEqual(object.txid, expectedTxId)
+                expectation.fulfill()
+            case .failure(let error):
+                switch error {
+                case .error(let localizedErr):
+                    XCTAssert(localizedErr.error != "")
+                    expectation.fulfill()
+                case .unknownError:
+                    XCTFail(expectation.description)
+                }
             }
         })
         waitForExpectations(timeout: 5, handler: nil)
