@@ -10,8 +10,16 @@ import Foundation
 
 public struct LitecoinTransactionsHistory: Decodable {
     public let totalItems: Int
-    public let from: Int
-    public let to: Int
+    public let fromNumber: Int
+    public let toNumber: Int
     public let items: [LitecoinTransactionValue]
+    
+    enum CodingKeys: String, CodingKey {
+        case totalItems = "totalItems"
+        case fromNumber = "from"
+        case toNumber = "to"
+        case items = "items"
+    }
+
 }
 

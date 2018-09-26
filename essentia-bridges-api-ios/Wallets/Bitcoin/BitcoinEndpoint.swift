@@ -45,8 +45,8 @@ enum BitcoinEndpoint: RequestProtocol {
             return NSString(format: Constants.Path.getUTxo, address).description
         case .getTransactionsHistory(let address):
             return NSString(format: Constants.Path.getTransactionsHistory, address).description
-        case .getTransactionById(let id):
-            return NSString(format: Constants.Path.getTransactionById, id).description
+        case .getTransactionById(let txId):
+            return NSString(format: Constants.Path.getTransactionById, txId).description
         case .sendTransaction:
             return Constants.Path.sendTransaction
         }

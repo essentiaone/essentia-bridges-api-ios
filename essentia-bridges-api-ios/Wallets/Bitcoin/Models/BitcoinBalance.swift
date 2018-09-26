@@ -9,14 +9,14 @@
 public struct BitcoinBalanceValue: Decodable {
     public let value: Double
     
-    enum CodingKeys: CodingKey, String {
+    enum CodingKeys: String, CodingKey {
         case value = "balance"
     }
 }
 public struct BitcoinBalance: Decodable {
     public let balance: BitcoinBalanceValue
     
-    enum CodingKeys: CodingKey, String {
+    enum CodingKeys: String, CodingKey {
         case balance = "result"
     }
 }

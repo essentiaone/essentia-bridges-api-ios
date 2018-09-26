@@ -11,7 +11,7 @@ import Foundation
 public struct BalanceValue: Decodable {
     public let value: Double
     
-    enum CodingKeys: CodingKey, String {
+    enum CodingKeys: String, CodingKey {
         case value = "balance"
     }
 }
@@ -19,7 +19,7 @@ public struct BalanceValue: Decodable {
 public struct EthereumBalance: Decodable {
     public let balance: BalanceValue
     
-    enum CodingKeys: CodingKey, String {
+    enum CodingKeys: String, CodingKey {
         case balance = "result"
     }
 }
