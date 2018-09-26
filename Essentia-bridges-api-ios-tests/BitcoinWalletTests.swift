@@ -10,13 +10,13 @@ import XCTest
 @testable import essentia_bridges_api_ios
 import HDWalletKit
 
-fileprivate var url = "https://b3.essentia.network"
-fileprivate var apiVersion = "/api/v1"
-fileprivate var serverUrl = url + apiVersion
+private var url = "https://b3.essentia.network"
+private var apiVersion = "/api/v1"
+private var serverUrl = url + apiVersion
 
-fileprivate var addressFrom: Address = "1MoRmwmoA1cFSuePCGJV6UWLTmcxaBBKfW"
-fileprivate var transactionId = "b7b707244f0b56a49ea9339b6a70c589f24bdacbb20d850f55e3bb855f386c87"
-fileprivate var transactionData =
+private var addressFrom: Address = "1MoRmwmoA1cFSuePCGJV6UWLTmcxaBBKfW"
+private var transactionId = "b7b707244f0b56a49ea9339b6a70c589f24bdacbb20d850f55e3bb855f386c87"
+private var transactionData =
 ["02000000014fe69799ba112fbe7210bb46a24abdb2b4c7aae12db4e2b0c7fe88996734fbe0",
  "010000006b483045022100e9753329e4a51d72b8ae5971b70646100d0e8b8e9655b5980347",
  "217d5ec008d702203fdcadec793b227baf976706d08b68de358650ba2a7368a7f55e193f13",
@@ -24,10 +24,10 @@ fileprivate var transactionData =
  "00ffffffff0210270000000000001976a9146e81f8092d4b5b5a20d7257d042b0b170b5056",
  "cc88ac103a0100000000001976a9143936070b1eded9950affc4444953c2bb1e5abce388ac00000000"].joined()
 
-fileprivate var expectedTxId: String =  "7de75f5864009e04f0cccbc675148c85b6e13e97d2347d384299680ba3533dc9"
-fileprivate var expectedBalance = 0.00542246
+private var expectedTxId: String =  "7de75f5864009e04f0cccbc675148c85b6e13e97d2347d384299680ba3533dc9"
+private var expectedBalance = 0.00542246
 
-fileprivate struct ExpectedTransactionbyId {
+private struct ExpectedTransactionbyId {
     static public let blockhash: String = "0000000000000000001a71f184d147b59a3ef170e094a9c2c435faffa6ce2262"
     static public let blockheight: Int = 518607
     static public let blocktime: Int = 1523964387
@@ -44,7 +44,6 @@ fileprivate struct ExpectedTransactionbyId {
         static public let txid: String = "e54c10f1749ba2cc73e8f4cd07e64565846e3ebe90032e5bbd1870f1cfb3a8a8"
         static public let value: Double = 0.00714
     }
-    
     public struct Vout {
         static public let addresses: [String] = ["1PGEjYqbk8CzmsFdRXQSwfAtZ7ieRWaAtA"]
         static public let txid: String? = nil
@@ -52,13 +51,13 @@ fileprivate struct ExpectedTransactionbyId {
     }
 }
 
-fileprivate struct ExpectedTransactionHistory {
-    static public let from: Int = 0
-    static public let to:Int = 15
-    static public let totalItems:Int = 15
+private struct ExpectedTransactionHistory {
+    static public let fromNumber: Int = 0
+    static public let toNumber: Int = 15
+    static public let totalItems: Int = 15
 }
 
-fileprivate struct ExpectedUTXO {
+private struct ExpectedUTXO {
     static public let address = "1MoRmwmoA1cFSuePCGJV6UWLTmcxaBBKfW"
     static public let amount = 0.00014407
     static public let height = 539189
@@ -123,8 +122,8 @@ class BitcoinTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.from)
-                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.to)
+                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.fromNumber)
+                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.toNumber)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
@@ -172,4 +171,3 @@ class BitcoinTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 }
-

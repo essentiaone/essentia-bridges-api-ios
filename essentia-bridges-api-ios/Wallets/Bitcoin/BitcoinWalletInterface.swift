@@ -9,7 +9,7 @@
 import Foundation
 import EssentiaNetworkCore
 
-fileprivate enum Constants {
+private enum Constants {
     static var title: String = "Bitcoin"
 }
 

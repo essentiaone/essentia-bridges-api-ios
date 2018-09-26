@@ -10,15 +10,15 @@ import XCTest
 @testable import essentia_bridges_api_ios
 import HDWalletKit
 
-fileprivate var url = "https://b3.essentia.network"
-fileprivate var apiVersion = "/api/v1"
-fileprivate var serverUrl = url + apiVersion
+private var url = "https://b3.essentia.network"
+private var apiVersion = "/api/v1"
+private var serverUrl = url + apiVersion
 
-fileprivate var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
-fileprivate var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
-fileprivate var expectedBalance = 0.00579998
+private var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
+private var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
+private var expectedBalance = 0.00579998
 
-fileprivate struct ExpectedTransactionbyId {
+private struct ExpectedTransactionbyId {
     static public let blockhash: String = "021af84732c7f1ff56f817ec8ca18ae70e66c406959dfee13fa1d7da97a55dce"
     static public let blockheight: Int = 1418413
     static public let blocktime: Int = 1525873384
@@ -42,13 +42,13 @@ fileprivate struct ExpectedTransactionbyId {
     }
 }
 
-fileprivate struct ExpectedTransactionHistory {
-    static public let from: Int = 0
-    static public let to:Int = 50
-    static public let totalItems:Int = 52
+private struct ExpectedTransactionHistory {
+    static public let fromNumber: Int = 0
+    static public let toNumber: Int = 50
+    static public let totalItems: Int = 52
 }
 
-fileprivate struct ExpectedUTXO {
+private struct ExpectedUTXO {
     static public let address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
     static public let amount = 0.00379998
     static public let height = 1487761
@@ -58,7 +58,7 @@ fileprivate struct ExpectedUTXO {
     static public let vout = 1
 }
 
-fileprivate var transactionData =
+private var transactionData =
 ["0100000002e7a158cd5b485d977c618d7d30076c014d3e164c886e27d38514000",
  "6531c124c010000006a4730440220457bd0e35a7165e811dd6f774e5880d948b8",
  "ac81f98329340f9384215fcc9dda02205eccf40903f11b24c64a92604a145d00b",
@@ -72,7 +72,7 @@ fileprivate var transactionData =
  "af324790829bf788ac635c1100000000001976a9143a62afc6a58bf99ae74d7ea",
  "b7baf324790829bf788ac00000000"].joined()
 
-fileprivate var expectedTxId: String = ""
+private var expectedTxId: String = ""
 
 class LitecoinTests: XCTestCase {
     var ltcWallet: LitecoinWallet?
@@ -128,8 +128,8 @@ class LitecoinTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.from)
-                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.to)
+                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.fromNumber)
+                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.toNumber)
                 expectation.fulfill()
             case .failure:
                  XCTFail(expectation.description)
