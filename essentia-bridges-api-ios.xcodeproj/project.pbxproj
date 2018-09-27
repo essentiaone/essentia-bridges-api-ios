@@ -32,6 +32,7 @@
 		4C9E745855E57C6FCACF004C /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */; };
 		BB1E8E2F21590D67001B1082 /* LitecoinTransactionsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */; };
 		BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */; };
+		BB7AD798215BF953002F2648 /* LitecoinSendTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7AD797215BF953002F2648 /* LitecoinSendTX.swift */; };
 		BB8013E4215643B1003E3612 /* HDWalletKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8013E3215643B1003E3612 /* HDWalletKit.framework */; };
 		BB8013E6215643B5003E3612 /* EssentiaNetworkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8013E5215643B5003E3612 /* EssentiaNetworkCore.framework */; };
 		BB8013E9215667D4003E3612 /* LitecoinEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8013E8215667D4003E3612 /* LitecoinEndpoint.swift */; };
@@ -101,6 +102,7 @@
 		9EE38E6E54409846E4E9EC9F /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinTransactionsHistory.swift; sourceTree = "<group>"; };
 		BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinUTXO.swift; sourceTree = "<group>"; };
+		BB7AD797215BF953002F2648 /* LitecoinSendTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinSendTX.swift; sourceTree = "<group>"; };
 		BB8013E3215643B1003E3612 /* HDWalletKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HDWalletKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8013E5215643B5003E3612 /* EssentiaNetworkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentiaNetworkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8013E8215667D4003E3612 /* LitecoinEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LitecoinEndpoint.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				BB8013EE2156917F003E3612 /* LitecoinTransaction.swift */,
 				BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */,
 				BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */,
+				BB7AD797215BF953002F2648 /* LitecoinSendTX.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
 				BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */,
 				349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */,
+				BB7AD798215BF953002F2648 /* LitecoinSendTX.swift in Sources */,
 				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,
 				BB8013EB215673D3003E3612 /* LitecoinBalance.swift in Sources */,
 				BB916406215A3E560083584B /* BitcoinSendTX.swift in Sources */,

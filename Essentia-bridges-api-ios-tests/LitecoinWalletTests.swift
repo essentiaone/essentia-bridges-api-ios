@@ -10,15 +10,15 @@ import XCTest
 @testable import essentia_bridges_api_ios
 import HDWalletKit
 
-fileprivate var url = "https://b3.essentia.network"
-fileprivate var apiVersion = "/api/v1"
-fileprivate var serverUrl = url + apiVersion
+private var url = "https://b3.essentia.network"
+private var apiVersion = "/api/v1"
+private var serverUrl = url + apiVersion
 
-fileprivate var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
-fileprivate var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
-fileprivate var expectedBalance = 0.00579998
+private var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
+private var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
+private var expectedBalance = 0.00579998
 
-fileprivate struct ExpectedTransactionbyId {
+private struct ExpectedTransactionbyId {
     static public let blockhash: String = "021af84732c7f1ff56f817ec8ca18ae70e66c406959dfee13fa1d7da97a55dce"
     static public let blockheight: Int = 1418413
     static public let blocktime: Int = 1525873384
@@ -42,13 +42,13 @@ fileprivate struct ExpectedTransactionbyId {
     }
 }
 
-fileprivate struct ExpectedTransactionHistory {
-    static public let from: Int = 0
-    static public let to:Int = 50
-    static public let totalItems:Int = 52
+private struct ExpectedTransactionHistory {
+    static public let fromNumber: Int = 0
+    static public let toNumber: Int = 50
+    static public let totalItems: Int = 52
 }
 
-fileprivate struct ExpectedUTXO {
+private struct ExpectedUTXO {
     static public let address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
     static public let amount = 0.00379998
     static public let height = 1487761
@@ -57,6 +57,22 @@ fileprivate struct ExpectedUTXO {
     static public let txid = "93c91eb170b04316ec5f34e071529eae5e6d196efda8a20272af7868b0327fa6"
     static public let vout = 1
 }
+
+private var transactionData =
+["0100000002e7a158cd5b485d977c618d7d30076c014d3e164c886e27d38514000",
+ "6531c124c010000006a4730440220457bd0e35a7165e811dd6f774e5880d948b8",
+ "ac81f98329340f9384215fcc9dda02205eccf40903f11b24c64a92604a145d00b",
+ "062e05d06eaf4beb4b43ab0e218975b0121034e2ec662bbc43c046c3fc4bcb80a",
+ "6c522715343a1728c126469710c377b7026bffffffffe7a158cd5b485d977c618",
+ "d7d30076c014d3e164c886e27d385140006531c124c000000006a47304402204f",
+ "7d98870e113298e19c58a4f9b5f07c0d904e6f3a729fe9f4157a1c6220b6aa022",
+ "075e307c292da39c938d8fcd201c37c50566267cf9b31dcd37aed45897c448780",
+ "0121034e2ec662bbc43c046c3fc4bcb80a6c522715343a1728c126469710c377b",
+ "7026bffffffff02a0860100000000001976a9143a62afc6a58bf99ae74d7eab7b",
+ "af324790829bf788ac635c1100000000001976a9143a62afc6a58bf99ae74d7ea",
+ "b7baf324790829bf788ac00000000"].joined()
+
+private var expectedTxId: String = ""
 
 class LitecoinTests: XCTestCase {
     var ltcWallet: LitecoinWallet?
@@ -112,8 +128,8 @@ class LitecoinTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.from, ExpectedTransactionHistory.from)
-                XCTAssertEqual(object.to, ExpectedTransactionHistory.to)
+                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.fromNumber)
+                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.toNumber)
                 expectation.fulfill()
             case .failure:
                  XCTFail(expectation.description)
@@ -136,6 +152,26 @@ class LitecoinTests: XCTestCase {
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
+            }
+        })
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testSendTX() {
+        let expectation = self.expectation(description: "Send TX")
+        ltcWallet?.sendTransaction(with: transactionData, result: { (result) in
+            switch result {
+            case .success(let object):
+                XCTAssertEqual(object.txid, expectedTxId)
+                expectation.fulfill()
+            case .failure(let error):
+                switch error {
+                case .error(let localizedErr):
+                    XCTAssert(localizedErr.error != "")
+                    expectation.fulfill()
+                case .unknownError:
+                    XCTFail(expectation.description)
+                }
             }
         })
         waitForExpectations(timeout: 5, handler: nil)

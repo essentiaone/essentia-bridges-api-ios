@@ -27,8 +27,8 @@ class BitcoinWallet: BaseWallet, BitcoinWalletInterface {
         networking.makeRequest(BitcoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
-    func getTransactionById(for id: TransactionId, result: @escaping (Result<BitcoinTransactionValue>) -> Void) {
-        networking.makeRequest(BitcoinEndpoint.getTransactionById(id), result: result)
+    func getTransactionById(for txId: TransactionId, result: @escaping (Result<BitcoinTransactionValue>) -> Void) {
+        networking.makeRequest(BitcoinEndpoint.getTransactionById(txId), result: result)
     }
     
     func getUTxo(for address: Address, result: @escaping (Result<[BitcoinUTXO]>) -> Void) {
