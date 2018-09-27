@@ -8,7 +8,7 @@
 
 public struct BitcoinUTXO: Decodable {
     public let address: String
-    public let amount : Double
+    public let amount: Double
     public let confirmations: Int
     public let height: Int
     public let satoshis: Int

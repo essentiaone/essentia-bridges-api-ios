@@ -77,6 +77,4 @@ public struct BitcoinTransactionValue: Decodable {
     public let version: Int    
     public let vin: [BitcoinTransactionVin]
     public let vout: [BitcoinTransactionVout]
-    
-
 }

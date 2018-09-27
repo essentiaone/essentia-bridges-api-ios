@@ -20,6 +20,4 @@ public struct LitecoinTransactionsHistory: Decodable {
         case toNumber = "to"
         case items = "items"
     }
-
 }
-

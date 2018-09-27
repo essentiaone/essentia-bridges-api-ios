@@ -81,4 +81,3 @@ public struct LitecoinTransactionValue: Decodable {
     public let vin: [LitecoinTransactionVin]
     public let vout: [LitecoinTransactionVout]
 }
-
