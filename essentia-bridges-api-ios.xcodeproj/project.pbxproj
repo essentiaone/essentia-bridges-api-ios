@@ -23,8 +23,6 @@
 		3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492208520EFC8B700A59A6F /* BaseWallet.swift */; };
 		3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209720F34F4900A59A6F /* EthereumEndpoint.swift */; };
 		3492209A20F3508500A59A6F /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492209920F3508500A59A6F /* Typealiases.swift */; };
-		349220AA20F4FD1D00A59A6F /* BridgesApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220A920F4FD1D00A59A6F /* BridgesApiError.swift */; };
-		349220CF20F517A900A59A6F /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220CE20F517A900A59A6F /* ErrorMessage.swift */; };
 		349220D420F5658F00A59A6F /* EthereumBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D320F5658F00A59A6F /* EthereumBalance.swift */; };
 		349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */; };
 		349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D820F5F57C00A59A6F /* RPCModel.swift */; };
@@ -91,8 +89,6 @@
 		3492208520EFC8B700A59A6F /* BaseWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWallet.swift; sourceTree = "<group>"; };
 		3492209720F34F4900A59A6F /* EthereumEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumEndpoint.swift; sourceTree = "<group>"; };
 		3492209920F3508500A59A6F /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		349220A920F4FD1D00A59A6F /* BridgesApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesApiError.swift; sourceTree = "<group>"; };
-		349220CE20F517A900A59A6F /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		349220D320F5658F00A59A6F /* EthereumBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumBalance.swift; sourceTree = "<group>"; };
 		349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNumberResponce.swift; sourceTree = "<group>"; };
 		349220D820F5F57C00A59A6F /* RPCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCModel.swift; sourceTree = "<group>"; };
@@ -177,7 +173,6 @@
 		3492201F20ED415F00A59A6F /* essentia-bridges-api-ios */ = {
 			isa = PBXGroup;
 			children = (
-				349220D220F5656B00A59A6F /* Error */,
 				3492207820EFC42300A59A6F /* Core */,
 				3492202920ED784400A59A6F /* Wallets */,
 				3492203220ED7B0B00A59A6F /* CryptoWallet.swift */,
@@ -249,14 +244,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		349220CD20F5151900A59A6F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				349220CE20F517A900A59A6F /* ErrorMessage.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		349220D120F5655A00A59A6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,15 +253,6 @@
 				34737BD92150E077008A306F /* EtherScanInfo.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		349220D220F5656B00A59A6F /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				349220CD20F5151900A59A6F /* Models */,
-				349220A920F4FD1D00A59A6F /* BridgesApiError.swift */,
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		349220D720F5F56300A59A6F /* Models */ = {
@@ -514,14 +492,12 @@
 				BB916400215A2D2C0083584B /* BitcoinTransaction.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
 				3492209A20F3508500A59A6F /* Typealiases.swift in Sources */,
-				349220CF20F517A900A59A6F /* ErrorMessage.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */,
 				349220D420F5658F00A59A6F /* EthereumBalance.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
 				3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */,
-				349220AA20F4FD1D00A59A6F /* BridgesApiError.swift in Sources */,
 				349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */,
 				BB9163FE215A2D2C0083584B /* BitcoinEndpoint.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,

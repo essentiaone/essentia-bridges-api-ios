@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'essentia-bridges-api-ios'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'Bridges api for crypto wallets'
 
   s.homepage         = 'https://github.com/essentiaone/essentia-bridges-api-ios.git'
