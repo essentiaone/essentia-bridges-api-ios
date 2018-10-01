@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import EssentiaNetworkCore
 
-fileprivate enum Constants {
+private enum Constants {
     static var title: String = "BitcoinCash"
 }
 
 public protocol BitcoinCashWalletInterface: WalletInterface {
-    func getBalance(for address: String) -> Double
+    func getBalance(for address: String, result: @escaping (Result<BitcoinCashBalance>) -> Void)
+    func getTransactionsHistory(for addr: Address, result: @escaping (Result<BitcoinCashTransactionsHistory>) -> Void)
+    func getTransactionById(for txId: String, result: @escaping (Result<BitcoinCashTransactionByIdValue>) -> Void)
+    func sendRawTransaction(with data: TransactionData, result: @escaping (Result<BitcoinCashSendTXResponse>) -> Void)
 }
 
 extension BitcoinCashWalletInterface {

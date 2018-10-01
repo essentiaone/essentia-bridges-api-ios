@@ -9,7 +9,7 @@
 import Foundation
 import EssentiaNetworkCore
 
-fileprivate enum Constants {
+private enum Constants {
     enum Path {
         static var getBalance: NSString = "/bitcoin/wallets/%@/balance"
         static var getUTxo: NSString = "/bitcoin/wallets/%@/utxo/"
@@ -52,7 +52,7 @@ enum BitcoinEndpoint: RequestProtocol {
         }
     }
     
-    var parameters: [String : Any]? {
+    var parameters: [String: Any]? {
         switch self {
         case .sendTransaction(let withData):
             return [Constants.Headers.data: withData]
@@ -61,7 +61,7 @@ enum BitcoinEndpoint: RequestProtocol {
         }
     }
     
-    var extraHeaders: [String : String]? {
+    var extraHeaders: [String: String]? {
         return nil
     }
     
