@@ -44,6 +44,12 @@
 		BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */; };
 		BB916404215A33CE0083584B /* BitcoinWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916403215A33CE0083584B /* BitcoinWalletTests.swift */; };
 		BB916406215A3E560083584B /* BitcoinSendTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916405215A3E560083584B /* BitcoinSendTX.swift */; };
+		BBB358622162883300D559A3 /* BitcoinCashEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3585C2162883300D559A3 /* BitcoinCashEndpoint.swift */; };
+		BBB358632162883300D559A3 /* BitcoinCashBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3585E2162883300D559A3 /* BitcoinCashBalance.swift */; };
+		BBB358642162883300D559A3 /* BitcoinCashSendTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB3585F2162883300D559A3 /* BitcoinCashSendTX.swift */; };
+		BBB358652162883300D559A3 /* BitcoinCashTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB358602162883300D559A3 /* BitcoinCashTransaction.swift */; };
+		BBB358662162883300D559A3 /* BitcoinCashTransactionsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB358612162883300D559A3 /* BitcoinCashTransactionsHistory.swift */; };
+		BBB35868216289ED00D559A3 /* BitcoinCashWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB35867216289EC00D559A3 /* BitcoinCashWalletTests.swift */; };
 		F896B24478F60F38BFF4E9DC /* Pods_essentia_bridges_api_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +118,12 @@
 		BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BItcoinUTXO.swift; sourceTree = "<group>"; };
 		BB916403215A33CE0083584B /* BitcoinWalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinWalletTests.swift; sourceTree = "<group>"; };
 		BB916405215A3E560083584B /* BitcoinSendTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinSendTX.swift; sourceTree = "<group>"; };
+		BBB3585C2162883300D559A3 /* BitcoinCashEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashEndpoint.swift; sourceTree = "<group>"; };
+		BBB3585E2162883300D559A3 /* BitcoinCashBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashBalance.swift; sourceTree = "<group>"; };
+		BBB3585F2162883300D559A3 /* BitcoinCashSendTX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashSendTX.swift; sourceTree = "<group>"; };
+		BBB358602162883300D559A3 /* BitcoinCashTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashTransaction.swift; sourceTree = "<group>"; };
+		BBB358612162883300D559A3 /* BitcoinCashTransactionsHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashTransactionsHistory.swift; sourceTree = "<group>"; };
+		BBB35867216289EC00D559A3 /* BitcoinCashWalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitcoinCashWalletTests.swift; sourceTree = "<group>"; };
 		E5292E662034E4FF8E6A6CA2 /* Pods-essentia-bridges-api-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-bridges-api-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-essentia-bridges-api-ios/Pods-essentia-bridges-api-ios.release.xcconfig"; sourceTree = "<group>"; };
 		FE4B0AB970A7844BDF094E92 /* Pods-Essentia-bridges-api-ios-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +158,7 @@
 				34514989213F296F004A30E7 /* EthereumWalletTests.swift */,
 				BB8013EC215679FA003E3612 /* LitecoinWalletTests.swift */,
 				BB916403215A33CE0083584B /* BitcoinWalletTests.swift */,
+				BBB35867216289EC00D559A3 /* BitcoinCashWalletTests.swift */,
 			);
 			path = "Essentia-bridges-api-ios-tests";
 			sourceTree = "<group>";
@@ -218,8 +231,10 @@
 		3492203820ED7C8700A59A6F /* BitcoinCash */ = {
 			isa = PBXGroup;
 			children = (
+				BBB3585D2162883300D559A3 /* Models */,
 				3492203A20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift */,
 				3492203C20ED7CB600A59A6F /* BitcoinCashWallet.swift */,
+				BBB3585C2162883300D559A3 /* BitcoinCashEndpoint.swift */,
 			);
 			path = BitcoinCash;
 			sourceTree = "<group>";
@@ -283,6 +298,17 @@
 				BB9163FC215A2D2B0083584B /* BitcoinTransactionsHistory.swift */,
 				BB9163FD215A2D2B0083584B /* BItcoinUTXO.swift */,
 				BB916405215A3E560083584B /* BitcoinSendTX.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBB3585D2162883300D559A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBB3585E2162883300D559A3 /* BitcoinCashBalance.swift */,
+				BBB3585F2162883300D559A3 /* BitcoinCashSendTX.swift */,
+				BBB358602162883300D559A3 /* BitcoinCashTransaction.swift */,
+				BBB358612162883300D559A3 /* BitcoinCashTransactionsHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +506,7 @@
 			files = (
 				BB916404215A33CE0083584B /* BitcoinWalletTests.swift in Sources */,
 				3451498A213F296F004A30E7 /* EthereumWalletTests.swift in Sources */,
+				BBB35868216289ED00D559A3 /* BitcoinCashWalletTests.swift in Sources */,
 				BB8013ED215679FA003E3612 /* LitecoinWalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,13 +515,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBB358632162883300D559A3 /* BitcoinCashBalance.swift in Sources */,
 				3492203520ED7C2000A59A6F /* BitcoinWalletInterface.swift in Sources */,
 				BB916400215A2D2C0083584B /* BitcoinTransaction.swift in Sources */,
+				BBB358662162883300D559A3 /* BitcoinCashTransactionsHistory.swift in Sources */,
 				3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */,
 				3492209A20F3508500A59A6F /* Typealiases.swift in Sources */,
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */,
 				349220D420F5658F00A59A6F /* EthereumBalance.swift in Sources */,
+				BBB358642162883300D559A3 /* BitcoinCashSendTX.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
 				3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */,
@@ -506,8 +536,10 @@
 				349220DB20F6005C00A59A6F /* EthereumTransactionCount.swift in Sources */,
 				BB916401215A2D2C0083584B /* BitcoinTransactionsHistory.swift in Sources */,
 				3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */,
+				BBB358652162883300D559A3 /* BitcoinCashTransaction.swift in Sources */,
 				BB9163FF215A2D2C0083584B /* BitcoinBalance.swift in Sources */,
 				34737BDA2150E077008A306F /* EtherScanInfo.swift in Sources */,
+				BBB358622162883300D559A3 /* BitcoinCashEndpoint.swift in Sources */,
 				BB8013EF2156917F003E3612 /* LitecoinTransaction.swift in Sources */,
 				BB1E8E2F21590D67001B1082 /* LitecoinTransactionsHistory.swift in Sources */,
 				3492203B20ED7CAA00A59A6F /* BitcoinCashWalletInterface.swift in Sources */,
