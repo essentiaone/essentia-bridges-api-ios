@@ -16,22 +16,18 @@ private var serverUrl = url + apiVersion
 
 private var addressFrom: Address = "qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
 private var transactionData =
-    ["02000000014fe69799ba112fbe7210bb46a24abdb2b4c7aae12db4e2b0c7fe88996734fbe0",
-     "010000006b483045022100e9753329e4a51d72b8ae5971b70646100d0e8b8e9655b5980347",
-     "217d5ec008d702203fdcadec793b227baf976706d08b68de358650ba2a7368a7f55e193f13",
-     "5f28b8012102c0e4768ae9a4f4fbdb42f438695033abc61a8c1f77573ff7273f5b461d264f",
-     "00ffffffff0210270000000000001976a9146e81f8092d4b5b5a20d7257d042b0b170b5056",
-     "cc88ac103a0100000000001976a9143936070b1eded9950affc4444953c2bb1e5abce388ac00000000"].joined()
+["01000000010000000000000000000000000000000000000000000000000000000000000000fff",
+ "fffff0704ffff001d0104ffffffff0100f2052a0100000043410496b538e853519c726a2c91e61ec11600ae1390813a",
+ "627c66fb8be7947be63c52da7589379515d4e0a604f8141781e62294721166bf621e73a82cbf2342c858eeac00000000"].joined()
 
 private var expectedTxId: String =  "f53fb9bcdde78bcf580efacb6ce777bde5e345a9392e5ed3f3e84fe15a63cf1a"
 private var expectedBalance = 0.00126419
 
 private struct ExpectedTransactionHistory {
     static public let fromNumber: Int = 0
-    static public let toNumber: Int = 15
-    static public let totalItems: Int = 15
+    static public let toNumber: Int = 3
+    static public let totalItems: Int = 3
 }
-
 
 private struct ExpectedTransactionbyId {
     static public let blockhash: String = "000000000000000001df56329b3831c92b953c2266f97ee7d7632b3d37a1234d"
@@ -83,9 +79,9 @@ class BitcoinCashTests: XCTestCase {
         bchWallet?.getTransactionsHistory(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssertEqual(object.totalItems, ExpectedTransactionHistory.totalItems)
-                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.fromNumber)
-                XCTAssertEqual(object.toNumber, ExpectedTransactionHistory.toNumber)
+                XCTAssertEqual(object.result.totalItems, ExpectedTransactionHistory.totalItems)
+                XCTAssertEqual(object.result.fromNumber, ExpectedTransactionHistory.fromNumber)
+                XCTAssertEqual(object.result.toNumber, ExpectedTransactionHistory.toNumber)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
