@@ -47,7 +47,6 @@ public struct BitcoinCashTransactionByIdVin: Decodable {
         }
 }
 
-
 public struct BitcoinCashTransactionVin: Decodable {
     public let addr: String
     public let txid: String

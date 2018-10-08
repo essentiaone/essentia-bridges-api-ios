@@ -83,20 +83,4 @@ class EthereumTests: XCTestCase {
         })
         waitForExpectations(timeout: 5, handler: nil)
     }
-
-    func testSendTransaction() {
-        let expectation = self.expectation(description: "Send transaction")
-        let transactionData = ""
-        ethWallet?.sendTransaction(with: transactionData, result: { (result) in
-            switch result {
-            case .success(let object):
-                XCTAssert(object != "")
-                expectation.fulfill()
-            case .failure:
-                XCTFail(expectation.description)
-            }
-        })
-        waitForExpectations(timeout: 5, handler: nil)
-    }
-
 }

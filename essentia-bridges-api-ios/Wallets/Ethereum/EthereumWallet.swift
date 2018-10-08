@@ -29,8 +29,8 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
         networking.makeRequest(EthereumEndpoint.getTransactionCount(address), result: result)
     }
     
-    func callSmartContract(to address: Address, data: TransactionData, result: @escaping (Result<String>) -> Void) {
-        networking.makeRequest(EthereumEndpoint.callSmartContract(address, withData: data), result: result)
+    func callSmartContract<T: Decodable>(info: EthereumSmartContract, result: @escaping (Result<T>) -> Void) {
+        networking.makeRequest(EthereumEndpoint.callSmartContract(info.to, withData: info.data), result: result)
     }
     
     func getGasPrice(result: @escaping (Result<EthereumNumberValue>) -> Void) {
@@ -55,5 +55,10 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
     
     func getBlockNumber(result: @escaping (Result<EthereumNumberValue>) -> Void) {
         networking.makeRequest(EthereumEndpoint.getBlockNumber, result: result)
+    }
+    
+    // MARK: Smart Contracts
+    func getTokenBalance(info: EthereumSmartContract, result: @escaping (Result<EthereumTokenBalance>) -> Void) {
+        networking.makeRequest(EthereumEndpoint.callSmartContract(info.to, withData: info.data), result: result)
     }
 }
