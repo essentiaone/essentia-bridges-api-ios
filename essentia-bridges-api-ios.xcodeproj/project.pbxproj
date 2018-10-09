@@ -27,6 +27,9 @@
 		349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */; };
 		349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220D820F5F57C00A59A6F /* RPCModel.swift */; };
 		349220DB20F6005C00A59A6F /* EthereumTransactionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349220DA20F6005C00A59A6F /* EthereumTransactionCount.swift */; };
+		34CABC9E216BAA60004B6CAA /* EthereumSmartContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CABC9D216BAA60004B6CAA /* EthereumSmartContractTests.swift */; };
+		34CABCA0216C0068004B6CAA /* EthereumSmartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CABC9F216C0067004B6CAA /* EthereumSmartContract.swift */; };
+		34CABCA2216C02A0004B6CAA /* EthereumTokenBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CABCA1216C02A0004B6CAA /* EthereumTokenBalance.swift */; };
 		4C9E745855E57C6FCACF004C /* Pods_Essentia_bridges_api_ios_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */; };
 		BB1E8E2F21590D67001B1082 /* LitecoinTransactionsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E2E21590D67001B1082 /* LitecoinTransactionsHistory.swift */; };
 		BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E8E30215947FC001B1082 /* LitecoinUTXO.swift */; };
@@ -99,6 +102,9 @@
 		349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNumberResponce.swift; sourceTree = "<group>"; };
 		349220D820F5F57C00A59A6F /* RPCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCModel.swift; sourceTree = "<group>"; };
 		349220DA20F6005C00A59A6F /* EthereumTransactionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumTransactionCount.swift; sourceTree = "<group>"; };
+		34CABC9D216BAA60004B6CAA /* EthereumSmartContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumSmartContractTests.swift; sourceTree = "<group>"; };
+		34CABC9F216C0067004B6CAA /* EthereumSmartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumSmartContract.swift; sourceTree = "<group>"; };
+		34CABCA1216C02A0004B6CAA /* EthereumTokenBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumTokenBalance.swift; sourceTree = "<group>"; };
 		47F2382617649E6497EAEA77 /* Pods_essentia_bridges_api_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_essentia_bridges_api_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A32A0AA398BA7A6B018FAD /* Pods_Essentia_bridges_api_ios_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Essentia_bridges_api_ios_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE38E6E54409846E4E9EC9F /* Pods-Essentia-bridges-api-ios-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Essentia-bridges-api-ios-tests/Pods-Essentia-bridges-api-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 				BB8013EC215679FA003E3612 /* LitecoinWalletTests.swift */,
 				BB916403215A33CE0083584B /* BitcoinWalletTests.swift */,
 				BBB35867216289EC00D559A3 /* BitcoinCashWalletTests.swift */,
+				34CABC9D216BAA60004B6CAA /* EthereumSmartContractTests.swift */,
 			);
 			path = "Essentia-bridges-api-ios-tests";
 			sourceTree = "<group>";
@@ -266,6 +273,8 @@
 				349220D520F5F33700A59A6F /* EthereumNumberResponce.swift */,
 				349220DA20F6005C00A59A6F /* EthereumTransactionCount.swift */,
 				34737BD92150E077008A306F /* EtherScanInfo.swift */,
+				34CABC9F216C0067004B6CAA /* EthereumSmartContract.swift */,
+				34CABCA1216C02A0004B6CAA /* EthereumTokenBalance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -504,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CABC9E216BAA60004B6CAA /* EthereumSmartContractTests.swift in Sources */,
 				BB916404215A33CE0083584B /* BitcoinWalletTests.swift in Sources */,
 				3451498A213F296F004A30E7 /* EthereumWalletTests.swift in Sources */,
 				BBB35868216289ED00D559A3 /* BitcoinCashWalletTests.swift in Sources */,
@@ -529,6 +539,7 @@
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
 				3492209820F34F4900A59A6F /* EthereumEndpoint.swift in Sources */,
 				349220D920F5F57C00A59A6F /* RPCModel.swift in Sources */,
+				34CABCA0216C0068004B6CAA /* EthereumSmartContract.swift in Sources */,
 				BB9163FE215A2D2C0083584B /* BitcoinEndpoint.swift in Sources */,
 				3492204120ED7D2F00A59A6F /* LitecoinWallet.swift in Sources */,
 				BB8013E9215667D4003E3612 /* LitecoinEndpoint.swift in Sources */,
@@ -550,6 +561,7 @@
 				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,
 				BB8013EB215673D3003E3612 /* LitecoinBalance.swift in Sources */,
 				BB916406215A3E560083584B /* BitcoinSendTX.swift in Sources */,
+				34CABCA2216C02A0004B6CAA /* EthereumTokenBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

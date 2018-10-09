@@ -12,7 +12,7 @@ import EssentiaNetworkCore
 private enum Constants {
     enum Path {
         static var getBalance: NSString = "/third-party/bitcoin-cash/explorer-bitcoin/details/%@/balance"
-        static var getTransactionsHistory: NSString = "/third-party/bitcoin-cash/explorer-bitcoin/details/%@/transactions"
+        static var getTxHistory: NSString = "/third-party/bitcoin-cash/explorer-bitcoin/details/%@/transactions"
         static var getTransactionById: NSString = "/third-party/bitcoin-cash/explorer-bitcoin/transactions/%@"
         static var sendRawTransaction: String = "/third-party/bitcoin-cash/explorer-bitcoin/rawtransactions"
     }
@@ -40,7 +40,7 @@ enum BitcoinCashEndpoint: RequestProtocol {
         case .getBalance(let address):
             return NSString(format: Constants.Path.getBalance, address).description
         case .getTransactionsHistory(let address):
-            return NSString(format: Constants.Path.getTransactionsHistory, address).description
+            return NSString(format: Constants.Path.getTxHistory, address).description
         case .getTransactionById(let txId):
             return NSString(format: Constants.Path.getTransactionById, txId).description
         case .sendRawTransaction:
