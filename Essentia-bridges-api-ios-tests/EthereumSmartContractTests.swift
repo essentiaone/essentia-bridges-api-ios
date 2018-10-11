@@ -32,7 +32,7 @@ class EthereumSmartContractsTests: XCTestCase {
         let expectation = self.expectation(description: "Get token balance")
         let smartContract = EthereumSmartContract(to: TokenBalance.smartContractAddress,
                                                   data: TokenBalance.smartContractData)
-        ethWallet?.getTokenBalance(info: startContract, result: { (result) in
+        ethWallet?.getTokenBalance(info: smartContract, result: { (result) in
                                         switch result {
                                         case .success(let object):
                                             print(object.balance)
