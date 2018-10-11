@@ -30,7 +30,7 @@ class EthereumSmartContractsTests: XCTestCase {
     
     func testGetTokenBalance() {
         let expectation = self.expectation(description: "Get token balance")
-        let startContract = EthereumSmartContract(to: TokenBalance.smartContractAddress,
+        let smartContract = EthereumSmartContract(to: TokenBalance.smartContractAddress,
                                                   data: TokenBalance.smartContractData)
         ethWallet?.getTokenBalance(info: startContract, result: { (result) in
                                         switch result {
