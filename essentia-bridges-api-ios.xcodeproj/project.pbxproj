@@ -10,6 +10,8 @@
 		34514983213F2943004A30E7 /* libessentia-bridges-api-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3492201D20ED415F00A59A6F /* libessentia-bridges-api-ios.a */; };
 		3451498A213F296F004A30E7 /* EthereumWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34514989213F296F004A30E7 /* EthereumWalletTests.swift */; };
 		34737BDA2150E077008A306F /* EtherScanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34737BD92150E077008A306F /* EtherScanInfo.swift */; };
+		348BC798217F6C6E00F494A8 /* EthereumTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BC797217F6C6E00F494A8 /* EthereumTransactionDetail.swift */; };
+		348BC79A217F6CEC00F494A8 /* EthereumTransactionsByAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BC799217F6CEC00F494A8 /* EthereumTransactionsByAddress.swift */; };
 		3492202C20ED786800A59A6F /* WalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492202B20ED786800A59A6F /* WalletInterface.swift */; };
 		3492202F20ED795000A59A6F /* EthereumWalletInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */; };
 		3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3492203020ED7A5F00A59A6F /* EthereumWallet.swift */; };
@@ -84,6 +86,8 @@
 		34514982213F2943004A30E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34514989213F296F004A30E7 /* EthereumWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumWalletTests.swift; sourceTree = "<group>"; };
 		34737BD92150E077008A306F /* EtherScanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherScanInfo.swift; sourceTree = "<group>"; };
+		348BC797217F6C6E00F494A8 /* EthereumTransactionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumTransactionDetail.swift; sourceTree = "<group>"; };
+		348BC799217F6CEC00F494A8 /* EthereumTransactionsByAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumTransactionsByAddress.swift; sourceTree = "<group>"; };
 		3492201D20ED415F00A59A6F /* libessentia-bridges-api-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libessentia-bridges-api-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3492202B20ED786800A59A6F /* WalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInterface.swift; sourceTree = "<group>"; };
 		3492202E20ED795000A59A6F /* EthereumWalletInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumWalletInterface.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 				34737BD92150E077008A306F /* EtherScanInfo.swift */,
 				34CABC9F216C0067004B6CAA /* EthereumSmartContract.swift */,
 				34CABCA1216C02A0004B6CAA /* EthereumTokenBalance.swift */,
+				348BC797217F6C6E00F494A8 /* EthereumTransactionDetail.swift */,
+				348BC799217F6CEC00F494A8 /* EthereumTransactionsByAddress.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				3492203D20ED7CB600A59A6F /* BitcoinCashWallet.swift in Sources */,
 				BB916402215A2D2C0083584B /* BItcoinUTXO.swift in Sources */,
 				349220D420F5658F00A59A6F /* EthereumBalance.swift in Sources */,
+				348BC798217F6C6E00F494A8 /* EthereumTransactionDetail.swift in Sources */,
 				BBB358642162883300D559A3 /* BitcoinCashSendTX.swift in Sources */,
 				3492203120ED7A5F00A59A6F /* EthereumWallet.swift in Sources */,
 				3492203720ED7C4C00A59A6F /* BitcoinWallet.swift in Sources */,
@@ -557,6 +564,7 @@
 				3492203320ED7B0B00A59A6F /* CryptoWallet.swift in Sources */,
 				BB1E8E31215947FC001B1082 /* LitecoinUTXO.swift in Sources */,
 				349220D620F5F33700A59A6F /* EthereumNumberResponce.swift in Sources */,
+				348BC79A217F6CEC00F494A8 /* EthereumTransactionsByAddress.swift in Sources */,
 				BB7AD798215BF953002F2648 /* LitecoinSendTX.swift in Sources */,
 				3492208620EFC8B700A59A6F /* BaseWallet.swift in Sources */,
 				BB8013EB215673D3003E3612 /* LitecoinBalance.swift in Sources */,

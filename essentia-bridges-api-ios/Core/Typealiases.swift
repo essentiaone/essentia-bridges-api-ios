@@ -13,3 +13,4 @@ public typealias Balance = Double
 public typealias TransactionHash = String
 public typealias TransactionData = String
 public typealias TransactionId = String
+public typealias ApiKey = String

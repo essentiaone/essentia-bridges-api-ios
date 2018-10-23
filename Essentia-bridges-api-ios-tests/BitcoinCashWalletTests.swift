@@ -109,7 +109,6 @@ class BitcoinCashTests: XCTestCase {
                 XCTAssertEqual(object.result.vin[0].number, ExpectedTransactionbyId.Vin.number)
                 XCTAssertEqual(object.result.vout[0].scriptPubKey.addresses, ExpectedTransactionbyId.Vout.addresses)
                 XCTAssertEqual(object.result.vout[0].value, ExpectedTransactionbyId.Vout.value)
-                XCTAssertEqual(object.result.vout[0].spentTxId, ExpectedTransactionbyId.Vout.txid)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

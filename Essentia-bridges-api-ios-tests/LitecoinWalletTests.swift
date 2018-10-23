@@ -16,7 +16,7 @@ private var serverUrl = url + apiVersion
 
 private var addressFrom: Address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
 private var transactionId = "4747007d8d017c6b37aea2a2b0a2bbdeaeff2f0b9ebeb3cc34d4ba260c0af4d9"
-private var expectedBalance = 0.00579998
+private var expectedBalance = 0.00379998
 
 private struct ExpectedTransactionbyId {
     static public let blockhash: String = "021af84732c7f1ff56f817ec8ca18ae70e66c406959dfee13fa1d7da97a55dce"
@@ -45,16 +45,16 @@ private struct ExpectedTransactionbyId {
 private struct ExpectedTransactionHistory {
     static public let fromNumber: Int = 0
     static public let toNumber: Int = 50
-    static public let totalItems: Int = 52
+    static public let totalItems: Int = 53
 }
 
 private struct ExpectedUTXO {
     static public let address = "LTNJvXUJeRi41DJuEg5V3zWRhUisC3KUtF"
     static public let amount = 0.00379998
-    static public let height = 1487761
+    static public let height = 1513685
     static public let satoshis = 379998
     static public let scriptPubKey = "76a9145955949e5acb12cba1cb7582c7b98eba6cdbf24b88ac"
-    static public let txid = "93c91eb170b04316ec5f34e071529eae5e6d196efda8a20272af7868b0327fa6"
+    static public let txid = "565e2c361a7c14870fe33e36c228c003a4702350d411865dfc9e932bddb5a99f"
     static public let vout = 1
 }
 

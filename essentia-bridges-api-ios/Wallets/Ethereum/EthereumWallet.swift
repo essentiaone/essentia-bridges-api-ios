@@ -11,9 +11,11 @@ import EssentiaNetworkCore
 
 class EthereumWallet: BaseWallet, EthereumWalletInterface {
     let etherScan: EtherScanInfo
+    let ethereScanNetwork: NetworkManagerInterface
     
     init(_ bridgeUrl: String, etherScan: EtherScanInfo) {
         self.etherScan = etherScan
+        self.ethereScanNetwork = NetworkManager(etherScan.url)
         super.init(bridgeUrl)
     }
     
@@ -55,6 +57,10 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
     
     func getBlockNumber(result: @escaping (Result<EthereumNumberValue>) -> Void) {
         networking.makeRequest(EthereumEndpoint.getBlockNumber, result: result)
+    }
+    
+    func getTxHistory(for address: Address, result: @escaping (Result<EthereumTransactionsByAddress>) -> Void) {
+        ethereScanNetwork.makeRequest(EthereumEndpoint.getHistory(address, etherScan.apiKey), result: result)
     }
     
     // MARK: Smart Contracts
