@@ -15,6 +15,8 @@ fileprivate enum Constants {
         static var getTransactionCount: NSString = "/ethereum/wallets/%@/transactions/count"
         static var getTransactionByHash: NSString = "/ethereum/transactions/%@"
         static var getReceiptOfTransaction: NSString = "/ethereum/transactions/receipts/%@"
+        static var txHistory: NSString =
+        "/api?module=account&action=txlist&address=%@&startblock=0&endblock=99999999&sort=asc&apikey=%@"
         static var sendTransaction = "/ethereum/wallets/transactions"
         static var callSmartContracet = "/ethereum/smart-contracts"
         static var getGasPrice = "/ethereum/gas/price"
@@ -32,7 +34,7 @@ fileprivate enum Constants {
         static var toAddress = "to"
     }
 }
-
+//http://api.etherscan.io/api?module=account&action=txl
 // MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/ethereum.rst
 enum EthereumEndpoint: RequestProtocol {
     case getBalance(Address)
@@ -44,6 +46,7 @@ enum EthereumEndpoint: RequestProtocol {
     case getBlockNumber
     case getTransactionByHash(TransactionHash)
     case getReceiptOfTransaction(TransactionHash)
+    case getHistory(Address, ApiKey)
 
     var path: String {
         switch self {
@@ -65,6 +68,8 @@ enum EthereumEndpoint: RequestProtocol {
             return Constants.Path.getGasEstimate
         case .getBlockNumber:
             return Constants.Path.getBlockNumber
+        case .getHistory(let address, let apikey):
+            return NSString(format:  Constants.Path.txHistory, address, apikey).description
         }
     }
     

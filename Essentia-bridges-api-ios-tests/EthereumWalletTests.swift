@@ -13,7 +13,7 @@ import HDWalletKit
 fileprivate var url = "https://b3.essentia.network"
 fileprivate var apiVersion = "/api/v1"
 fileprivate var serverUrl = url + apiVersion
-fileprivate var ethterScanUrl = "http://api.etherscan.io/api"
+fileprivate var ethterScanUrl = "http://api.etherscan.io"
 
 fileprivate var address = "0x34205555576717bBdF8158E2b2c9ed64EB1e6B85"
 fileprivate var destinationAddrss = "0xA705b88Ef92101f67AF73bf053D0282dbC07d348"
