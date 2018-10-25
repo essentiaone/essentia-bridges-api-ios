@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate var etherScanApiUrl = "http://api.etherscan.io/api"
+fileprivate var etherScanApiUrl = "http://api.etherscan.io"
 
 public class CryptoWallet {
     public init(bridgeApiUrl: String, etherScanApiKey: String) {
