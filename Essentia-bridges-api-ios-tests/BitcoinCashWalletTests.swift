@@ -21,7 +21,7 @@ private var transactionData =
  "627c66fb8be7947be63c52da7589379515d4e0a604f8141781e62294721166bf621e73a82cbf2342c858eeac00000000"].joined()
 
 private var expectedTxId: String =  "f53fb9bcdde78bcf580efacb6ce777bde5e345a9392e5ed3f3e84fe15a63cf1a"
-private var expectedBalance = 0.01126419
+private var expectedBalance = 0.0211909
 
 private struct ExpectedTransactionHistory {
     static public let fromNumber: Int = 0
