@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EtherScanInfo {
-    let url: String
-    let apiKey: String
+public struct EtherScanInfo {
+    public let url: String
+    public let apiKey: String
 }
