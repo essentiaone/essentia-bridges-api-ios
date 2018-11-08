@@ -22,6 +22,7 @@ fileprivate enum Constants {
         static var getGasPrice = "/ethereum/gas/price"
         static var getGasEstimate = "/ethereum/gas/estimate"
         static var getBlockNumber = "/ethereum/block-number"
+        static var getGasSpeed = "/third-party/ethereum/gas-station/gas/price"
     }
     
     enum Body {
@@ -43,6 +44,7 @@ enum EthereumEndpoint: RequestProtocol {
     case getTransactionByHash(TransactionHash)
     case getReceiptOfTransaction(TransactionHash)
     case getHistory(Address, ApiKey)
+    case getGasSpeed
     
     var path: String {
         switch self {
@@ -66,6 +68,8 @@ enum EthereumEndpoint: RequestProtocol {
             return Constants.Path.getBlockNumber
         case .getHistory(let address, let apikey):
             return NSString(format: Constants.Path.txHistory, address, apikey).description
+        case .getGasSpeed:
+            return Constants.Path.getGasSpeed
         }
     }
     

@@ -62,6 +62,10 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
         ethereScanNetwork.makeRequest(EthereumEndpoint.getHistory(address, etherScan.apiKey), result: result)
     }
     
+    func getGasSpeed(result: @escaping (Result<EthereumGasSpeed>) -> Void) {
+        networking.makeRequest(EthereumEndpoint.getGasSpeed, result: result)
+    }
+    
     // MARK: Smart Contracts
     func getTokenBalance(info: EthereumSmartContract, result: @escaping (Result<EthereumTokenBalance>) -> Void) {
         networking.makeRequest(EthereumEndpoint.callSmartContract(info.to, withData: info.data), result: result)

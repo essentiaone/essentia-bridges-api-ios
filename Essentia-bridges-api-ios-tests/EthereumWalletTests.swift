@@ -61,8 +61,19 @@ class EthereumTests: XCTestCase {
     func testGetEstimate() {
         let expectation = self.expectation(description: "Get gas estimate")
         ethWallet?.getGasEstimate(from: address, to: destinationAddrss, data: "0x", result: { (result) in
+            print(result)
             expectation.fulfill()
         })
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testGetGasSpeed() {
+        let expectation = self.expectation(description: "Get gas speed")
+        ethWallet?.getGasSpeed(result: { (result) in
+            print(result)
+            expectation.fulfill()
+        })
+        
         waitForExpectations(timeout: 5, handler: nil)
     }
     

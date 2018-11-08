@@ -24,6 +24,7 @@ public protocol EthereumWalletInterface: WalletInterface {
                         data: String,
                         result: @escaping (Result<EthereumNumberValue>) -> Void)
     func getBlockNumber(result: @escaping (Result<EthereumNumberValue>) -> Void)
+    func getGasSpeed(result: @escaping (Result<EthereumGasSpeed>) -> Void)
     func getTransactionByHash(for hash: TransactionHash, result: @escaping (Result<String>) -> Void)
     func getReceiptOfTransaction(for hash: TransactionHash, result: @escaping (Result<String>) -> Void)
     func getTokenBalance(info: EthereumSmartContract, result: @escaping (Result<EthereumTokenBalance>) -> Void)
