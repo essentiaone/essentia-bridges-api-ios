@@ -9,7 +9,7 @@
 import Foundation
 
 public struct EthereumTransactionsByAddress: Codable {
-    public  var status: String
-    public  var message: String
+    public var status: String
+    public var message: String
     public var result: [EthereumTransactionDetail]
 }

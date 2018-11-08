@@ -1,5 +1,7 @@
 disabled_rules:
  - trailing_whitespace
+ - private_over_fileprivate
+ - no_fallthrough_only
  - identifier_name
 excluded: 
   - Carthage

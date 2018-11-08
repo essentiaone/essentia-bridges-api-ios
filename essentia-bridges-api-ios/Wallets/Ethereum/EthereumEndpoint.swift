@@ -22,16 +22,13 @@ fileprivate enum Constants {
         static var getGasPrice = "/ethereum/gas/price"
         static var getGasEstimate = "/ethereum/gas/estimate"
         static var getBlockNumber = "/ethereum/block-number"
-    }
-    
-    enum Headers {
-        static var address = "address"
-        static var data = "data"
+        static var getGasSpeed = "/third-party/ethereum/gas-station/gas/price"
     }
     
     enum Body {
         static var data = "data"
-        static var toAddress = "to"
+        static var addressFrom = "from"
+        static var addressTo = "to"
     }
 }
 //http://api.etherscan.io/api?module=account&action=txl
@@ -42,12 +39,13 @@ enum EthereumEndpoint: RequestProtocol {
     case getTransactionCount(Address)
     case callSmartContract(Address, withData: TransactionData)
     case getGasPrice
-    case getGasEstimate(Address, withData: TransactionData)
+    case getGasEstimate(from: Address, to: Address, data: String)
     case getBlockNumber
     case getTransactionByHash(TransactionHash)
     case getReceiptOfTransaction(TransactionHash)
     case getHistory(Address, ApiKey)
-
+    case getGasSpeed
+    
     var path: String {
         switch self {
         case .getBalance(let address):
@@ -69,35 +67,36 @@ enum EthereumEndpoint: RequestProtocol {
         case .getBlockNumber:
             return Constants.Path.getBlockNumber
         case .getHistory(let address, let apikey):
-            return NSString(format:  Constants.Path.txHistory, address, apikey).description
+            return NSString(format: Constants.Path.txHistory, address, apikey).description
+        case .getGasSpeed:
+            return Constants.Path.getGasSpeed
         }
     }
     
-    var parameters: [String : Any]? {
+    var parameters: [String: Any]? {
         switch self {
         case .callSmartContract(let toAddress, let withData):
-            return [Constants.Body.toAddress: toAddress,
+            return [Constants.Body.addressTo: toAddress,
                     Constants.Body.data: withData]
         case .sendTransaction(let withData):
             return [Constants.Body.data: withData]
+        case .getGasEstimate(let from, let to, let data):
+            return [Constants.Body.addressFrom: from,
+                    Constants.Body.addressTo: to,
+                    Constants.Body.data: data]
         default:
             return nil
         }
     }
     
-    var extraHeaders: [String : String]? {
-        switch self {
-        case .getGasEstimate(let address, let withData):
-            return [Constants.Headers.address: address,
-                    Constants.Headers.data: withData]
-        default:
-            return nil
-        }
+    var extraHeaders: [String: String]? {
+        return nil
     }
     
     var requestType: RequestType {
         switch self {
         case .callSmartContract: fallthrough
+        case .getGasEstimate: fallthrough
         case .sendTransaction:
             return .post
         default:
