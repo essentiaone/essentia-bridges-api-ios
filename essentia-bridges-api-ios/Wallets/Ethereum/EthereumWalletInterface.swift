@@ -15,7 +15,7 @@ fileprivate enum Constants {
 
 public protocol EthereumWalletInterface: WalletInterface {
     func getBalance(for address: Address, result: @escaping (Result<EthereumBalance>) -> Void)
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<String>) -> Void)
+    func sendTransaction(with data: TransactionData, result: @escaping (Result<EthereumTxId>) -> Void)
     func getTransactionCount(for address: Address, result: @escaping (Result<EthereumTransactionCount>) -> Void)
     func callSmartContract<T: Decodable>(info: EthereumSmartContract, result: @escaping (Result<T>) -> Void)
     func getGasPrice(result: @escaping (Result<EthereumNumberValue>) -> Void)
