@@ -23,7 +23,7 @@ class EthereumWallet: BaseWallet, EthereumWalletInterface {
         networking.makeRequest(EthereumEndpoint.getBalance(address), result: result)
     }
     
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<String>) -> Void) {
+    func sendTransaction(with data: TransactionData, result: @escaping (Result<EthereumTxId>) -> Void) {
         networking.makeRequest(EthereumEndpoint.sendTransaction(withData: data), result: result)
     }
     
