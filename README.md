@@ -4,7 +4,7 @@
 [![Badge w/ Licence](https://cocoapod-badges.herokuapp.com/l/essentia-bridges-api-ios/badge.svg)](https://cocoadocs.org/docsets/essentia-bridges-api-ios)
 
 # Essentia Brides API (Swift)
-Swift wrapper on (our bridges API) [https://github.com/essentiaone/essentia-bridges-api] and other blockchain services.
+Swift wrapper on [our bridges API](https://github.com/essentiaone/essentia-bridges-api) and other blockchain services.
 ## Features
 ### Ethereum
 - Get balance
@@ -68,7 +68,7 @@ wallet.bitcoin.getBalance(for: btcAddress, result: { (result) in
 print(result)
 })
 ```
-(Usage examples)[https://github.com/essentiaone/essentia-bridges-api-ios/tree/develop/Essentia-bridges-api-ios-tests]
+[Usage examples](https://github.com/essentiaone/essentia-bridges-api-ios/tree/develop/Essentia-bridges-api-ios-tests)
 
 ## License
 essentia-bridges-api-ios is released under the [MIT License](https://github.com/essentiaone/essentia-bridges-api-ios/blob/develop/LICENSE.md).
