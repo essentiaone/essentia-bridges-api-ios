@@ -19,6 +19,7 @@ Swift wrapper on [our bridges API](https://github.com/essentiaone/essentia-bridg
  -Get receipt of transaction
 - Get token balance
  -Get transaction history
+ -Get ERC20 tokens history
  ### Bitcoin
  - Get balance
  - Send transaction
