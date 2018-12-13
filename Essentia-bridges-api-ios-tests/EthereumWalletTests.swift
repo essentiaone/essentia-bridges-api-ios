@@ -16,7 +16,7 @@ fileprivate var serverUrl = url + apiVersion
 fileprivate var ethterScanUrl = "http://api.etherscan.io"
 
 fileprivate var addressWithTokens = "0x9d143eF786DC2ddF9B566D8aac7438727fBE7cb7"
-fileprivate var zilSmartContractAddress = "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
+fileprivate var zilSmartContractAddress = "0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27"
 
 fileprivate var address = "0x3264d85ca1d3a7725bc9d2a800deeabc6519a447"
 fileprivate var destinationAddrss = "0x2f5059f64D5C0c4895092D26CDDacC58751e0C3C"
