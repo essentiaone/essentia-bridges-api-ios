@@ -15,6 +15,9 @@ fileprivate var apiVersion = "/api/v1"
 fileprivate var serverUrl = url + apiVersion
 fileprivate var ethterScanUrl = "http://api.etherscan.io"
 
+fileprivate var addressWithTokens = "0x9d143eF786DC2ddF9B566D8aac7438727fBE7cb7"
+fileprivate var zilSmartContractAddress = "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2"
+
 fileprivate var address = "0x3264d85ca1d3a7725bc9d2a800deeabc6519a447"
 fileprivate var destinationAddrss = "0x2f5059f64D5C0c4895092D26CDDacC58751e0C3C"
 fileprivate var transactionData = "0x338b5dea0000000000000000000000008f0921f30555624143d427b340b1156" +
@@ -97,6 +100,22 @@ class EthereumTests: XCTestCase {
             switch result {
             case .success(let object):
                 XCTAssert(object.value != 0)
+                expectation.fulfill()
+            case .failure:
+                XCTFail(expectation.description)
+            }
+        })
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testGetTokenHistory() {
+        let expectation = self.expectation(description: "Get token history")
+        ethWallet?.getTokenTxHistory(for: addressWithTokens,
+                                     smartContract: zilSmartContractAddress,
+                                     result: { (result) in
+            switch result {
+            case .success(let object):
+                print(object)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

@@ -28,6 +28,9 @@ public protocol EthereumWalletInterface: WalletInterface {
     func getTransactionByHash(for hash: TransactionHash, result: @escaping (Result<String>) -> Void)
     func getReceiptOfTransaction(for hash: TransactionHash, result: @escaping (Result<String>) -> Void)
     func getTokenBalance(info: EthereumSmartContract, result: @escaping (Result<EthereumTokenBalance>) -> Void)
+    func getTokenTxHistory(for address: Address,
+                           smartContract: Address,
+                           result: @escaping (Result<EthereumTransactionsByAddress>) -> Void)
     func getTxHistory(for address: Address, result: @escaping (Result<EthereumTransactionsByAddress>) -> Void)
 }
 
