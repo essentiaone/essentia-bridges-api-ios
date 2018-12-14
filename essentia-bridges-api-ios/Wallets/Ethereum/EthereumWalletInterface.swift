@@ -30,7 +30,7 @@ public protocol EthereumWalletInterface: WalletInterface {
     func getTokenBalance(info: EthereumSmartContract, result: @escaping (Result<EthereumTokenBalance>) -> Void)
     func getTokenTxHistory(for address: Address,
                            smartContract: Address,
-                           result: @escaping (Result<EthereumTransactionsByAddress>) -> Void)
+                           result: @escaping (Result<EthereumTokenTransactionByAddress>) -> Void)
     func getTxHistory(for address: Address, result: @escaping (Result<EthereumTransactionsByAddress>) -> Void)
 }
 
