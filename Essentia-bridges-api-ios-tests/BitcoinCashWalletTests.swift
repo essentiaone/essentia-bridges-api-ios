@@ -131,6 +131,8 @@ class BitcoinCashTests: XCTestCase {
                     expectation.fulfill()
                 case .unknownError:
                     XCTFail(expectation.description)
+                case .defaultError(let error):
+                    XCTFail(error.localizedDescription)
                 }
             }
         })

@@ -14,23 +14,26 @@ class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
         super.init(bridgeUrl)
     }
     
-    func getBalance(for address: Address, result: @escaping (Result<LitecoinBalance>) -> Void) {
+    func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getBalance(address), result: result)
     }
     
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<LitecoinSendTXResponse>) -> Void) {
+    func sendTransaction(with data: TransactionData,
+                         result: @escaping (NetworkResult<LitecoinSendTXResponse>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.sendTransaction(withData: data), result: result)
     }
     
-    func getTransactionsHistory(for address: Address, result: @escaping (Result<LitecoinTransactionsHistory>) -> Void) {
+    func getTransactionsHistory(for address: Address,
+                                result: @escaping (NetworkResult<LitecoinTransactionsHistory>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
-    func getTransactionById(for txId: TransactionId, result: @escaping (Result<LitecoinTransactionValue>) -> Void) {
+    func getTransactionById(for txId: TransactionId,
+                            result: @escaping (NetworkResult<LitecoinTransactionValue>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getTransactionById(txId), result: result)
     }
     
-    func getUTxo(for address: Address, result: @escaping (Result<[LitecoinUTXO]>) -> Void) {
+    func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getUTxo(address), result: result)
     }
 }
