@@ -13,11 +13,13 @@ private enum Constants {
 }
 
 public protocol LitecoinWalletInterface: WalletInterface {
-    func getBalance(for address: String, result: @escaping (Result<LitecoinBalance>) -> Void)
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<LitecoinSendTXResponse>) -> Void)
-    func getTransactionsHistory(for address: Address, result: @escaping (Result<LitecoinTransactionsHistory>) -> Void)
-    func getUTxo(for address: Address, result: @escaping (Result<[LitecoinUTXO]>) -> Void)
-    func getTransactionById(for txId: TransactionId, result: @escaping (Result<LitecoinTransactionValue>) -> Void)
+    func getBalance(for address: String, result: @escaping (NetworkResult<LitecoinBalance>) -> Void)
+    func sendTransaction(with data: TransactionData, result: @escaping (NetworkResult<LitecoinSendTXResponse>) -> Void)
+    func getTransactionsHistory(for address: Address,
+                                result: @escaping (NetworkResult<LitecoinTransactionsHistory>) -> Void)
+    func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void)
+    func getTransactionById(for txId: TransactionId,
+                            result: @escaping (NetworkResult<LitecoinTransactionValue>) -> Void)
 }
 
 extension LitecoinWalletInterface {

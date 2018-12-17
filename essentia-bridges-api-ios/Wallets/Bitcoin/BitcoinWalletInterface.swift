@@ -14,11 +14,12 @@ private enum Constants {
 }
 
 public protocol BitcoinWalletInterface: WalletInterface {
-    func getBalance(for address: String, result: @escaping (Result<BitcoinBalance>) -> Void)
-    func sendTransaction(with data: TransactionData, result: @escaping (Result<BitcoinSendTXResponse>) -> Void)
-    func getTransactionsHistory(for address: Address, result: @escaping (Result<BitcoinTransactionsHistory>) -> Void)
-    func getUTxo(for address: Address, result: @escaping (Result<[BitcoinUTXO]>) -> Void)
-    func getTransactionById(for txId: TransactionId, result: @escaping (Result<BitcoinTransactionValue>) -> Void)
+    func getBalance(for address: String, result: @escaping (NetworkResult<BitcoinBalance>) -> Void)
+    func sendTransaction(with data: TransactionData, result: @escaping (NetworkResult<BitcoinSendTXResponse>) -> Void)
+    func getTransactionsHistory(for address: Address,
+                                result: @escaping (NetworkResult<BitcoinTransactionsHistory>) -> Void)
+    func getUTxo(for address: Address, result: @escaping (NetworkResult<[BitcoinUTXO]>) -> Void)
+    func getTransactionById(for txId: TransactionId, result: @escaping (NetworkResult<BitcoinTransactionValue>) -> Void)
 }
 
 extension BitcoinWalletInterface {

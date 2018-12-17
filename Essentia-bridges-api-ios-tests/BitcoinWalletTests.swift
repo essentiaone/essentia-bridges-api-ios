@@ -164,7 +164,9 @@ class BitcoinTests: XCTestCase {
                     XCTAssert(localizedErr.error != "")
                     expectation.fulfill()
                 case .unknownError:
-                XCTFail(expectation.description)
+                    XCTFail(expectation.description)
+                case .defaultError(let error):
+                    XCTFail(error.localizedDescription)
             }
         }
         })
