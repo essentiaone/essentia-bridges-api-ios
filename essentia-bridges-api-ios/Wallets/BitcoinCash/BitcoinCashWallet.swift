@@ -9,28 +9,29 @@
 import Foundation
 import EssentiaNetworkCore
 
-class BitcoinCashWallet: BaseWallet, BitcoinCashWalletInterface {
+public typealias SendBitcoinCashTx = (NetworkResult<BitcoinCashSendTXResponse>) -> Void
+public typealias HistoryBitcoinCashTx = (NetworkResult<BitcoinCashTransactionsHistory>) -> Void
+public typealias BitcoinCashTx = (NetworkResult<BitcoinCashTransactionByIdValue>) -> Void
+
+public class BitcoinCashWallet: BaseWallet, BitcoinCashWalletInterface {
     
-    override init(_ bridgeUrl: String) {
+    override public init(_ bridgeUrl: String) {
         super.init(bridgeUrl)
     }
     
-    func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinCashBalance>) -> Void) {
+    public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinCashBalance>) -> Void) {
         networking.makeAsyncRequest(BitcoinCashEndpoint.getBalance(address), result: result)
     }
     
-    func getTransactionsHistory(for addr: Address,
-                                result: @escaping (NetworkResult<BitcoinCashTransactionsHistory>) -> Void) {
+    public func getTransactionsHistory(for addr: Address, result: @escaping HistoryBitcoinCashTx) {
         networking.makeAsyncRequest(BitcoinCashEndpoint.getTransactionsHistory(addr), result: result)
     }
     
-    func getTransactionById(for txId: String,
-                            result: @escaping (NetworkResult<BitcoinCashTransactionByIdValue>) -> Void) {
+    public func getTransactionById(for txId: String, result: @escaping BitcoinCashTx) {
         networking.makeAsyncRequest(BitcoinCashEndpoint.getTransactionById(txId), result: result)
     }
     
-    func sendRawTransaction(with data: TransactionData,
-                            result: @escaping (NetworkResult<BitcoinCashSendTXResponse>) -> Void) {
+    public func sendRawTransaction(with data: TransactionData, result: @escaping SendBitcoinCashTx) {
         networking.makeAsyncRequest(BitcoinCashEndpoint.sendRawTransaction(withData: data), result: result)
     }
     

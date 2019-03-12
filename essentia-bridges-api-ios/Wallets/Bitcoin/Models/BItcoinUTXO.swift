@@ -6,7 +6,7 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-public struct BitcoinUTXO: Decodable {
+public struct BitcoinUTXO: Codable {
     public let address: String
     public let amount: Double
     public let confirmations: Int

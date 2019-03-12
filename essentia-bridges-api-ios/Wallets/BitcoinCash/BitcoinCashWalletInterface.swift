@@ -24,7 +24,7 @@ public protocol BitcoinCashWalletInterface: WalletInterface {
 }
 
 extension BitcoinCashWalletInterface {
-    var title: String {
+    public var title: String {
         return Constants.title
     }
 }

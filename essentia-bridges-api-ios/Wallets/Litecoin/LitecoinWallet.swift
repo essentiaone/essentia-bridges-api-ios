@@ -8,32 +8,29 @@
 
 import EssentiaNetworkCore
 
-class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
+public class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
     
-    override init(_ bridgeUrl: String) {
+    public override init(_ bridgeUrl: String) {
         super.init(bridgeUrl)
     }
     
-    func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
+    public func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getBalance(address), result: result)
     }
     
-    func sendTransaction(with data: TransactionData,
-                         result: @escaping (NetworkResult<LitecoinSendTXResponse>) -> Void) {
+    public func sendTransaction(with data: TransactionData, result: @escaping SendLitecoinTx) {
         networking.makeAsyncRequest(LitecoinEndpoint.sendTransaction(withData: data), result: result)
     }
     
-    func getTransactionsHistory(for address: Address,
-                                result: @escaping (NetworkResult<LitecoinTransactionsHistory>) -> Void) {
+    public func getTransactionsHistory(for address: Address, result: @escaping HistoryLitecoinTx) {
         networking.makeAsyncRequest(LitecoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
-    func getTransactionById(for txId: TransactionId,
-                            result: @escaping (NetworkResult<LitecoinTransactionValue>) -> Void) {
+    public func getTransactionById(for txId: TransactionId, result: @escaping LitecoinTx) {
         networking.makeAsyncRequest(LitecoinEndpoint.getTransactionById(txId), result: result)
     }
     
-    func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void) {
+    public func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void) {
         networking.makeAsyncRequest(LitecoinEndpoint.getUTxo(address), result: result)
     }
 }
