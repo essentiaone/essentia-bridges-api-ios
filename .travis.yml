@@ -1,10 +1,9 @@
-language: 
-  - objective-c
-osx_image: 
-  - xcode9.4
+language: objective-c
+osx_image: xcode10.1
 before_install:
-   - pod cache clean --all    
-   - pod update
-install: true
+- pod cache clean --all
+- pod update
+install:
+- gem install xcpretty-travis-formatter
 script:
-  - xcodebuild -workspace 'essentia-bridges-api-ios.xcworkspace' -scheme 'essentia-bridges-api-ios' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4'
+  - xcodebuild -workspace 'essentia-bridges-api-ios.xcworkspace' -scheme 'essentia-bridges-api-ios' -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.4' | xcpretty -f `xcpretty-travis-formatter`
