@@ -9,10 +9,10 @@
 import Foundation
 import EssentiaNetworkCore
 
-class BaseWallet {
-    init(_ serverUrl: String) {
+public class BaseWallet {
+    public init(_ serverUrl: String) {
         networking = NetworkManager(serverUrl)
     }
     
-    let networking: NetworkManagerInterface
+    public let networking: NetworkManagerInterface
 }

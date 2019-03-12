@@ -14,7 +14,7 @@ private var url = "https://b3.essentia.network"
 private var apiVersion = "/api/v1"
 private var serverUrl = url + apiVersion
 
-private var addressFrom: Address = "qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
+private var addressFrom = "qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
 private var transactionData =
 ["01000000010000000000000000000000000000000000000000000000000000000000000000fff",
  "fffff0704ffff001d0104ffffffff0100f2052a0100000043410496b538e853519c726a2c91e61ec11600ae1390813a",

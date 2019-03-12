@@ -23,7 +23,7 @@ public protocol BitcoinWalletInterface: WalletInterface {
 }
 
 extension BitcoinWalletInterface {
-    var title: String {
+    public var title: String {
         return Constants.title
     }
 }
