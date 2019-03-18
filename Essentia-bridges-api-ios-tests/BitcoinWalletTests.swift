@@ -14,7 +14,7 @@ private var url = "https://b3.essentia.network"
 private var apiVersion = "/api/v1"
 private var serverUrl = url + apiVersion
 
-private var addressFrom: Address = "1MoRmwmoA1cFSuePCGJV6UWLTmcxaBBKfW"
+private var addressFrom: essentia_bridges_api_ios.Address = "1MoRmwmoA1cFSuePCGJV6UWLTmcxaBBKfW"
 private var transactionId = "b7b707244f0b56a49ea9339b6a70c589f24bdacbb20d850f55e3bb855f386c87"
 private var transactionData =
 ["02000000014fe69799ba112fbe7210bb46a24abdb2b4c7aae12db4e2b0c7fe88996734fbe0",
