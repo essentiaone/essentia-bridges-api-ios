@@ -35,7 +35,9 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xccheckout
+/xcschemes/
 *.xcscmblueprint
+essentia-bridges-api-ios.xcodeproj/xcuserdata
 
 ## Obj-C/Swift specific
 *.hmap
@@ -102,6 +104,7 @@ fastlane/test_output
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
 
 
 # End of https://www.gitignore.io/api/swift,xcode,cocoapods
