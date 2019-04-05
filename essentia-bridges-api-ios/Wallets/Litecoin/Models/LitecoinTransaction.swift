@@ -66,9 +66,9 @@ public struct LitecoinTransactionVin: Decodable {
 }
 
 public struct LitecoinTransactionValue: Decodable {
-    public let blockhash: String
+    public let blockhash: String?
     public let blockheight: Int
-    public let blocktime: Int
+    public let blocktime: Int?
     public let confirmations: Int
     public let fees: Double
     public let locktime: Int
