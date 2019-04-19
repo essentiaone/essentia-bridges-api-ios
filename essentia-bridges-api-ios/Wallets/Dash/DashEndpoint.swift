@@ -18,13 +18,7 @@ private enum Constants {
     }
     
     enum Headers {
-        static var address = "address"
         static var data = "data"
-    }
-    
-    enum Body {
-        static var body = "body"
-        static var toAddress = "to"
     }
 }
 
