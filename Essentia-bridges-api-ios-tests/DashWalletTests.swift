@@ -193,5 +193,4 @@ class DashTests: XCTestCase {
         })
         waitForExpectations(timeout: 5, handler: nil)
     }
-    
 }
