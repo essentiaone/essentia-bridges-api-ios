@@ -18,10 +18,12 @@ public class CryptoWallet {
                                                            apiKey: etherScanApiKey))
         litecoin = LitecoinWallet(bridgeApiUrl)
         bitcoinCash = BitcoinCashWallet(bridgeApiUrl)
+        dash = DashWallet(bridgeApiUrl)
     }
 
     public let bitcoin: BitcoinWalletInterface
     public let ethereum: EthereumWalletInterface
     public let litecoin: LitecoinWalletInterface
     public let bitcoinCash: BitcoinCashWalletInterface
+    public let dash: DashWalletInterface
 }
