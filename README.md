@@ -37,6 +37,11 @@ Swift wrapper on [our bridges API](https://github.com/essentiaone/essentia-bridg
  - Get transaction history 
  - Get transaction by id
  - Send raw transaction
+ ### Dash
+ - Get balance
+ - Get transaction history 
+ - Get transaction by id
+ - Send raw transaction
 ## Installation
 ### CocoaPods
 <p>To integrate Bridges API into your Xcode project using <a href="http://cocoapods.org">CocoaPods</a>, specify it in your <code>Podfile</code>:</p>
