@@ -15,22 +15,22 @@ public class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
     }
     
     public func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
-        networking.makeAsyncRequest(LitecoinEndpoint.getBalance(address), result: result)
+        networking.request(LitecoinEndpoint.getBalance(address), result: result)
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendLitecoinTx) {
-        networking.makeAsyncRequest(LitecoinEndpoint.sendTransaction(withData: data), result: result)
+        networking.request(LitecoinEndpoint.sendTransaction(withData: data), result: result)
     }
     
     public func getTransactionsHistory(for address: Address, result: @escaping HistoryLitecoinTx) {
-        networking.makeAsyncRequest(LitecoinEndpoint.getTransactionsHistory(address), result: result)
+        networking.request(LitecoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
     public func getTransactionById(for txId: TransactionId, result: @escaping LitecoinTx) {
-        networking.makeAsyncRequest(LitecoinEndpoint.getTransactionById(txId), result: result)
+        networking.request(LitecoinEndpoint.getTransactionById(txId), result: result)
     }
     
     public func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void) {
-        networking.makeAsyncRequest(LitecoinEndpoint.getUTxo(address), result: result)
+        networking.request(LitecoinEndpoint.getUTxo(address), result: result)
     }
 }
