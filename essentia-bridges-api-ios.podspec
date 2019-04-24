@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
   s.module_name   = "EssentiaBridgesApi"
   s.source_files = 'essentia-bridges-api-ios/**/*.{swift}'
 
-  s.dependency 'essentia-network-core-ios' :git => 'https://github.com/essentiaone/essentia-network-core-ios.git', :branch => 'feature/swift-5'
+  s.dependency 'essentia-network-core-ios'
 end
