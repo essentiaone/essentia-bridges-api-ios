@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { 'impl' => 'pavlo.bojkoo@gmail.com' }
   s.source           = { :git => 'https://github.com/essentiaone/essentia-bridges-api-ios.git', :tag => s.version.to_s }
   
-  s.swift_version= '4.2'
+  s.swift_version= '5'
   s.static_framework  = true
   s.requires_arc = true
 

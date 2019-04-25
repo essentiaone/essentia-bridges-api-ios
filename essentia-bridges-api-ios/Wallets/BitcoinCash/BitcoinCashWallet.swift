@@ -20,19 +20,19 @@ public class BitcoinCashWallet: BaseWallet, BitcoinCashWalletInterface {
     }
     
     public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinCashBalance>) -> Void) {
-        networking.makeAsyncRequest(BitcoinCashEndpoint.getBalance(address), result: result)
+        networking.request(BitcoinCashEndpoint.getBalance(address), result: result)
     }
     
     public func getTransactionsHistory(for addr: Address, result: @escaping HistoryBitcoinCashTx) {
-        networking.makeAsyncRequest(BitcoinCashEndpoint.getTransactionsHistory(addr), result: result)
+        networking.request(BitcoinCashEndpoint.getTransactionsHistory(addr), result: result)
     }
     
     public func getTransactionById(for txId: String, result: @escaping BitcoinCashTx) {
-        networking.makeAsyncRequest(BitcoinCashEndpoint.getTransactionById(txId), result: result)
+        networking.request(BitcoinCashEndpoint.getTransactionById(txId), result: result)
     }
     
     public func sendRawTransaction(with data: TransactionData, result: @escaping SendBitcoinCashTx) {
-        networking.makeAsyncRequest(BitcoinCashEndpoint.sendRawTransaction(withData: data), result: result)
+        networking.request(BitcoinCashEndpoint.sendRawTransaction(withData: data), result: result)
     }
     
 }

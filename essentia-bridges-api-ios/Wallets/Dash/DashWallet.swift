@@ -15,22 +15,22 @@ public class DashWallet: BaseWallet, DashWalletInterface {
     }
     
     public func getBalance(for address: Address, result: @escaping (NetworkResult<DashBalance>) -> Void) {
-        networking.makeAsyncRequest(DashEndpoint.getBalance(address), result: result)
+        networking.request(DashEndpoint.getBalance(address), result: result)
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendDashTx) {
-        networking.makeAsyncRequest(DashEndpoint.sendTransaction(withData: data), result: result)
+        networking.request(DashEndpoint.sendTransaction(withData: data), result: result)
     }
     
     public func getTransactionsHistory(for address: Address, result: @escaping HistoryDashTx) {
-        networking.makeAsyncRequest(DashEndpoint.getTransactionsHistory(address), result: result)
+        networking.request(DashEndpoint.getTransactionsHistory(address), result: result)
     }
     
     public func getTransactionById(for txId: TransactionId, result: @escaping DashTx) {
-        networking.makeAsyncRequest(DashEndpoint.getTransactionById(txId), result: result)
+        networking.request(DashEndpoint.getTransactionById(txId), result: result)
     }
     
     public func getUTxo(for address: Address, result: @escaping (NetworkResult<[DashUTXO]>) -> Void) {
-        networking.makeAsyncRequest(DashEndpoint.getUTxo(address), result: result)
+        networking.request(DashEndpoint.getUTxo(address), result: result)
     }
 }

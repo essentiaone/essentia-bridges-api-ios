@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct dashBalanceValue: Decodable {
+public struct DashBalanceValue: Decodable {
     public let value: Double
     
     enum CodingKeys: String, CodingKey {
@@ -17,7 +17,7 @@ public struct dashBalanceValue: Decodable {
 }
 
 public struct DashBalance: Decodable {
-    public let balance: dashBalanceValue
+    public let balance: DashBalanceValue
     
     enum CodingKeys: String, CodingKey {
         case balance = "result"

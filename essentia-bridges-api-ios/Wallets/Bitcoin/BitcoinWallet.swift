@@ -16,25 +16,25 @@ public class BitcoinWallet: BaseWallet, BitcoinWalletInterface {
     }
     
     public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinBalance>) -> Void) {
-        networking.makeAsyncRequest(BitcoinEndpoint.getBalance(address), result: result)
+        networking.request(BitcoinEndpoint.getBalance(address), result: result)
     }
     
     public func sendTransaction(with data: TransactionData,
                                 result: @escaping (NetworkResult<BitcoinSendTXResponse>) -> Void) {
-        networking.makeAsyncRequest(BitcoinEndpoint.sendTransaction(withData: data), result: result)
+        networking.request(BitcoinEndpoint.sendTransaction(withData: data), result: result)
     }
     
     public func getTransactionsHistory(for address: Address,
                                        result: @escaping (NetworkResult<BitcoinTransactionsHistory>) -> Void) {
-        networking.makeAsyncRequest(BitcoinEndpoint.getTransactionsHistory(address), result: result)
+        networking.request(BitcoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
     public func getTransactionById(for txId: TransactionId,
                                    result: @escaping (NetworkResult<BitcoinTransactionValue>) -> Void) {
-        networking.makeAsyncRequest(BitcoinEndpoint.getTransactionById(txId), result: result)
+        networking.request(BitcoinEndpoint.getTransactionById(txId), result: result)
     }
     
     public func getUTxo(for address: Address, result: @escaping (NetworkResult<[BitcoinUTXO]>) -> Void) {
-        networking.makeAsyncRequest(BitcoinEndpoint.getUTxo(address), result: result)
+        networking.request(BitcoinEndpoint.getUTxo(address), result: result)
     }
 }

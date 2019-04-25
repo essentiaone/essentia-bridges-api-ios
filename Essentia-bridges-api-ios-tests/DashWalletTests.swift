@@ -30,7 +30,7 @@ private struct ExpectedTransactionbyId {
     }
     
     static public let confirmations: Int = 8
-    static public let extraPayload: String = "0100a5ce0f00cbdb95f079947b5def8599baec1b638212ab8142b8dba62fa0e2131c8c1c5377"
+    static public let extraPayload = "0100a5ce0f00cbdb95f079947b5def8599baec1b638212ab8142b8dba62fa0e2131c8c1c5377"
     static public let extraPayloadSize: Int = 38
     static public let isCoinBase: Bool = true
     static public let locktime: Int = 0
@@ -42,14 +42,14 @@ private struct ExpectedTransactionbyId {
     static public let valueOut: Double = 3.34571244
     
     public struct Vin {
-        static public let coinbase: String = "03a5ce0f1a4d696e656420627920416e74506f6f6c35b0001f01204beb20e2540200008b090000"
+        static public let coinbase = "03a5ce0f1a4d696e656420627920416e74506f6f6c35b0001f01204beb20e2540200008b090000"
         static public let sequence: Int = 4294967295
         static public let number: Int = 0
     }
     
     public struct Vout {
         static public let addresses: [String] = ["Xkii6qKmiqC229oggR2RHrw9c7U5C3CCTx"]
-        static public let asm: String = "OP_DUP OP_HASH160 6e0ba2ccdc601f1b0af728917bdb6cedb1733c59 OP_EQUALVERIFY OP_CHECKSIG"
+        static public let asm = "OP_DUP OP_HASH160 6e0ba2ccdc601f1b0af728917bdb6cedb1733c59 OP_EQUALVERIFY OP_CHECKSIG"
         static public let hex: String = "76a9146e0ba2ccdc601f1b0af728917bdb6cedb1733c5988ac"
         static public let value: String = "1.67285620"
         static public let spentTxId: String = "ba3e6663d7e55deec916771b7ceb8dcf128eb671f68048027d3368d05df14051"
