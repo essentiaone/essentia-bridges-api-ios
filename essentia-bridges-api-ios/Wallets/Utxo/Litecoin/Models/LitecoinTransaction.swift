@@ -65,7 +65,7 @@ public struct LitecoinTransactionVin: Decodable {
     
 }
 
-public struct LitecoinTransactionValue: Decodable {
+public struct LitecoinTransactionValue: Decodable, UtxoTxHistoryInterface {
     public let blockhash: String?
     public let blockheight: Int
     public let blocktime: Int?
@@ -80,4 +80,18 @@ public struct LitecoinTransactionValue: Decodable {
     public let version: Int    
     public let vin: [LitecoinTransactionVin]
     public let vout: [LitecoinTransactionVout]
+    
+    public var vinTx: [[String: Double]] {
+        return vin.map { return [$0.addr: $0.value] }
+    }
+    
+    public var voutTx: [[String: Double]] {
+        return vout.compactMap {
+            guard let address = $0.scriptPubKey.addresses.first,
+                let value = Double($0.value) else {
+                    return nil
+            }
+            return [address: value]
+        }
+    }
 }

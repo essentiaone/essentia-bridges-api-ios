@@ -41,7 +41,7 @@ public struct DashTransactionCbTx: Decodable {
     public let merkleRootMNList: String
 }
 
-public struct DashTransactionValue: Decodable {
+public struct DashTransactionValue: Decodable, UtxoTxHistoryInterface {
     public let blockhash: String?
     public let blockheight: Int?
     public let blocktime: Int?
@@ -60,4 +60,24 @@ public struct DashTransactionValue: Decodable {
     public let version: Int
     public let vin: [DashTransactionVin]
     public let vout: [DashTransactionVout]
+    
+    public var vinTx: [[String: Double]] {
+        return vin.compactMap {
+            guard let address = $0.addr,
+                  let value = $0.value else {
+                    return nil
+            }
+            return [address: value]
+        }
+    }
+    
+    public var voutTx: [[String: Double]] {
+        return vout.compactMap {
+            guard let address = $0.scriptPubKey.addresses.first,
+                let value = Double($0.value) else {
+                    return nil
+            }
+            return [address: value]
+        }
+    }
 }
