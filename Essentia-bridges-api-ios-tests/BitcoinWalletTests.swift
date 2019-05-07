@@ -78,8 +78,8 @@ class BitcoinTests: XCTestCase {
         let expectation = self.expectation(description: "Get balance")
         btcWallet?.getBalance(for: addressFrom, result: { (result) in
             switch result {
-            case .success(let object):
-                XCTAssert(object.balance.value >= 0)
+            case .success(let value):
+                XCTAssert(value >= 0)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

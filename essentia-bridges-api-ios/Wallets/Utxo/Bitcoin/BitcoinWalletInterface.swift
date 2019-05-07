@@ -14,7 +14,7 @@ private enum Constants {
 }
 
 public protocol BitcoinWalletInterface: WalletInterface {
-    func getBalance(for address: String, result: @escaping (NetworkResult<BitcoinBalance>) -> Void)
+    func getBalance(for address: String, result: @escaping (NetworkResult<UtxoBalance>) -> Void)
     func sendTransaction(with data: TransactionData, result: @escaping (NetworkResult<BitcoinSendTXResponse>) -> Void)
     func getTransactionsHistory(for address: Address,
                                 result: @escaping (NetworkResult<BitcoinTransactionsHistory>) -> Void)

@@ -17,7 +17,7 @@ public typealias HistoryDashTx = (NetworkResult<DashTransactionsHistory>) -> Voi
 public typealias DashTx = (NetworkResult<DashTransactionValue>) -> Void
 
 public protocol DashWalletInterface: WalletInterface {
-    func getBalance(for address: String, result: @escaping (NetworkResult<DashBalance>) -> Void)
+    func getBalance(for address: String, result: @escaping (NetworkResult<UtxoBalance>) -> Void)
     func sendTransaction(with data: TransactionData, result: @escaping SendDashTx)
     func getTransactionsHistory(for address: Address, result: @escaping HistoryDashTx)
     func getUTxo(for address: Address, result: @escaping (NetworkResult<[DashUTXO]>) -> Void)

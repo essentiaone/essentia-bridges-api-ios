@@ -86,7 +86,7 @@ class LitecoinTests: XCTestCase {
         ltcWallet?.getBalance(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object.balance.value > 0)
+                XCTAssert(object >= 0)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

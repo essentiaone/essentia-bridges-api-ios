@@ -14,8 +14,15 @@ public class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
         super.init(bridgeUrl)
     }
     
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
-        networking.request(LitecoinEndpoint.getBalance(address), result: result)
+    public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
+        networking.request(LitecoinEndpoint.getBalance(address), result: { (responce: NetworkResult<LitecoinBalance>) in
+            switch responce {
+            case .success(let object):
+                result(.success(object.balance.value))
+            case .failure(let error):
+                result(.failure(error))
+            }
+        })
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendLitecoinTx) {
