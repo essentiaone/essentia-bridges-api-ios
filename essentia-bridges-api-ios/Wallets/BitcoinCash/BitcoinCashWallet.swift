@@ -9,10 +9,6 @@
 import Foundation
 import EssentiaNetworkCore
 
-public typealias SendBitcoinCashTx = (NetworkResult<UtxoSendTXResponse>) -> Void
-public typealias HistoryBitcoinCashTx = (NetworkResult<BitcoinCashTransactionsHistory>) -> Void
-public typealias BitcoinCashTx = (NetworkResult<BitcoinCashTransactionByIdValue>) -> Void
-
 public class BitcoinCashWallet: BaseWallet, UtxoWalletUnterface {
     private let cashUtxoNetwork: NetworkManager
     override public init(_ bridgeUrl: String) {
@@ -20,10 +16,6 @@ public class BitcoinCashWallet: BaseWallet, UtxoWalletUnterface {
         super.init(bridgeUrl)
     }
     
-<<<<<<< Updated upstream:essentia-bridges-api-ios/Wallets/BitcoinCash/BitcoinCashWallet.swift
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinCashBalance>) -> Void) {
-        networking.request(BitcoinCashEndpoint.getBalance(address), result: result)
-=======
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
         networking.request(BitcoinCashEndpoint.getBalance(address),
                            result: {( responce: NetworkResult<BitcoinCashBalance>) in
@@ -31,7 +23,6 @@ public class BitcoinCashWallet: BaseWallet, UtxoWalletUnterface {
                 return responce.result
             }))
         })
->>>>>>> Stashed changes:essentia-bridges-api-ios/Wallets/Utxo/BitcoinCash/BitcoinCashWallet.swift
     }
     
     public func getTransactionsHistory(for addr: Address, result: @escaping HistoryUtxoTx) {

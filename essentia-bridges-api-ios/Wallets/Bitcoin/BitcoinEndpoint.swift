@@ -12,7 +12,7 @@ import EssentiaNetworkCore
 private enum Constants {
     enum Path {
         static var getBalance: NSString = "/bitcoin/wallets/%@/balance"
-        static var getUTxo: NSString = "/bitcoin/wallets/%@/utxo/"
+        static var getUtxo: NSString = "/bitcoin/wallets/%@/utxo/"
         static var getTransactionsHistory: NSString = "/bitcoin/wallets/%@/transactions"
         static var getTransactionById: NSString = "/bitcoin/transactions/%@"
         static var sendTransaction: String = "/bitcoin/wallets/transactions"
@@ -32,7 +32,7 @@ private enum Constants {
 // MARK: - https://github.com/essentiaone/ess-bridge-wallet/blob/develop/docs/source/rest/wallet/bitcoin.rst
 enum BitcoinEndpoint: RequestProtocol {
     case getBalance(Address)
-    case getUTxo(Address)
+    case getUtxo(Address)
     case getTransactionsHistory(Address)
     case getTransactionById(TransactionId)
     case sendTransaction(withData: TransactionData)
@@ -41,8 +41,8 @@ enum BitcoinEndpoint: RequestProtocol {
         switch self {
         case .getBalance(let address):
             return NSString(format: Constants.Path.getBalance, address).description
-        case .getUTxo(let address):
-            return NSString(format: Constants.Path.getUTxo, address).description
+        case .getUtxo(let address):
+            return NSString(format: Constants.Path.getUtxo, address).description
         case .getTransactionsHistory(let address):
             return NSString(format: Constants.Path.getTransactionsHistory, address).description
         case .getTransactionById(let txId):

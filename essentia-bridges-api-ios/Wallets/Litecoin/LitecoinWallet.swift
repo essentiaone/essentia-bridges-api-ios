@@ -13,10 +13,6 @@ public class LitecoinWallet: BaseWallet, UtxoWalletUnterface {
         super.init(bridgeUrl)
     }
     
-<<<<<<< Updated upstream:essentia-bridges-api-ios/Wallets/Litecoin/LitecoinWallet.swift
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<LitecoinBalance>) -> Void) {
-        networking.request(LitecoinEndpoint.getBalance(address), result: result)
-=======
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
         networking.request(LitecoinEndpoint.getBalance(address),
                            result: { (responce: NetworkResult<UtxoBalanceResponce>) in
@@ -27,7 +23,6 @@ public class LitecoinWallet: BaseWallet, UtxoWalletUnterface {
                 result(.failure(error))
             }
         })
->>>>>>> Stashed changes:essentia-bridges-api-ios/Wallets/Utxo/Litecoin/LitecoinWallet.swift
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendUtxoTx) {

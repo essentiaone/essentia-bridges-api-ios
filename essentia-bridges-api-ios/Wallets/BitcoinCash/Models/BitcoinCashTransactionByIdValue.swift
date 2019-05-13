@@ -1,5 +1,5 @@
 //
-//  BitcoinCashTransactionsHistory.swift
+//  BitcoinCashTransactionByIdValue.swift
 //  essentia-bridges-api-ios
 //
 //  Created by Pavlo Boiko on 5/14/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct BitcoinCashTransactionsHistory: Decodable {
-    public var result: UtxoTransactionsHistory
+public struct BitcoinCashTransactionByIdValue: Decodable {
+    public var result: UtxoTransactionValue
 }

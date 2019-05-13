@@ -98,7 +98,7 @@ class DashTests: XCTestCase {
         dshWallet?.getBalance(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssertEqual(object.balance.value, expectedBalance)
+                XCTAssertEqual(object, expectedBalance)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)

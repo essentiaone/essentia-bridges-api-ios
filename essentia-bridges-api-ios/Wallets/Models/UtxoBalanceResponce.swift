@@ -23,3 +23,5 @@ public struct UtxoBalanceResponce: Decodable {
         case balance = "result"
     }
 }
+
+public typealias UtxoBalance = Double

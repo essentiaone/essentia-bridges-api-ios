@@ -13,10 +13,6 @@ public class DashWallet: BaseWallet, UtxoWalletUnterface {
         super.init(bridgeUrl)
     }
     
-<<<<<<< Updated upstream:essentia-bridges-api-ios/Wallets/Dash/DashWallet.swift
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<DashBalance>) -> Void) {
-        networking.request(DashEndpoint.getBalance(address), result: result)
-=======
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
         networking.request(DashEndpoint.getBalance(address), result: { (responce: NetworkResult<UtxoBalanceResponce>) in
             switch responce {
@@ -26,7 +22,6 @@ public class DashWallet: BaseWallet, UtxoWalletUnterface {
                 result(.failure(error))
             }
         })
->>>>>>> Stashed changes:essentia-bridges-api-ios/Wallets/Utxo/Dash/DashWallet.swift
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendUtxoTx) {

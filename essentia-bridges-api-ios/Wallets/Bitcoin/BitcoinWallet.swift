@@ -14,21 +14,13 @@ public class BitcoinWallet: BaseWallet, UtxoWalletUnterface {
         super.init(bridgeUrl)
     }
     
-<<<<<<< Updated upstream:essentia-bridges-api-ios/Wallets/Bitcoin/BitcoinWallet.swift
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinBalance>) -> Void) {
-        networking.request(BitcoinEndpoint.getBalance(address), result: result)
-=======
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
         networking.request(BitcoinEndpoint.getBalance(address),
                            result: { (responce: NetworkResult<UtxoBalanceResponce>) in
-            switch responce {
-            case .success(let object):
-                result(.success(object.balance.value))
-            case .failure(let error):
-                result(.failure(error))
-            }
+                            result(responce.adapt(adapting: { (object) -> UtxoBalance in
+                                return object.balance.value
+                            }))
         })
->>>>>>> Stashed changes:essentia-bridges-api-ios/Wallets/Utxo/Bitcoin/BitcoinWallet.swift
     }
     
     public func sendTransaction(with data: TransactionData, result: @escaping SendUtxoTx) {
@@ -46,6 +38,6 @@ public class BitcoinWallet: BaseWallet, UtxoWalletUnterface {
     }
     
     public func getUtxo(for address: Address, result: @escaping (NetworkResult<[UtxoResponce]>) -> Void) {
-        networking.request(BitcoinEndpoint.getUTxo(address), result: result)
+        networking.request(BitcoinEndpoint.getUtxo(address), result: result)
     }
 }

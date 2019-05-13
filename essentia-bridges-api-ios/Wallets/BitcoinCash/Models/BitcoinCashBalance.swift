@@ -2,10 +2,12 @@
 //  BitcoinCashBalance.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Binomial on 27.09.2018.
-//  Copyright © 2018 Essentia. All rights reserved.
+//  Created by Pavlo Boiko on 5/14/19.
+//  Copyright © 2019 Essentia. All rights reserved.
 //
 
+import Foundation
+
 public struct BitcoinCashBalance: Decodable {
-    public let result: Double
+    public var result: Double
 }
