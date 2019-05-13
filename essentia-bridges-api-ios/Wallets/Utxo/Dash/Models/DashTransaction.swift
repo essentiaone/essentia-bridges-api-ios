@@ -21,30 +21,18 @@ public struct DashTransactionVout: Decodable {
     public let spentTxId: String?
     public let spentHeight: Int?
     public let spentIndex: Int?
-    public let number: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case number = "n"
-        case value = "value"
-        case scriptPubKey = "scriptPubKey"
-        case spentTxId = "spentTxId"
-        case spentHeight = "spentHeight"
-        case spentIndex = "spentIndex"
-    }
-    
+    public let n: Int
 }
 
 public struct DashTransactionVin: Decodable {
-    public let coinbase: String
-    public let number: Int
+    public let txId: String?
+    public let vout: Int?
     public let sequence: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case coinbase = "coinbase"
-        case number = "n"
-        case sequence = "sequence"
-    }
-    
+    public let n: Int
+    public let addr: String?
+    public let value: Double?
+    public let valueSat: Int?
+    public let coinbase: String?
 }
 
 public struct DashTransactionCbTx: Decodable {
@@ -53,23 +41,43 @@ public struct DashTransactionCbTx: Decodable {
     public let merkleRootMNList: String
 }
 
-public struct DashTransactionValue: Decodable {
+public struct DashTransactionValue: Decodable, UtxoTxHistoryInterface {
     public let blockhash: String?
-    public let blockheight: Int
+    public let blockheight: Int?
     public let blocktime: Int?
-    public let cbTx: DashTransactionCbTx
+    public let cbTx: DashTransactionCbTx?
     public let confirmations: Int
-    public let extraPayload: String
-    public let extraPayloadSize: Int
-    public let isCoinBase: Bool
+    public let extraPayload: String?
+    public let extraPayloadSize: Int?
+    public let isCoinBase: Bool?
     public let locktime: Int
     public let size: Int
     public let time: Int
     public let txid: String
-    public let txlock: Bool
-    public let type: Int
+    public let txlock: Bool?
+    public let type: Int?
     public let valueOut: Double
     public let version: Int
     public let vin: [DashTransactionVin]
     public let vout: [DashTransactionVout]
+    
+    public var vinTx: [[String: Double]] {
+        return vin.compactMap {
+            guard let address = $0.addr,
+                  let value = $0.value else {
+                    return nil
+            }
+            return [address: value]
+        }
+    }
+    
+    public var voutTx: [[String: Double]] {
+        return vout.compactMap {
+            guard let address = $0.scriptPubKey.addresses.first,
+                let value = Double($0.value) else {
+                    return nil
+            }
+            return [address: value]
+        }
+    }
 }

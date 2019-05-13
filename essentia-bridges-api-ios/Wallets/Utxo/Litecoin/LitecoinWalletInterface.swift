@@ -17,7 +17,7 @@ public typealias HistoryLitecoinTx = (NetworkResult<LitecoinTransactionsHistory>
 public typealias LitecoinTx = (NetworkResult<LitecoinTransactionValue>) -> Void
 
 public protocol LitecoinWalletInterface: WalletInterface {
-    func getBalance(for address: String, result: @escaping (NetworkResult<LitecoinBalance>) -> Void)
+    func getBalance(for address: String, result: @escaping (NetworkResult<UtxoBalance>) -> Void)
     func sendTransaction(with data: TransactionData, result: @escaping SendLitecoinTx)
     func getTransactionsHistory(for address: Address, result: @escaping HistoryLitecoinTx)
     func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void)

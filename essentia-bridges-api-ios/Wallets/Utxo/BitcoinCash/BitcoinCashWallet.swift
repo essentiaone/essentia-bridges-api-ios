@@ -19,8 +19,16 @@ public class BitcoinCashWallet: BaseWallet, BitcoinCashWalletInterface {
         super.init(bridgeUrl)
     }
     
-    public func getBalance(for address: Address, result: @escaping (NetworkResult<BitcoinCashBalance>) -> Void) {
-        networking.request(BitcoinCashEndpoint.getBalance(address), result: result)
+    public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
+        networking.request(BitcoinCashEndpoint.getBalance(address),
+                           result: { ( responce: NetworkResult<BitcoinCashBalance>) in
+            switch responce {
+            case .success(let object):
+                result(.success(object.result))
+            case .failure(let error):
+                result(.failure(error))
+            }
+        })
     }
     
     public func getTransactionsHistory(for addr: Address, result: @escaping HistoryBitcoinCashTx) {

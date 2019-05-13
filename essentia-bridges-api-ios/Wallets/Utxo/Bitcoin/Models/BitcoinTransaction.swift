@@ -62,7 +62,7 @@ public struct BitcoinTransactionVin: Decodable {
     
 }
 
-public struct BitcoinTransactionValue: Decodable {
+public struct BitcoinTransactionValue: Decodable, UtxoTxHistoryInterface {
     public let blockhash: String?
     public let blockheight: Int?
     public let blocktime: Int?
@@ -77,4 +77,18 @@ public struct BitcoinTransactionValue: Decodable {
     public let version: Int    
     public let vin: [BitcoinTransactionVin]
     public let vout: [BitcoinTransactionVout]
+    
+    public var vinTx: [[String: Double]] {
+        return vin.map { return [$0.addr: $0.value] }
+    }
+    
+    public var voutTx: [[String: Double]] {
+        return vout.compactMap {
+            guard let address = $0.scriptPubKey.addresses.first,
+                  let value = Double($0.value) else {
+                return nil
+            }
+            return [address: value]
+        }
+    }
 }
