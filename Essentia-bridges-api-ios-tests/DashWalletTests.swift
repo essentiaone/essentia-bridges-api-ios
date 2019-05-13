@@ -155,7 +155,7 @@ class DashTests: XCTestCase {
 
     func testGetUTXO() {
         let expectation = self.expectation(description: "Get UTXO")
-        dshWallet?.getUTxo(for: addressFrom, result: { (result) in
+        dshWallet?.getUtxo(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
                 XCTAssertEqual(object[0].address, ExpectedUTXO.address)

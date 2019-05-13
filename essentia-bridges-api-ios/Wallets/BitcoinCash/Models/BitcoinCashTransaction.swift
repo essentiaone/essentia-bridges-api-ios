@@ -6,6 +6,7 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
+<<<<<<< Updated upstream:essentia-bridges-api-ios/Wallets/BitcoinCash/Models/BitcoinCashTransaction.swift
 public struct BitcoinCashTransactionVoutAddresses: Decodable {
     public let addresses: [String]
     public let asm: String
@@ -107,7 +108,9 @@ public struct BitcoinCashTransactionValue: Decodable {
     
 }
 
+=======
+>>>>>>> Stashed changes:essentia-bridges-api-ios/Wallets/Utxo/BitcoinCash/Models/BitcoinCashTransaction.swift
 public struct BitcoinCashTransactionByIdValue: Decodable {
-    public let result: BitcoinCashTransactionById
+    public let result: UtxoTransactionValue
     
 }

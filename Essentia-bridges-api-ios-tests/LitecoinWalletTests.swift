@@ -140,7 +140,7 @@ class LitecoinTests: XCTestCase {
     
     func testGetUTXO() {
         let expectation = self.expectation(description: "Get UTXO")
-        ltcWallet?.getUTxo(for: addressFrom, result: { (result) in
+        ltcWallet?.getUtxo(for: addressFrom, result: { (result) in
             switch result {
             case .success(let object):
                 XCTAssertEqual(object[0].address, ExpectedUTXO.address)
