@@ -232,11 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				34AF682A228AAA3700F5C73D /* Utxo */,
-				34099EC5228A1E79002A88EA /* Models */,
 				3492202A20ED784B00A59A6F /* Ethereum */,
 				3492202B20ED786800A59A6F /* WalletInterface.swift */,
 				3492208520EFC8B700A59A6F /* BaseWallet.swift */,
-				34099ECB228A1E79002A88EA /* UtxoWalletInterface.swift */,
 			);
 			path = Wallets;
 			sourceTree = "<group>";
@@ -292,6 +290,8 @@
 		34AF682A228AAA3700F5C73D /* Utxo */ = {
 			isa = PBXGroup;
 			children = (
+				34099EC5228A1E79002A88EA /* Models */,
+				34099ECB228A1E79002A88EA /* UtxoWalletInterface.swift */,
 				34AF682B228AAA3700F5C73D /* BitcoinCash */,
 				34AF6837228AAA3700F5C73D /* Bitcoin */,
 				34AF6841228AAA3700F5C73D /* Dash */,
