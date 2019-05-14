@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'essentia-bridges-api-ios'
-  s.version          = '0.4.2'
+  s.version          = '0.4.3'
   s.summary          = 'Bridges api for crypto wallets'
 
   s.homepage         = 'https://github.com/essentiaone/essentia-bridges-api-ios.git'
@@ -21,4 +21,5 @@ Pod::Spec.new do |s|
   s.source_files = 'essentia-bridges-api-ios/**/*.{swift}'
 
   s.dependency 'essentia-network-core-ios'
+  s.dependency 'HDWalletKit'
 end
