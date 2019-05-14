@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import HDWalletKit
 
 fileprivate var etherScanApiUrl = "http://api.etherscan.io"
 
@@ -28,18 +27,4 @@ public class CryptoWallet {
     public let litecoin: UtxoWalletUnterface
     public let bitcoinCash: UtxoWalletUnterface
     public let dash: UtxoWalletUnterface
-    
-    public func utxoWalletForCoin(coin: Coin) -> UtxoWalletUnterface {
-        switch coin {
-        case .bitcoin:
-            return bitcoin
-        case .bitcoinCash:
-            return bitcoinCash
-        case .litecoin:
-            return litecoin
-        case .dash:
-            return dash
-        default: fatalError("There no such Utxo wallet!")
-        }
-    }
 }

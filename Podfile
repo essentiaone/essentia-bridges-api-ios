@@ -5,7 +5,6 @@ target 'essentia-bridges-api-ios' do
   use_frameworks!
   
 #Core
-  pod "HDWalletKit"
   pod "essentia-network-core-ios"
   
   target 'Essentia-bridges-api-ios-tests' do
