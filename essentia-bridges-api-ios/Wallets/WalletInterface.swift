@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EssentiaNetworkCore
 
 public protocol WalletInterface {
     var title: String { get }

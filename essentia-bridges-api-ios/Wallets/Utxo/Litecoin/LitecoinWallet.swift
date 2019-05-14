@@ -8,14 +8,14 @@
 
 import EssentiaNetworkCore
 
-public class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
-    
+public class LitecoinWallet: BaseWallet, UtxoWalletUnterface {
     public override init(_ bridgeUrl: String) {
         super.init(bridgeUrl)
     }
     
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
-        networking.request(LitecoinEndpoint.getBalance(address), result: { (responce: NetworkResult<LitecoinBalance>) in
+        networking.request(LitecoinEndpoint.getBalance(address),
+                           result: { (responce: NetworkResult<UtxoBalanceResponce>) in
             switch responce {
             case .success(let object):
                 result(.success(object.balance.value))
@@ -25,19 +25,19 @@ public class LitecoinWallet: BaseWallet, LitecoinWalletInterface {
         })
     }
     
-    public func sendTransaction(with data: TransactionData, result: @escaping SendLitecoinTx) {
+    public func sendTransaction(with data: TransactionData, result: @escaping SendUtxoTx) {
         networking.request(LitecoinEndpoint.sendTransaction(withData: data), result: result)
     }
     
-    public func getTransactionsHistory(for address: Address, result: @escaping HistoryLitecoinTx) {
+    public func getTransactionsHistory(for address: Address, result: @escaping HistoryUtxoTx) {
         networking.request(LitecoinEndpoint.getTransactionsHistory(address), result: result)
     }
     
-    public func getTransactionById(for txId: TransactionId, result: @escaping LitecoinTx) {
+    public func getTransactionById(for txId: TransactionId, result: @escaping UtxoTx) {
         networking.request(LitecoinEndpoint.getTransactionById(txId), result: result)
     }
     
-    public func getUTxo(for address: Address, result: @escaping (NetworkResult<[LitecoinUTXO]>) -> Void) {
+    public func getUtxo(for address: Address, result: @escaping (NetworkResult<[UtxoResponce]>) -> Void) {
         networking.request(LitecoinEndpoint.getUTxo(address), result: result)
     }
 }

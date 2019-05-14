@@ -1,20 +1,22 @@
 //
-//  BitcoinTransaction.swift
+//  UtxoTransactionValue.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Binomial on 25.09.2018.
-//  Copyright © 2018 Essentia. All rights reserved.
+//  Created by Pavlo Boiko on 5/13/19.
+//  Copyright © 2019 Essentia. All rights reserved.
 //
 
-public struct BitcoinTransactionVoutAddresses: Decodable {
+import Foundation
+
+public struct UtxoTransactionVoutAddresses: Decodable {
     public let addresses: [String]
     public let asm: String
     public let hex: String
     public let type: String
 }
-public struct BitcoinTransactionVout: Decodable {
+public struct UtxoTransactionVout: Decodable {
     public let value: String
-    public let scriptPubKey: BitcoinTransactionVoutAddresses
+    public let scriptPubKey: UtxoTransactionVoutAddresses
     public let spentTxId: String?
     public let spentHeight: Int?
     public let spentIndex: Int?
@@ -29,24 +31,25 @@ public struct BitcoinTransactionVout: Decodable {
         case spentIndex = "spentIndex"
         
     }
-        
+    
 }
 
-public struct BitcoinTransactionScriptSig: Decodable {
+public struct UtxoTransactionScriptSig: Decodable {
     public let asm: String
     public let hex: String
 }
 
-public struct BitcoinTransactionVin: Decodable {
-    public let addr: String
-    public let txid: String
-    public let value: Double
+public struct UtxoTransactionVin: Decodable {
+    public let addr: String?
+    public let txid: String?
+    public let value: Double?
     public let doubleSpentTxID: String?
     public let number: Int
-    public let scriptSig: BitcoinTransactionScriptSig
+    public let scriptSig: UtxoTransactionScriptSig?
+    public let coinbase: String?
     public let sequence: Int
-    public let valueSat: Int
-    public let vout: Int
+    public let valueSat: Int?
+    public let vout: Int?
     
     enum CodingKeys: String, CodingKey {
         case addr = "addr"
@@ -58,37 +61,26 @@ public struct BitcoinTransactionVin: Decodable {
         case sequence = "sequence"
         case valueSat = "valueSat"
         case vout = "vout"
+        case coinbase = "coinbase"
     }
     
 }
 
-public struct BitcoinTransactionValue: Decodable, UtxoTxHistoryInterface {
+public struct UtxoTransactionValue: Decodable {
     public let blockhash: String?
     public let blockheight: Int?
     public let blocktime: Int?
     public let confirmations: Int
-    public let fees: Double
+    public let fees: Double?
     public let locktime: Int
+    public let extraPayloadSize: Int?
+    public let extraPayload: String?
     public let size: Int
     public let time: Int
     public let txid: String
-    public let valueIn: Double
+    public let valueIn: Double?
     public let valueOut: Double
-    public let version: Int    
-    public let vin: [BitcoinTransactionVin]
-    public let vout: [BitcoinTransactionVout]
-    
-    public var vinTx: [[String: Double]] {
-        return vin.map { return [$0.addr: $0.value] }
-    }
-    
-    public var voutTx: [[String: Double]] {
-        return vout.compactMap {
-            guard let address = $0.scriptPubKey.addresses.first,
-                  let value = Double($0.value) else {
-                return nil
-            }
-            return [address: value]
-        }
-    }
+    public let version: Int
+    public let vin: [UtxoTransactionVin]
+    public let vout: [UtxoTransactionVout]
 }

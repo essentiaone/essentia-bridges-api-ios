@@ -1,14 +1,14 @@
 //
-//  DashUTXO.swift
+//  UtxoResponce.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Bohdan Sinchuk on 4/17/19.
+//  Created by Pavlo Boiko on 5/13/19.
 //  Copyright © 2019 Essentia. All rights reserved.
 //
 
 import Foundation
 
-public struct DashUTXO: Decodable {
+public struct UtxoResponce: Decodable {
     public let address: String
     public let amount: Double
     public let confirmations: Int

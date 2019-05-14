@@ -1,14 +1,14 @@
 //
-//  DashBalance.swift
+//  UtxoBalanceResponce.swift
 //  essentia-bridges-api-ios
 //
-//  Created by Bohdan Sinchuk on 4/17/19.
+//  Created by Pavlo Boiko on 5/13/19.
 //  Copyright © 2019 Essentia. All rights reserved.
 //
 
 import Foundation
 
-public struct DashBalanceValue: Decodable {
+public struct UtxoBalanceValue: Decodable {
     public let value: Double
     
     enum CodingKeys: String, CodingKey {
@@ -16,10 +16,12 @@ public struct DashBalanceValue: Decodable {
     }
 }
 
-public struct DashBalance: Decodable {
-    public let balance: DashBalanceValue
+public struct UtxoBalanceResponce: Decodable {
+    public let balance: UtxoBalanceValue
     
     enum CodingKeys: String, CodingKey {
         case balance = "result"
     }
 }
+
+public typealias UtxoBalance = Double

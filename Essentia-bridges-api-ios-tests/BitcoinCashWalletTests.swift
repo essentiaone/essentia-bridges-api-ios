@@ -91,20 +91,19 @@ class BitcoinCashTests: XCTestCase {
         bchWallet?.getTransactionById(for: expectedTxId, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssertEqual(object.result.blockhash, ExpectedTransactionbyId.blockhash)
-                XCTAssertEqual(object.result.blocktime, ExpectedTransactionbyId.blocktime)
-                XCTAssertEqual(object.result.blockheight, ExpectedTransactionbyId.blockheight)
-                XCTAssertEqual(object.result.size, ExpectedTransactionbyId.size)
-                XCTAssertEqual(object.result.time, ExpectedTransactionbyId.time)
-                XCTAssertEqual(object.result.txid, ExpectedTransactionbyId.txid)
-                XCTAssertEqual(object.result.fees, ExpectedTransactionbyId.fees)
-                XCTAssertEqual(object.result.valueIn, ExpectedTransactionbyId.valueIn)
-                XCTAssertEqual(object.result.valueOut, ExpectedTransactionbyId.valueOut)
-                XCTAssertEqual(object.result.vin[0].coinbase, ExpectedTransactionbyId.Vin.coinbase)
-                XCTAssertEqual(object.result.vin[0].sequence, ExpectedTransactionbyId.Vin.sequence)
-                XCTAssertEqual(object.result.vin[0].number, ExpectedTransactionbyId.Vin.number)
-                XCTAssertEqual(object.result.vout[0].scriptPubKey.addresses, ExpectedTransactionbyId.Vout.addresses)
-                XCTAssertEqual(object.result.vout[0].value, ExpectedTransactionbyId.Vout.value)
+                XCTAssertEqual(object.blockhash, ExpectedTransactionbyId.blockhash)
+                XCTAssertEqual(object.blocktime, ExpectedTransactionbyId.blocktime)
+                XCTAssertEqual(object.blockheight, ExpectedTransactionbyId.blockheight)
+                XCTAssertEqual(object.size, ExpectedTransactionbyId.size)
+                XCTAssertEqual(object.time, ExpectedTransactionbyId.time)
+                XCTAssertEqual(object.txid, ExpectedTransactionbyId.txid)
+                XCTAssertEqual(object.fees, ExpectedTransactionbyId.fees)
+                XCTAssertEqual(object.valueIn, ExpectedTransactionbyId.valueIn)
+                XCTAssertEqual(object.valueOut, ExpectedTransactionbyId.valueOut)
+                XCTAssertEqual(object.vin[0].sequence, ExpectedTransactionbyId.Vin.sequence)
+                XCTAssertEqual(object.vin[0].number, ExpectedTransactionbyId.Vin.number)
+                XCTAssertEqual(object.vout[0].scriptPubKey.addresses, ExpectedTransactionbyId.Vout.addresses)
+                XCTAssertEqual(object.vout[0].value, ExpectedTransactionbyId.Vout.value)
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
@@ -115,7 +114,7 @@ class BitcoinCashTests: XCTestCase {
     
     func testSendTX() {
         let expectation = self.expectation(description: "Send TX")
-        bchWallet?.sendRawTransaction(with: transactionData, result: { (result) in
+        bchWallet?.sendTransaction(with: transactionData, result: { (result) in
             switch result {
             case .success(let object):
                 XCTAssertEqual(object.txid, expectedTxId)
