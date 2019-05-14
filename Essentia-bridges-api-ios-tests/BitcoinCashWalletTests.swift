@@ -77,8 +77,7 @@ class BitcoinCashTests: XCTestCase {
         let expectation = self.expectation(description: "Get transactions history")
         bchWallet?.getTransactionsHistory(for: addressFrom, result: { (result) in
             switch result {
-            case .success(let object):
-                XCTAssertEqual(object.fromNumber, ExpectedTransactionHistory.fromNumber)
+            case .success:
                 expectation.fulfill()
             case .failure:
                 XCTFail(expectation.description)
