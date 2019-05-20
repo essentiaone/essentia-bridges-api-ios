@@ -3,6 +3,7 @@ disabled_rules:
  - private_over_fileprivate
  - no_fallthrough_only
  - identifier_name
+ - line_length
 excluded: 
   - Carthage
   - Pods

@@ -9,6 +9,11 @@
 import Foundation
 
 public struct EtherScanInfo {
+    public init(url: String, apiKey: String) {
+        self.url = url
+        self.apiKey = apiKey
+    }
+    
     public let url: String
     public let apiKey: String
 }

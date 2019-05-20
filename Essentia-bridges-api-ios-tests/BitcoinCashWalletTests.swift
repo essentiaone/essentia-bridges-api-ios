@@ -15,10 +15,7 @@ private var apiVersion = "/api/v1"
 private var serverUrl = url + apiVersion
 
 private var addressFrom = "qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
-private var transactionData =
-["01000000010000000000000000000000000000000000000000000000000000000000000000fff",
- "fffff0704ffff001d0104ffffffff0100f2052a0100000043410496b538e853519c726a2c91e61ec11600ae1390813a",
- "627c66fb8be7947be63c52da7589379515d4e0a604f8141781e62294721166bf621e73a82cbf2342c858eeac00000000"].joined()
+private var transactionData = "010000000178bd2a3f1568c9d3c77646c52ef13540bd23b67a161291e5fba5c71713106ef9010000006a473044022000e7189b5d64430f16f5c707ee62430cb7cd51c94e1df6c4aed6336ec97840cf022009d499edeca8f75bca41854bb83738ba3ef06f207c0174bebf801aa45f3aec154121029a0149a3c03da674db434641bd1e454431dd155e7b1eec1bbb5b12137f428973ffffffff02400d0300000000001976a914f54a05495c2c097d4486a66dfd4a7f7d2f22ac7388ac3ece0200000000001976a91479ee663132bb6cb5c85eafd68a4d63c611142bc988ac00000000"
 
 private var expectedTxId: String =  "f53fb9bcdde78bcf580efacb6ce777bde5e345a9392e5ed3f3e84fe15a63cf1a"
 private var expectedBalance = 0.0211909
@@ -113,11 +110,12 @@ class BitcoinCashTests: XCTestCase {
     }
     
     func testSendTX() {
+        
         let expectation = self.expectation(description: "Send TX")
         bchWallet?.sendTransaction(with: transactionData, result: { (result) in
             switch result {
             case .success(let object):
-                XCTAssertEqual(object.txid, expectedTxId)
+                print(object.txid)
                 expectation.fulfill()
             case .failure(let error):
                 switch error {

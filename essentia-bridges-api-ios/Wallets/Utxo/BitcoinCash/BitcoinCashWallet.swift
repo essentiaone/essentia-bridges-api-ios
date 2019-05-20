@@ -19,27 +19,27 @@ public class BitcoinCashWallet: BaseWallet, UtxoWalletUnterface {
     public func getBalance(for address: Address, result: @escaping (NetworkResult<UtxoBalance>) -> Void) {
         networking.request(BitcoinCashEndpoint.getBalance(address),
                            result: {( responce: NetworkResult<BitcoinCashBalance>) in
-            result(responce.adapt(adapting: { (responce) -> UtxoBalance in
-                return responce.result
-            }))
+                            result(responce.adapt(adapting: { (responce) -> UtxoBalance in
+                                return responce.result
+                            }))
         })
     }
     
     public func getTransactionsHistory(for addr: Address, result: @escaping HistoryUtxoTx) {
         networking.request(BitcoinCashEndpoint.getTransactionsHistory(addr),
                            result: {( responce: NetworkResult<BitcoinCashTransactionsHistory>) in
-            result(responce.adapt(adapting: { (responce) -> UtxoTransactionsHistory in
-                return responce.result
-            }))
+                            result(responce.adapt(adapting: { (responce) -> UtxoTransactionsHistory in
+                                return responce.result
+                            }))
         })
     }
     
     public func getTransactionById(for txId: String, result: @escaping UtxoTx) {
         networking.request(BitcoinCashEndpoint.getTransactionById(txId),
                            result: {( responce: NetworkResult<BitcoinCashTransactionByIdValue>) in
-            result(responce.adapt(adapting: { (responce) -> UtxoTransactionValue in
-                return responce.result
-            }))
+                            result(responce.adapt(adapting: { (responce) -> UtxoTransactionValue in
+                                return responce.result
+                            }))
         })
     }
     
