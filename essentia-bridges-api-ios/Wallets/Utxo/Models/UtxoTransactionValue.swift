@@ -9,10 +9,10 @@
 import Foundation
 
 public struct UtxoTransactionVoutAddresses: Decodable {
-    public let addresses: [String]
+    public let addresses: [String]?
     public let asm: String
     public let hex: String
-    public let type: String
+    public let type: String?
 }
 public struct UtxoTransactionVout: Decodable {
     public let value: String
