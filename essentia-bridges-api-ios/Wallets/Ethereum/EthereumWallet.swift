@@ -75,7 +75,7 @@ public class EthereumWallet: BaseWallet, EthereumWalletInterface {
     }
     
     public func getWalletTokenHistory(for address: Address, result: @escaping (NetworkResult<EthereumTokenTransactionByAddress>) -> Void) {
-        ethereScanNetwork.request(EthereumEndpoint.walletTokenHistory(address, etherScan.apiKey, result: result))
+        ethereScanNetwork.request(EthereumEndpoint.walletTokenHistory(address, etherScan.apiKey), result: result)
     }
     
     public func getGasSpeed(result: @escaping (NetworkResult<EthereumGasSpeed>) -> Void) {

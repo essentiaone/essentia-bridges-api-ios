@@ -79,7 +79,7 @@ enum EthereumEndpoint: RequestProtocol {
         case .getGasSpeed:
             return Constants.Path.getGasSpeed
         case .walletTokenHistory(let address, let key):
-            return NSString(format: Constants.Path.walletTokenHistory, address, key)
+            return NSString(format: Constants.Path.walletTokenHistory, address, key).description
         }
     }
     
