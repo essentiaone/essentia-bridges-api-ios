@@ -19,6 +19,8 @@ fileprivate enum Constants {
         "/api?module=account&action=txlist&address=%@&startblock=0&endblock=99999999&sort=asc&apikey=%@"
         static var txTokenHistory: NSString =
         "/api?module=account&action=tokentx&contractaddress=%@&address=%@&page=1&offset=100&sort=asc&apikey=%@"
+        static var walletTokenHistory: NSString =
+        "/api?module=account&action=tokentx&address=%@&page=1&offset=100&sort=asc&apikey=%@"
         static var sendTransaction = "/ethereum/wallets/transactions"
         static var callSmartContracet = "/ethereum/smart-contracts"
         static var getGasPrice = "/ethereum/gas/price"
@@ -47,6 +49,7 @@ enum EthereumEndpoint: RequestProtocol {
     case getReceiptOfTransaction(TransactionHash)
     case getHistory(Address, ApiKey)
     case getTokenHistory(Address, smartContract: Address, ApiKey)
+    case walletTokenHistory(Address, ApiKey)
     case getGasSpeed
     
     var path: String {
@@ -75,6 +78,8 @@ enum EthereumEndpoint: RequestProtocol {
             return NSString(format: Constants.Path.txTokenHistory, smartContract, address, apiKey).description
         case .getGasSpeed:
             return Constants.Path.getGasSpeed
+        case .walletTokenHistory(let address, let key):
+            return NSString(format: Constants.Path.walletTokenHistory, address, key).description
         }
     }
     

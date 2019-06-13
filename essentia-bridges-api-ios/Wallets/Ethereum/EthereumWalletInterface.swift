@@ -32,6 +32,8 @@ public protocol EthereumWalletInterface: WalletInterface {
                            smartContract: Address,
                            result: @escaping (NetworkResult<EthereumTokenTransactionByAddress>) -> Void)
     func getTxHistory(for address: Address, result: @escaping (NetworkResult<EthereumTransactionsByAddress>) -> Void)
+    func getWalletTokenHistory(for address: Address, result: @escaping (NetworkResult<EthereumTokenTransactionByAddress>) -> Void)
+    
 }
 
 extension EthereumWalletInterface {
