@@ -19,6 +19,7 @@ public class CryptoWallet {
         litecoin = LitecoinWallet(bridgeApiUrl)
         bitcoinCash = BitcoinCashWallet(bridgeApiUrl)
         dash = DashWallet(bridgeApiUrl)
+        essentia = EssentiaWallet(bridgeApiUrl)
     }
 
     public let ethereum: EthereumWalletInterface
@@ -27,4 +28,5 @@ public class CryptoWallet {
     public let litecoin: UtxoWalletUnterface
     public let bitcoinCash: UtxoWalletUnterface
     public let dash: UtxoWalletUnterface
+    public let essentia: UtxoWalletUnterface
 }
