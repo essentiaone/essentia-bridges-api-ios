@@ -12,9 +12,10 @@ public struct UtxoResponce: Decodable {
     public let address: String
     public let amount: Double
     public let confirmations: Int
-    public let height: Int
+    public let height: Int?
     public let satoshis: Int
     public let scriptPubKey: String
+    public let ts: Int?
     public let txid: String
     public let vout: Int
 }
